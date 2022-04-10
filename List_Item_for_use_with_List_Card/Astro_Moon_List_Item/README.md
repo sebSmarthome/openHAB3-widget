@@ -1,4 +1,4 @@
-![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item/screenshots/AstroMoonListItemScreenShot.gif)
+![Screen1|632x500, 75%](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item/screenshots/AstroMoonListItemScreenShot.gif)
 
 This is an UI **List Item** Widget to view the Moon information with the Astro Binding.
 
