@@ -3,10 +3,9 @@ tags:
   - astro
   - list
   - sun
-  - weather
 props:
   parameters:
-    - default: Soleil
+    - default: Sun
       description: Sun Title
       label: title
       name: SunTitle
@@ -48,7 +47,7 @@ props:
       type: BOOLEAN
       groupName: SunriseSettings
     - description: Sunrise Title
-      default: Lever
+      default: Sunrise
       label: title
       name: SunriseTitle
       required: false
@@ -89,7 +88,7 @@ props:
       type: BOOLEAN
       groupName: SunsetSettings
     - description: Sunset Title
-      default: Coucher
+      default: Sunset
       label: title
       name: SunsetTitle
       required: false
@@ -130,7 +129,7 @@ props:
       type: BOOLEAN
       groupName: RadiationSettings
     - description: Radiation Title
-      default: Radiation totale
+      default: Total Radiation
       label: title
       name: RadiationTitle
       required: false
@@ -171,7 +170,7 @@ props:
       type: BOOLEAN
       groupName: TotalEclipseSettings
     - description: Total Eclipse Title
-      default: Eclipse Totale
+      default: Total Eclipse
       label: title
       name: TotalEclipseTitle
       required: false
@@ -198,7 +197,7 @@ props:
       type: BOOLEAN
       groupName: PartialEclipseSettings
     - description: Partial Eclipse Title
-      default: Eclipse Partielle
+      default: Partial Eclipse
       label: title
       name: PartialEclipseTitle
       required: false
