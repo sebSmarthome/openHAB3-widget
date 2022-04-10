@@ -46,4 +46,4 @@ Support to use a light and a dark background.
 
 ## Resources
 
-<https://github.com/sebSmarthome/openHAB3-widget/blob/c0c826344fcf9ac6929c8a2e71c9bd0d38cf3f9b/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/frs_Astro_Sun_list_item.yaml>
+<https://github.com/sebSmarthome/openHAB3-widget/blob/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/frs_Astro_Sun_list_item.yaml>
