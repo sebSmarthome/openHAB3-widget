@@ -2,7 +2,7 @@
 
 This is an UI **List Item** Widget to view the Sun information with the Astro Binding.
 
-Only for use with **List Card** with accordion and rich list items option set to true.
+Only use with **List Card** with accordion and rich list items option set to true.
 
 Support to use a light and a dark background.
 
@@ -38,7 +38,8 @@ Support to use a light and a dark background.
 
 ### Version 0.1
 
-- initial release
+* initial release
 
 ## Resources
+
 <https://github.com/sebSmarthome/openHAB3-widget/blob/c0c826344fcf9ac6929c8a2e71c9bd0d38cf3f9b/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/frs_Astro_Sun_list_item.yaml>
