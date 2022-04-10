@@ -30,7 +30,9 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/screenshots/AstroSun2.PNG)
+![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/screenshots/AstroSunListItemScreenShot3.PNG)
+
+![Screen3](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/screenshots/AstroSunListItemScreenShot2.PNG)
 
 ## Changelog
 
