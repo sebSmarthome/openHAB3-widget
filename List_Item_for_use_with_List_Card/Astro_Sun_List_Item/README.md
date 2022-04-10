@@ -1,4 +1,4 @@
-![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/screenshots/AstroSun1.gif)
+![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/screenshots/AstroSunListItemScreenShot.gif)
 
 This is an UI **List Item** Widget to view the Sun information with the Astro Binding.
 
