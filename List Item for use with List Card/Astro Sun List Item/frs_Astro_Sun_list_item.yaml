@@ -1,0 +1,330 @@
+uid: frs_Astro_Sun_list_item
+tags:
+  - astro
+  - list
+  - sun
+  - weather
+props:
+  parameters:
+    - default: Soleil
+      description: Sun Title
+      label: title
+      name: SunTitle
+      required: false
+      type: TEXT
+      groupName: SunSettings
+    - default: f7:sun_max_fill
+      description: Sun Day Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SunDayIcon
+      required: false
+      type: TEXT
+      groupName: SunSettings
+    - default: f7:sun_min
+      description: Sun Night Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SunNightIcon
+      required: false
+      type: TEXT
+      groupName: SunSettings
+    - context: item
+      description: Sun Day/night item switch
+      label: item
+      name: SunDayNightItem
+      required: false
+      type: TEXT
+      groupName: SunSettings
+    - context: item
+      description: Sun Phase name item
+      label: item
+      name: SunPhaseNameItem
+      required: false
+      type: TEXT
+      groupName: SunSettings
+    - description: Hide Sunrise label-item
+      label: hide
+      name: HideSunrise
+      required: false
+      type: BOOLEAN
+      groupName: SunriseSettings
+    - description: Sunrise Title
+      default: Lever
+      label: title
+      name: SunriseTitle
+      required: false
+      type: TEXT
+      groupName: SunriseSettings
+    - default: f7:sunrise_fill
+      description: Sunrise Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SunriseIcon
+      required: false
+      type: TEXT
+      groupName: SunriseSettings
+    - context: item
+      description: Sunrise Start time item
+      label: item
+      name: StartTimeSunriseItem
+      required: false
+      type: TEXT
+      groupName: SunriseSettings
+    - context: item
+      description: Sunrise End time item
+      label: item
+      name: EndTimeSunriseItem
+      required: false
+      type: TEXT
+      groupName: SunriseSettings
+    - context: item
+      description: Sunrise Duration item
+      label: item
+      name: DurationSunriseItem
+      required: false
+      type: TEXT
+      groupName: SunriseSettings
+    - description: Hide Sunset label-item
+      label: hide
+      name: HideSunset
+      required: false
+      type: BOOLEAN
+      groupName: SunsetSettings
+    - description: Sunset Title
+      default: Coucher
+      label: title
+      name: SunsetTitle
+      required: false
+      type: TEXT
+      groupName: SunsetSettings
+    - default: f7:sunset_fill
+      description: Sunset Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SunsetIcon
+      required: false
+      type: TEXT
+      groupName: SunsetSettings
+    - context: item
+      description: Sunset Start time item
+      label: item
+      name: StartTimeSunsetItem
+      required: false
+      type: TEXT
+      groupName: SunsetSettings
+    - context: item
+      description: Sunset End time item
+      label: item
+      name: EndTimeSunsetItem
+      required: false
+      type: TEXT
+      groupName: SunsetSettings
+    - context: item
+      description: Sunset Duration item
+      label: item
+      name: DurationSunsetItem
+      required: false
+      type: TEXT
+      groupName: SunsetSettings
+    - description: Hide Radiation label-item
+      label: hide
+      name: HideRadiation
+      required: false
+      type: BOOLEAN
+      groupName: RadiationSettings
+    - description: Radiation Title
+      default: Radiation totale
+      label: title
+      name: RadiationTitle
+      required: false
+      type: TEXT
+      groupName: RadiationSettings
+    - default: iconify:mdi:sun-wireless
+      description: Radiation Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: RadiationIcon
+      required: false
+      type: TEXT
+      groupName: RadiationSettings
+    - context: item
+      description: Total Radiation item
+      label: item
+      name: TotalRadiationItem
+      required: false
+      type: TEXT
+      groupName: RadiationSettings
+    - context: item
+      description: Direct Radiation item
+      label: item
+      name: DirectRadiationItem
+      required: false
+      type: TEXT
+      groupName: RadiationSettings
+    - context: item
+      description: Diffuse Radiation item
+      label: item
+      name: DiffuseRadiationItem
+      required: false
+      type: TEXT
+      groupName: RadiationSettings
+    - description: Hide Total Eclipse label-item
+      label: hide
+      name: HideTotalEclipse
+      required: false
+      type: BOOLEAN
+      groupName: TotalEclipseSettings
+    - description: Total Eclipse Title
+      default: Eclipse Totale
+      label: title
+      name: TotalEclipseTitle
+      required: false
+      type: TEXT
+      groupName: TotalEclipseSettings
+    - default: f7:calendar_today
+      description: Total Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: TotalEclipseIcon
+      required: false
+      type: TEXT
+      groupName: TotalEclipseSettings
+    - context: item
+      description: Total Eclipse date item
+      label: item
+      name: TotalEclipseDateItem
+      required: false
+      type: TEXT
+      groupName: TotalEclipseSettings
+    - description: Hide Partial Eclipse label-item
+      label: hide
+      name: HidePartialEclipse
+      required: false
+      type: BOOLEAN
+      groupName: PartialEclipseSettings
+    - description: Partial Eclipse Title
+      default: Eclipse Partielle
+      label: title
+      name: PartialEclipseTitle
+      required: false
+      type: TEXT
+      groupName: PartialEclipseSettings
+    - default: f7:calendar_today
+      description: Partial Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: PartialEclipseIcon
+      required: false
+      type: TEXT
+      groupName: PartialEclipseSettings
+    - context: item
+      description: Partial Eclipse date item
+      label: item
+      name: PartialEclipseDateItem
+      required: false
+      type: TEXT
+      groupName: PartialEclipseSettings
+  parameterGroups:
+    - name: SunSettings
+      label: Sun settings
+    - name: SunriseSettings
+      label: Sunrise settings
+    - name: SunsetSettings
+      label: Sunset settings
+    - name: RadiationSettings
+      label: Radiation settings
+    - name: TotalEclipseSettings
+      label: Total Eclipse settings
+    - name: PartialEclipseSettings
+      label: Partial Eclipse settings
+timestamp: Apr 10, 2022, 8:45:12 AM
+component: oh-list-item
+config:
+  accordionList: true
+  after: '=props.SunPhaseNameItem ? items[props.SunPhaseNameItem].displayState : ""'
+  icon: '=(items[props.SunDayNightItem].state == "ON") ? props.SunDayIcon : props.SunNightIcon'
+  iconColor: '=(items[props.SunDayNightItem].state == "ON") ? "yellow" : "gray"'
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=(props.StartTimeSunriseItem ? "↑ " + items[props.StartTimeSunriseItem].displayState : "") + " ↓ " + (props.StartTimeSunsetItem ? items[props.StartTimeSunsetItem].displayState : "")'
+  title: =props.SunTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              icon: =props.SunriseIcon
+              iconColor: gray
+              item: =props.DurationSunriseItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '=(props.StartTimeSunriseItem ? items[props.StartTimeSunriseItem].displayState + " - " : "") + (props.EndTimeSunriseItem ? items[props.EndTimeSunriseItem].displayState : "")'
+              title: =props.SunriseTitle
+              visible: =!props.HideSunrise
+          - component: oh-label-item
+            config:
+              icon: =props.SunsetIcon
+              iconColor: gray
+              item: =props.DurationSunsetItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '=(props.StartTimeSunsetItem ? items[props.StartTimeSunsetItem].displayState + " - " : "") + (props.EndTimeSunsetItem ? items[props.EndTimeSunsetItem].displayState : "")'
+              title: =props.SunsetTitle
+              visible: =!props.HideSunset
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: day
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.TotalRadiationItem, props.DirectRadiationItem, props.DiffuseRadiationItem]
+              icon: =props.RadiationIcon
+              iconColor: gray
+              item: =props.TotalRadiationItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '=(props.DirectRadiationItem ? "Directe " + items[props.DirectRadiationItem].displayState + " - " : "") + (props.DiffuseRadiationItem ? "Diffuse " + items[props.DiffuseRadiationItem].displayState : "")'
+              title: =props.RadiationTitle
+              visible: =!props.HideRadiation
+          - component: oh-label-item
+            config:
+              icon: =props.TotalEclipseIcon
+              iconColor: gray
+              item: =props.TotalEclipseDateItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.TotalEclipseTitle
+              visible: =!props.HideTotalEclipse
+          - component: oh-label-item
+            config:
+              icon: =props.PartialEclipseIcon
+              iconColor: gray
+              item: =props.PartialEclipseDateItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.PartialEclipseTitle
+              visible: =!props.HidePartialEclipse
