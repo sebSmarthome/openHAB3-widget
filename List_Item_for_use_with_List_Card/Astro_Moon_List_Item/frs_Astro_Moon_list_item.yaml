@@ -1,0 +1,220 @@
+uid: frs_Astro_Moon_list_item
+tags:
+  - astro
+  - list
+  - moon
+props:
+  parameters:
+    - default: Moon
+      description: Moon Title
+      label: title
+      name: MoonTitle
+      required: false
+      type: TEXT
+      groupName: MoonSettings
+    - context: item
+      description: Moon illumination item
+      label: item
+      name: MoonIlluminationItem
+      required: false
+      type: TEXT
+      groupName: MoonSettings
+    - context: item
+      description: Moon phase name item
+      label: item
+      name: MoonPhaseNameItem
+      required: false
+      type: TEXT
+      groupName: MoonSettings
+    - description: Hide Full Moon label-item
+      label: hide
+      name: HideFullMoon
+      required: false
+      type: BOOLEAN
+      groupName: FullMoonSettings
+    - description: Full Moon Title
+      default: Full Moon
+      label: title
+      name: FullMoonTitle
+      required: false
+      type: TEXT
+      groupName: FullMoonSettings
+    - default: iconify:mdi:moon-full
+      description: Full Moon Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: FullMoonIcon
+      required: false
+      type: TEXT
+      groupName: FullMoonSettings
+    - context: item
+      description: Full Moon Date item
+      label: item
+      name: FullMoonDateItem
+      required: false
+      type: TEXT
+      groupName: FullMoonSettings
+    - description: Hide New Moon label-item
+      label: hide
+      name: HideNewMoon
+      required: false
+      type: BOOLEAN
+      groupName: NewMoonSettings
+    - description: New Moon Title
+      default: New Moon
+      label: title
+      name: NewMoonTitle
+      required: false
+      type: TEXT
+      groupName: NewMoonSettings
+    - default: iconify:mdi:moon-new
+      description: New Moon Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: NewMoonIcon
+      required: false
+      type: TEXT
+      groupName: NewMoonSettings
+    - context: item
+      description: New Moon Date item
+      label: item
+      name: NewMoonDateItem
+      required: false
+      type: TEXT
+      groupName: NewMoonSettings
+    - description: Hide Total Eclipse label-item
+      label: hide
+      name: HideTotalEclipse
+      required: false
+      type: BOOLEAN
+      groupName: TotalEclipseSettings
+    - description: Total Eclipse Title
+      default: Total Eclipse
+      label: title
+      name: TotalEclipseTitle
+      required: false
+      type: TEXT
+      groupName: TotalEclipseSettings
+    - default: f7:calendar_today
+      description: Total Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: TotalEclipseIcon
+      required: false
+      type: TEXT
+      groupName: TotalEclipseSettings
+    - context: item
+      description: Total Eclipse date item
+      label: item
+      name: TotalEclipseDateItem
+      required: false
+      type: TEXT
+      groupName: TotalEclipseSettings
+    - description: Hide Partial Eclipse label-item
+      label: hide
+      name: HidePartialEclipse
+      required: false
+      type: BOOLEAN
+      groupName: PartialEclipseSettings
+    - description: Partial Eclipse Title
+      default: Partial Eclipse
+      label: title
+      name: PartialEclipseTitle
+      required: false
+      type: TEXT
+      groupName: PartialEclipseSettings
+    - default: f7:calendar_today
+      description: Partial Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: PartialEclipseIcon
+      required: false
+      type: TEXT
+      groupName: PartialEclipseSettings
+    - context: item
+      description: Partial Eclipse date item
+      label: item
+      name: PartialEclipseDateItem
+      required: false
+      type: TEXT
+      groupName: PartialEclipseSettings
+  parameterGroups:
+    - name: MoonSettings
+      label: Moon settings
+    - name: FullMoonSettings
+      label: Full Moon settings
+    - name: NewMoonSettings
+      label: New Moon settings
+    - name: TotalEclipseSettings
+      label: Total Eclipse settings
+    - name: PartialEclipseSettings
+      label: Partial Eclipse settings
+timestamp: Jan 1, 2022, 8:00:54 AM
+component: oh-list-item
+config:
+  accordionList: true
+  after: =items[props.MoonIlluminationItem].displayState
+  icon: '=(items[props.MoonPhaseNameItem].state == "FULL") ? "iconify:noto:full-moon" : (items[props.MoonPhaseNameItem].state == "NEW") ? "iconify:noto:new-moon" : (items[props.MoonPhaseNameItem].state == "WAXING_GIBBOUS") ? "iconify:noto:waxing-gibbous-moon" : (items[props.MoonPhaseNameItem].state == "FIRST_QUARTER") ? "iconify:noto:first-quarter-moon" : (items[props.MoonPhaseNameItem].state == "THIRD_QUARTER") ? "iconify:noto:last-quarter-moon" : (items[props.MoonPhaseNameItem].state == "WANING_GIBBOUS") ? "iconify:noto:waning-gibbous-moon" : (items[props.MoonPhaseNameItem].state == "WANING_CRESCENT") ? "iconify:noto:waning-crescent-moon" : (items[props.MoonPhaseNameItem].state == "WAXING_GIBBOUS") ? "iconify:noto:waxing-gibbous-moon" : (items[props.MoonPhaseNameItem].state == "FIRST_QUARTER") ? "iconify:noto:first-quarter-moon" : (items[props.MoonPhaseNameItem].state == "THIRD_QUARTER") ? "iconify:noto:last-quarter-moon" : (items[props.MoonPhaseNameItem].state == "WANING_GIBBOUS") ? "iconify:noto:waning-gibbous-moon" : (items[props.MoonPhaseNameItem].state == "WAXING_CRESCENT") ? "iconify:noto:waxing-crescent-moon" : "iconify:noto:new-moon"'
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: =items[props.MoonPhaseNameItem].displayState
+  title: =props.MoonTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              icon: =props.FullMoonIcon
+              iconColor: gray
+              item: =props.FullMoonDateItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.FullMoonTitle
+              visible: =!props.HideFullMoon
+          - component: oh-label-item
+            config:
+              icon: =props.NewMoonIcon
+              iconColor: gray
+              item: =props.NewMoonDateItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.NewMoonTitle
+              visible: =!props.HideNewMoon
+          - component: oh-label-item
+            config:
+              icon: =props.TotalEclipseIcon
+              iconColor: gray
+              item: =props.TotalEclipseDateItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.TotalEclipseTitle
+              visible: =!props.HideTotalEclipse
+          - component: oh-label-item
+            config:
+              icon: =props.PartialEclipseIcon
+              iconColor: gray
+              item: =props.PartialEclipseDateItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.PartialEclipseTitle
+              visible: =!props.HidePartialEclipse
