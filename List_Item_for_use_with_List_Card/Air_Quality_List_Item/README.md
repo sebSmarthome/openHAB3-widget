@@ -9,7 +9,7 @@ Support to use a light and a dark background.
 **Configuration parameters:**
 
 * All title string
-* All Icons - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+* All Icons - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
 * Visibility of Label item (No2, O3, PM10, PM2.5)
 
 **items**
@@ -27,7 +27,7 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item/screenshots/AirQualityItemScreenShot4.PNG)
+![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item/screenshots/AirQualityListItemScreenShot4.PNG)
 
 **Standard Library List Card**
 
