@@ -1,0 +1,280 @@
+uid: frs_Air_Quality_list_item
+tags:
+  - air Quality
+  - list
+  - weather
+props:
+  parameters:
+    - defaultValue: Air Quality
+      description: Air Quality Title
+      label: Title
+      name: AirQualityTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - description: AQI Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:wind
+      label: Icon
+      name: IconIndiceAqi
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Indice AQI Item
+      label: Item
+      name: IndiceAQIItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Poluant dominent Item
+      label: Item
+      name: PoluantdominentItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide label-item No2
+      label: Hide
+      name: HideNo2
+      required: false
+      type: BOOLEAN
+      groupName: no2
+    - description: No2 Title
+      defaultValue: No2
+      label: Title
+      name: No2Title
+      required: false
+      type: TEXT
+      groupName: no2
+    - description: No2 Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:wind
+      label: Icon
+      name: IconNo2
+      required: false
+      type: TEXT
+      groupName: no2
+    - context: item
+      description: No2 Value item
+      label: Item
+      name: No2MeasureItem
+      required: false
+      type: TEXT
+      groupName: no2
+    - context: item
+      description: No2 Alert Level item
+      label: Item
+      name: No2IndexItem
+      required: false
+      type: TEXT
+      groupName: no2
+    - description: Hide label-item O3
+      label: Hide
+      name: HideO3
+      required: false
+      type: BOOLEAN
+      groupName: O3
+    - description: O3 Title
+      defaultValue: O3
+      label: Title
+      name: O3Title
+      required: false
+      type: TEXT
+      groupName: O3
+    - description: O3 Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:wind
+      label: Icon
+      name: IconO3
+      required: false
+      type: TEXT
+      groupName: O3
+    - context: item
+      description: O3 Value item
+      label: item
+      name: O3MeasureItem
+      required: false
+      type: TEXT
+      groupName: O3
+    - context: item
+      description: O3 Alert Level item
+      label: item
+      name: O3IndexItem
+      required: false
+      type: TEXT
+      groupName: O3
+    - description: Hide label-item PM10
+      label: Hide
+      name: HidePm10
+      required: false
+      type: BOOLEAN
+      groupName: pm10
+    - description: PM10 Title
+      defaultValue: PM10
+      label: Title
+      name: PM10Title
+      required: false
+      type: TEXT
+      groupName: pm10
+    - description: PM10 Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:wind
+      label: Icon
+      name: IconPM10
+      required: false
+      type: TEXT
+      groupName: pm10
+    - context: item
+      description: PM10 Value item
+      label: item
+      name: PM10MeasureItem
+      required: false
+      type: TEXT
+      groupName: pm10
+    - context: item
+      description: PM10 Alert Level item
+      label: item
+      name: PM10IndexItem
+      required: false
+      type: TEXT
+      groupName: pm10
+    - description: Hide label-item PM2.5
+      label: Hide
+      name: HidePm25
+      required: false
+      type: BOOLEAN
+      groupName: pm25
+    - description: PM2.5 Title
+      defaultValue: PM2.5
+      label: Title
+      name: PM25Title
+      required: false
+      type: TEXT
+      groupName: pm25
+    - description: PM2.5 Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:wind
+      label: Icon
+      name: IconPM25
+      required: false
+      type: TEXT
+      groupName: pm25
+    - context: item
+      description: PM2.5 Value item
+      label: item
+      name: PM25MeasureItem
+      required: false
+      type: TEXT
+      groupName: pm25
+    - context: item
+      description: PM2.5 Alert Level item
+      label: item
+      name: PM25IndexItem
+      required: false
+      type: TEXT
+      groupName: pm25
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: no2
+      label: No2
+    - name: O3
+      label: O3
+    - name: pm10
+      label: PM10
+    - name: pm25
+      label: PM2.5
+timestamp: Dec 31, 2021, 9:43:17 PM
+component: oh-list-item
+config:
+  accordionList: true
+  after: =items[props.IndiceAQIItem].displayState
+  icon: =props.IconIndiceAqi
+  iconColor: '=(Number.parseFloat(items[props.IndiceAQIItem].state) == "0") ? "green" : (Number.parseFloat(items[props.IndiceAQIItem].state) == "1") ? "yellow" : (Number.parseFloat(items[props.IndiceAQIItem].state) == "2") ? "orange" : (Number.parseFloat(items[props.IndiceAQIItem].state) == "3") ? "red" : (Number.parseFloat(items[props.IndiceAQIItem].state) == "4") ? "purple" : (Number.parseFloat(items[props.IndiceAQIItem].state) == "5") ? "maroon" : "gray"'
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=props.PoluantdominentItem ? items[props.PoluantdominentItem].displayState : ""'
+  title: =props.AirQualityTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: month
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.No2MeasureItem]
+              icon: =props.IconNo2
+              iconColor: '=(Number.parseFloat(items[props.No2IndexItem].state) == "0") ? "green" : (Number.parseFloat(items[props.No2IndexItem].state) == "1") ? "yellow" : (Number.parseFloat(items[props.No2IndexItem].state) == "2") ? "orange" : (Number.parseFloat(items[props.No2IndexItem].state) == "3") ? "red" : (Number.parseFloat(items[props.No2IndexItem].state) == "4") ? "purple" : (Number.parseFloat(items[props.No2IndexItem].state) == "5") ? "maroon" : "gray"'
+              item: =props.No2IndexItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.No2MeasureItem].state
+              title: =props.No2Title
+              visible: =!props.HideNo2
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: month
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.O3MeasureItem]
+              icon: =props.IconO3
+              iconColor: '=(Number.parseFloat(items[props.O3IndexItem].state) == "0") ? "green" : (Number.parseFloat(items[props.O3IndexItem].state) == "1") ? "yellow" : (Number.parseFloat(items[props.O3IndexItem].state) == "2") ? "orange" : (Number.parseFloat(items[props.O3IndexItem].state) == "3") ? "red" : (Number.parseFloat(items[props.O3IndexItem].state) == "4") ? "purple" : (Number.parseFloat(items[props.O3IndexItem].state) == "5") ? "maroon" : "gray"'
+              item: =props.O3IndexItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.O3MeasureItem].state
+              title: =props.O3Title
+              visible: =!props.HideO3
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: month
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.PM10MeasureItem]
+              icon: =props.IconPM10
+              iconColor: '=(Number.parseFloat(items[props.PM10IndexItem].state) == "0") ? "green" : (Number.parseFloat(items[props.PM10IndexItem].state) == "1") ? "yellow" : (Number.parseFloat(items[props.PM10IndexItem].state) == "2") ? "orange" : (Number.parseFloat(items[props.PM10IndexItem].state) == "3") ? "red" : (Number.parseFloat(items[props.PM10IndexItem].state) == "4") ? "purple" : (Number.parseFloat(items[props.PM10IndexItem].state) == "5") ? "maroon" : "gray"'
+              item: =props.PM10IndexItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.PM10MeasureItem].state
+              title: =props.PM10Title
+              visible: =!props.HidePm10
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: month
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.PM25MeasureItem]
+              icon: =props.IconPM25
+              iconColor: '=(Number.parseFloat(items[props.PM25IndexItem].state) == "0") ? "green" : (Number.parseFloat(items[props.PM25IndexItem].state) == "1") ? "yellow" : (Number.parseFloat(items[props.PM25IndexItem].state) == "2") ? "orange" : (Number.parseFloat(items[props.PM25IndexItem].state) == "3") ? "red" : (Number.parseFloat(items[props.PM25IndexItem].state) == "4") ? "purple" : (Number.parseFloat(items[props.PM25IndexItem].state) == "5") ? "maroon" : "gray"'
+              item: =props.PM25IndexItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.PM25MeasureItem].state
+              title: =props.PM25Title
+              visible: =!props.HidePm25
