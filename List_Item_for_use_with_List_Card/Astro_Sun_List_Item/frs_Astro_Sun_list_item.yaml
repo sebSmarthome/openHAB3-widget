@@ -1,26 +1,23 @@
 uid: frs_Astro_Sun_list_item
-tags:
-  - astro
-  - list
-  - sun
+tags: []
 props:
   parameters:
-    - default: Sun
-      description: Sun Title
+    - description: Sun Title
+      defaultValue: Sun
       label: title
       name: SunTitle
       required: false
       type: TEXT
       groupName: SunSettings
-    - default: f7:sun_max_fill
-      description: Sun Day Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Sun Day Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:sun_max_fill
       label: Icon
       name: SunDayIcon
       required: false
       type: TEXT
       groupName: SunSettings
-    - default: f7:sun_min
-      description: Sun Night Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Sun Night Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:sun_min
       label: Icon
       name: SunNightIcon
       required: false
@@ -47,14 +44,14 @@ props:
       type: BOOLEAN
       groupName: SunriseSettings
     - description: Sunrise Title
-      default: Sunrise
+      defaultValue: Sunrise
       label: title
       name: SunriseTitle
       required: false
       type: TEXT
       groupName: SunriseSettings
-    - default: f7:sunrise_fill
-      description: Sunrise Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Sunrise Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:sunrise_fill
       label: Icon
       name: SunriseIcon
       required: false
@@ -88,14 +85,14 @@ props:
       type: BOOLEAN
       groupName: SunsetSettings
     - description: Sunset Title
-      default: Sunset
+      defaultValue: Sunset
       label: title
       name: SunsetTitle
       required: false
       type: TEXT
       groupName: SunsetSettings
-    - default: f7:sunset_fill
-      description: Sunset Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Sunset Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:sunset_fill
       label: Icon
       name: SunsetIcon
       required: false
@@ -129,14 +126,14 @@ props:
       type: BOOLEAN
       groupName: RadiationSettings
     - description: Radiation Title
-      default: Total Radiation
+      defaultValue: Total Radiation
       label: title
       name: RadiationTitle
       required: false
       type: TEXT
       groupName: RadiationSettings
-    - default: iconify:mdi:sun-wireless
-      description: Radiation Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Radiation Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: iconify:mdi:sun-wireless
       label: Icon
       name: RadiationIcon
       required: false
@@ -170,14 +167,14 @@ props:
       type: BOOLEAN
       groupName: TotalEclipseSettings
     - description: Total Eclipse Title
-      default: Total Eclipse
+      defaultValue: Total Eclipse
       label: title
       name: TotalEclipseTitle
       required: false
       type: TEXT
       groupName: TotalEclipseSettings
-    - default: f7:calendar_today
-      description: Total Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Total Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:calendar_today
       label: Icon
       name: TotalEclipseIcon
       required: false
@@ -197,14 +194,14 @@ props:
       type: BOOLEAN
       groupName: PartialEclipseSettings
     - description: Partial Eclipse Title
-      default: Partial Eclipse
+      defaultValue: Partial Eclipse
       label: title
       name: PartialEclipseTitle
       required: false
       type: TEXT
       groupName: PartialEclipseSettings
-    - default: f7:calendar_today
-      description: Partial Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+    - description: Partial Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:calendar_today
       label: Icon
       name: PartialEclipseIcon
       required: false

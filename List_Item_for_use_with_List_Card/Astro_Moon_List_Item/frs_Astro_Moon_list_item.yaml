@@ -5,7 +5,7 @@ tags:
   - moon
 props:
   parameters:
-    - default: Moon
+    - defaultValue: Moon
       description: Moon Title
       label: title
       name: MoonTitle
@@ -33,13 +33,13 @@ props:
       type: BOOLEAN
       groupName: FullMoonSettings
     - description: Full Moon Title
-      default: Full Moon
+      defaultValue: Full Moon
       label: title
       name: FullMoonTitle
       required: false
       type: TEXT
       groupName: FullMoonSettings
-    - default: iconify:mdi:moon-full
+    - defaultValue: iconify:mdi:moon-full
       description: Full Moon Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: FullMoonIcon
@@ -60,13 +60,13 @@ props:
       type: BOOLEAN
       groupName: NewMoonSettings
     - description: New Moon Title
-      default: New Moon
+      defaultValue: New Moon
       label: title
       name: NewMoonTitle
       required: false
       type: TEXT
       groupName: NewMoonSettings
-    - default: iconify:mdi:moon-new
+    - defaultValue: iconify:mdi:moon-new
       description: New Moon Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: NewMoonIcon
@@ -87,13 +87,13 @@ props:
       type: BOOLEAN
       groupName: TotalEclipseSettings
     - description: Total Eclipse Title
-      default: Total Eclipse
+      defaultValue: Total Eclipse
       label: title
       name: TotalEclipseTitle
       required: false
       type: TEXT
       groupName: TotalEclipseSettings
-    - default: f7:calendar_today
+    - defaultValue: f7:calendar_today
       description: Total Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: TotalEclipseIcon
@@ -114,13 +114,13 @@ props:
       type: BOOLEAN
       groupName: PartialEclipseSettings
     - description: Partial Eclipse Title
-      default: Partial Eclipse
+      defaultValue: Partial Eclipse
       label: title
       name: PartialEclipseTitle
       required: false
       type: TEXT
       groupName: PartialEclipseSettings
-    - default: f7:calendar_today
+    - defaultValue: f7:calendar_today
       description: Partial Eclipse Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: PartialEclipseIcon
