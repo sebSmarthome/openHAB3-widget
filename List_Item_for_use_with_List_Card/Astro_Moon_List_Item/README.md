@@ -23,7 +23,7 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item/screenshots/AstroMoonListItemScreenShot4.PNG)
+![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item/screenshots/AstroListItemScreenShot.gif)
 
 **Standard Library List Card**
 
