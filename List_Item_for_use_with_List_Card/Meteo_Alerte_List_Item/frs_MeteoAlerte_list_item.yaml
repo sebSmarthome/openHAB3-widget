@@ -1,0 +1,310 @@
+uid: frs_MeteoAlerte_list_item
+tags:
+  - list
+  - meteo alerte
+  - weather
+props:
+  parameters:
+    - defaultValue: Meteo Alert
+      description: Meteo Alert Title
+      label: Title
+      name: MeteoAlertTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - description: French department
+      defaultValue: Doubs
+      label: SubTitle
+      name: MeteoAlertSubTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Group Meteo alert items state - Group Settings (Members Base Type, NUMBER), (Aggregation Function, MAX)
+      label: Group
+      name: MeteoAlertItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconName
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Neige pictogramme
+      label: Hide
+      name: HideNeigePictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Neige pictogramme item
+      label: Item
+      name: NeigePictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Vague Submersion pictogramme
+      label: Hide
+      name: HideVagueSubmersionPictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Vague Submersion pictogramme item
+      label: Item
+      name: VagueSubmersionPictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Vent pictogramme
+      label: Hide
+      name: HideVentPictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Vent pictogramme item
+      label: Item
+      name: VentPictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Pluie Inondation pictogramme
+      label: Hide
+      name: HidePluieInondationPictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Pluie Inondation pictogramme item
+      label: Item
+      name: PluieInondationPictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Orage pictogramme
+      label: Hide
+      name: HideOragePictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Orage pictogramme item
+      label: Item
+      name: OragePictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Inondation pictogramme
+      label: Hide
+      name: HideInondationPictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Inondation pictogramme item
+      label: Item
+      name: InondationPictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Canicule pictogramme
+      label: Hide
+      name: HideCaniculePictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Canicule pictogramme item
+      label: Item
+      name: CaniculePictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Grand Froid pictogramme
+      label: Hide
+      name: HideGrandFroidPictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Grand Froid pictogramme item
+      label: Item
+      name: GrandFroidPictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Avalanches pictogramme
+      label: Hide
+      name: HideAvalanchesPictogramme
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Avalanches pictogramme item
+      label: Item
+      name: AvalanchesPictogrammeItem
+      required: false
+      type: TEXT
+      groupName: content
+    - description: Hide Commentaire
+      label: Hide
+      name: HideCommentaire
+      required: false
+      type: BOOLEAN
+      groupName: content
+    - context: item
+      description: Commentaire item
+      label: Item
+      name: CommentaireItem
+      required: false
+      type: TEXT
+      groupName: content
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: content
+      label: Content
+timestamp: Dec 31, 2021, 9:47:18 PM
+component: oh-list-item
+config:
+  accordionList: true
+  icon: =props.IconName
+  iconColor: '=(Number.parseFloat(items[props.MeteoAlertItem].state) == 0) ? "green" : (Number.parseFloat(items[props.MeteoAlertItem].state) == 1) ? "yellow" : (Number.parseFloat(items[props.MeteoAlertItem].state) == 2) ? "orange" : (Number.parseFloat(items[props.MeteoAlertItem].state) == 3) ? "red" : "gray"'
+  subtitle: =props.MeteoAlertSubTitle
+  title: =props.MeteoAlertTitle
+slots:
+  accordion:
+    - component: f7-row
+      config:
+        class:
+          - justify-content-center
+        no-gap: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-image
+            config:
+              item: =props.VentPictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideVentPictogramme
+          - component: oh-image
+            config:
+              item: =props.InondationPictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideInondationPictogramme
+          - component: oh-image
+            config:
+              item: =props.PluieInondationPictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HidePluieInondationPictogramme
+          - component: oh-image
+            config:
+              item: =props.OragePictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideOragePictogramme
+          - component: oh-image
+            config:
+              item: =props.GrandFroidPictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideGrandFroidPictogramme
+          - component: oh-image
+            config:
+              item: =props.CaniculePictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideCaniculePictogramme
+          - component: oh-image
+            config:
+              item: =props.AvalanchesPictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideAvalanchesPictogramme
+          - component: oh-image
+            config:
+              item: =props.NeigePictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideNeigePictogramme
+          - component: oh-image
+            config:
+              item: =props.VagueSubmersionPictogrammeItem
+              lazy: true
+              lazyFadeIn: true
+              style:
+                height: 50px
+                left: 0px
+                position: relative
+                top: 0px
+                width: 50px
+              visible: =!props.HideVagueSubmersionPictogramme
+          - component: f7-row
+            slots:
+              default:
+                - component: f7-col
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          style:
+                            font-size: 14px
+                            font-weight: 600
+                            padding: 10px
+                          text: =items[props.CommentaireItem].state
+                          visible: =!props.HideCommentaire
