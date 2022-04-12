@@ -1,0 +1,196 @@
+uid: frs_UV_list_item
+tags:
+  - list
+  - uv
+  - weather
+props:
+  parameters:
+    - defaultValue: UV Index
+      description: UV Index Title
+      label: Title
+      name: IndiceUVTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - description: UV Index Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: iconify:carbon:uv-index-alt
+      label: Icon
+      name: IconIndiceUV
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: UV Index Item
+      label: Item
+      name: CurrentIndiceUVItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Alert level Item
+      label: Item
+      name: CurrentAlerteUVItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Max UV Index label-item
+      label: hide
+      name: HideUVIndexMax
+      required: false
+      type: BOOLEAN
+      groupName: UvMax
+    - description: Max UV Index Title
+      defaultValue: Max UV Index
+      label: Title
+      name: IndiceUVMaxTitle
+      required: false
+      type: TEXT
+      groupName: UvMax
+    - description: Max UV Index Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: iconify:carbon:uv-index-alt
+      label: Icon
+      name: IconIndiceUVMax
+      required: false
+      type: TEXT
+      groupName: UvMax
+    - context: item
+      description: Max UV Index Item
+      label: Item
+      name: IndiceUVMaxItem
+      required: false
+      type: TEXT
+      groupName: UvMax
+    - description: Hide Ozone level label-item
+      label: hide
+      name: HideOzoneLevel
+      required: false
+      type: BOOLEAN
+      groupName: Ozone
+    - description: Ozone level Title
+      defaultValue: Ozone level
+      label: Title
+      name: OzoneTitle
+      required: false
+      type: TEXT
+      groupName: Ozone
+    - description: Ozone level Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: iconify:tabler:letter-o
+      label: Icon
+      name: IconOzone
+      required: false
+      type: TEXT
+      groupName: Ozone
+    - context: item
+      description: Ozone level Item
+      label: Item
+      name: OzoneItem
+      required: false
+      type: TEXT
+      groupName: Ozone
+    - description: Hide Safe exposure time label-item
+      label: hide
+      name: HideSafeExposureTime
+      required: false
+      type: BOOLEAN
+      groupName: Exposition
+    - description: Safe exposure time Title
+      defaultValue: Safe exposure time
+      label: Title
+      name: ExpositionTitle
+      required: false
+      type: TEXT
+      groupName: Exposition
+    - description: Safe exposure time Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:timer
+      label: Icon
+      name: IconExposition
+      required: false
+      type: TEXT
+      groupName: Exposition
+    - context: item
+      description: Safe exposure time Item
+      label: Item
+      name: ExpositionItem
+      required: false
+      type: TEXT
+      groupName: Exposition
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: UvMax
+      label: UV Max
+    - name: Ozone
+      label: Ozone
+    - name: Exposition
+      label: Exposition
+timestamp: Dec 31, 2021, 9:48:25 PM
+component: oh-list-item
+config:
+  accordionList: true
+  after: '=props.CurrentAlerteUVItem ? items[props.CurrentAlerteUVItem].displayState : ""'
+  icon: '=(!Number.isFinite(Number.parseFloat(items[props.CurrentIndiceUVItem].state))) ? "f7:question_circle" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 8) ? props.IconIndiceUV : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 6) ? props.IconIndiceUV : props.IconIndiceUV'
+  iconColor: '=(!Number.isFinite(Number.parseFloat(items[props.CurrentIndiceUVItem].state))) ? "gray" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 11) ? "violet" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 8) ? "red" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 6) ? "orange" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 3) ? "yellow" : "green"'
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: =items[props.CurrentIndiceUVItem].displayState
+  title: =props.IndiceUVTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              icon: =props.IconIndiceUVMax
+              iconColor: gray
+              item: =props.IndiceUVMaxItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.IndiceUVMaxTitle
+              visible: =!props.HideUVIndexMax
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: month
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.OzoneItem]
+              icon: =props.IconOzone
+              iconColor: gray
+              item: =props.OzoneItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.OzoneTitle
+              visible: =!props.HideOzoneLevel
+          - component: oh-label-item
+            config:
+              icon: =props.IconExposition
+              iconColor: gray
+              item: =props.ExpositionItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.ExpositionTitle
+              visible: =!props.HideSafeExposureTime
