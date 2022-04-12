@@ -9,7 +9,7 @@ Support to use a light and a dark background.
 **Configuration parameters:**
 
 * All title string
-* Icon Printer - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+* Printer icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
 * Visibility of Label item (Black Level, Pages, Tray & Missed Picks)
 
 **items HP Printer Binding**
