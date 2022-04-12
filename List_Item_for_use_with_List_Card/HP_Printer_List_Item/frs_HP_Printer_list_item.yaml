@@ -1,0 +1,220 @@
+uid: frs_HP_Printer_list_item
+tags:
+  - list
+  - printer
+props:
+  parameters:
+    - defaultValue: HP Printer
+      description: Titre
+      label: Title
+      name: ImprimanteTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Printer Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      defaultValue: f7:printer_fill
+      label: Icon
+      name: IconPrinter
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Printer Network State item
+      label: Item
+      name: PrinterNetworkStateItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Printer Status item
+      label: Item
+      name: PrinterStatusItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Printer Latency item
+      label: Item
+      name: PrinterLatencyItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Black Level label-item
+      label: hide
+      name: HideBlackLevel
+      required: false
+      type: BOOLEAN
+      groupName: blacklevel
+    - defaultValue: Black Level
+      description: Black Level Title
+      label: Title
+      name: BlackLevelTitle
+      required: false
+      type: TEXT
+      groupName: blacklevel
+    - context: item
+      description: Black level item
+      label: Item
+      name: BlackLevelItem
+      required: false
+      type: TEXT
+      groupName: blacklevel
+    - description: Hide Pages label-item
+      label: hide
+      name: HideBlackPagesRemaining
+      required: false
+      type: BOOLEAN
+      groupName: pages
+    - defaultValue: Black Pages Remaining
+      description: Black Pages Remaining Title
+      label: Title
+      name: PagesTitle
+      required: false
+      type: TEXT
+      groupName: pages
+    - context: item
+      description: Black Pages Remaining item
+      label: Item
+      name: PagesRestantesItem
+      required: false
+      type: TEXT
+      groupName: pages
+    - context: item
+      description: Total Lifetime Pages item
+      label: Item
+      name: ImpressionsTotalesItem
+      required: false
+      type: TEXT
+      groupName: pages
+    - description: Hide  Tray & Missed Picks label-item
+      label: hide
+      name: HideTray
+      required: false
+      type: BOOLEAN
+      groupName: erreurs
+    - defaultValue: Tray Empty/Open
+      description: Tray Empty/Open Title
+      label: Title
+      name: erreurs
+      required: false
+      type: TEXT
+      groupName: erreurs
+    - context: item
+      description: Tray Empty/Open item
+      label: Item
+      name: BacVideOuvertItem
+      required: false
+      type: TEXT
+      groupName: erreurs
+    - context: item
+      description: Jams item
+      label: Item
+      name: NbsBourragePapierItem
+      required: false
+      type: TEXT
+      groupName: erreurs
+    - context: item
+      description: Missed Picks item
+      label: Item
+      name: ErreurChargemenPapierItem
+      required: false
+      type: TEXT
+      groupName: erreurs
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: blacklevel
+      label: Black Level
+    - name: pages
+      label: Pages
+    - name: erreurs
+      label: Tray & Missed Picks
+timestamp: Jan 5, 2022, 6:50:25 PM
+component: oh-list-item
+config:
+  after: '=props.PrinterLatencyItem ? items[props.PrinterLatencyItem].state : ""'
+  icon: =props.IconPrinter
+  iconColor: '=(items[props.PrinterNetworkStateItem].state == "OFF") ? "green" : "red"'
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=((items[props.PrinterNetworkStateItem].state == "OFF") ? "En ligne - " : "Hors ligne - ") + (items[props.PrinterStatusItem].displayState)'
+  title: =props.ImprimanteTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: f7-list-item
+            config:
+              after: '=props.BlackLevelItem ? items[props.BlackLevelItem].state : ""'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.BlackLevelTitle
+              visible: =!props.HideBlackLevel
+            slots:
+              content:
+                - component: f7-list-item-row
+                  slots:
+                    default:
+                      - component: f7-list-item-cell
+                        config:
+                          style:
+                            width: 32px
+                        slots:
+                          default:
+                            - component: oh-icon
+                              config:
+                                color: gray
+                                icon: f7:drop_fill
+                                style:
+                                  margin-top: 10px
+                      - component: f7-list-item-cell
+                        slots:
+                          default:
+                            - component: f7-progressbar
+                              config:
+                                progress: =Number(items[props.BlackLevelItem].state.split(' ')[0])
+                                style:
+                                  --f7-progressbar-height: 26px
+                                  --f7-theme-color: rgb(0, 0, 0)
+                                  margin-top: 10px
+          - component: oh-label-item
+            config:
+              icon: f7:doc_on_doc
+              iconColor: gray
+              item: =props.PagesRestantesItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: ="Total Lifetime Pages:" + " " + items[props.ImpressionsTotalesItem].state
+              title: =props.PagesTitle
+              visible: =!props.HideBlackPagesRemaining
+          - component: oh-label-item
+            config:
+              icon: f7:exclamationmark_circle
+              iconColor: gray
+              item: =props.BacVideOuvertItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: ="Jams:" + " " + items[props.NbsBourragePapierItem].state + " / " + "Missed Picks:" + " " + items[props.ErreurChargemenPapierItem].state
+              title: =props.erreurs
+              visible: =!props.HideTray
