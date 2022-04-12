@@ -29,11 +29,11 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/HP_Printer_List_Item/screenshots/HPPrinterListItemScreenShot4.PNG)
+![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/HP_Printer_List_Item/screenshots/HPPrinterListItemScreenShot4.png)
 
 **Standard Library List Card**
 
-![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/HP_Printer_List_Item/screenshots/HPPrinterListItemScreenShot3.PNG)
+![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/HP_Printer_List_Item/screenshots/HPPrinterListItemScreenShot3.png)
 
 **Configure List**
 
