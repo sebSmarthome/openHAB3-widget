@@ -1,0 +1,431 @@
+uid: frs_System_Info_list_item
+tags:
+  - list
+  - system
+props:
+  parameters:
+    - defaultValue: Raspberry Pi OH
+      description: Title
+      label: Title
+      name: SystemOHTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - defaultValue: iconify:mdi:raspberry-pi
+      description: System Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SystemOHIcon
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: CPU Temperature item
+      label: Item
+      name: CPUTemperatureItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: System Uptime item
+      label: Item
+      name: SystemUptimeItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Cpu label-item
+      label: hide
+      name: HideCpu
+      required: false
+      type: BOOLEAN
+      groupName: cpu
+    - defaultValue: Cpu
+      description: Cpu title
+      label: Title
+      name: SystemOHCpuTitle
+      required: false
+      type: TEXT
+      groupName: cpu
+    - defaultValue: iconify:whh:cpu
+      description: Cpu Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SystemOHCpuIcon
+      required: false
+      type: TEXT
+      groupName: cpu
+    - context: item
+      description: Cpu Load1 item
+      label: Item
+      name: CPULoad1Item
+      required: false
+      type: TEXT
+      groupName: cpu
+    - context: item
+      description: Cpu Load 5 item
+      label: Item
+      name: CPULoad5Item
+      required: false
+      type: TEXT
+      groupName: cpu
+    - context: item
+      description: Cpu Load 15 item
+      label: Item
+      name: CPULoad15Item
+      required: false
+      type: TEXT
+      groupName: cpu
+    - description: Hide Memory label-item
+      label: hide
+      name: HideMemory
+      required: false
+      type: BOOLEAN
+      groupName: memory
+    - defaultValue: Memory
+      description: Memory title
+      label: Title
+      name: SystemOHMemoryTitle
+      required: false
+      type: TEXT
+      groupName: memory
+    - defaultValue: iconify:fa-solid:memory
+      description: Memory Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SystemOHMemoryIcon
+      required: false
+      type: TEXT
+      groupName: memory
+    - context: item
+      description: Memory Total item
+      label: Item
+      name: MemoryTotalItem
+      required: false
+      type: TEXT
+      groupName: memory
+    - context: item
+      description: Memory Used item
+      label: Item
+      name: MemoryUsedItem
+      required: false
+      type: TEXT
+      groupName: memory
+    - context: item
+      description: Memory Used Percent item
+      label: Item
+      name: MemoryUsedPercentItem
+      required: false
+      type: TEXT
+      groupName: memory
+    - context: item
+      description: Memory Available item
+      label: Item
+      name: MemoryAvailableItem
+      required: false
+      type: TEXT
+      groupName: memory
+    - context: item
+      description: Memory Available Percent item
+      label: Item
+      name: MemoryAvailablePercentItem
+      required: false
+      type: TEXT
+      groupName: memory
+    - description: Hide Storage label-item
+      label: hide
+      name: HideStorage
+      required: false
+      type: BOOLEAN
+      groupName: storage
+    - defaultValue: Storage
+      description: Storage title
+      label: Title
+      name: SystemOHStorageTitle
+      required: false
+      type: TEXT
+      groupName: storage
+    - defaultValue: iconify:bi:device-ssd-fill
+      description: Storage Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SystemOHStorageIcon
+      required: false
+      type: TEXT
+      groupName: storage
+    - context: item
+      description: Storage Total item
+      label: Item
+      name: StorageTotalItem
+      required: false
+      type: TEXT
+      groupName: storage
+    - context: item
+      description: Storage Used item
+      label: Item
+      name: StorageUsedItem
+      required: false
+      type: TEXT
+      groupName: storage
+    - context: item
+      description: Storage Used Percent item
+      label: Item
+      name: StorageUsedPercentItem
+      required: false
+      type: TEXT
+      groupName: storage
+    - context: item
+      description: Storage Available item
+      label: Item
+      name: StorageAvailableItem
+      required: false
+      type: TEXT
+      groupName: storage
+    - context: item
+      description: Storage Available Percent item
+      label: Item
+      name: StorageAvailablePercentItem
+      required: false
+      type: TEXT
+      groupName: storage
+    - description: Hide Swap label-item
+      label: hide
+      name: HideSwap
+      required: false
+      type: BOOLEAN
+      groupName: swap
+    - defaultValue: Swap
+      description: Swap title
+      label: Title
+      name: SystemOHSwapTitle
+      required: false
+      type: TEXT
+      groupName: swap
+    - defaultValue: iconify:ic:outline-swap-calls
+      description: Swap Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SystemOHSwapIcon
+      required: false
+      type: TEXT
+      groupName: swap
+    - context: item
+      description: Swap Total item
+      label: Item
+      name: SwapTotalItem
+      required: false
+      type: TEXT
+      groupName: swap
+    - context: item
+      description: Swap Used item
+      label: Item
+      name: SwapUsedItem
+      required: false
+      type: TEXT
+      groupName: swap
+    - context: item
+      description: Swap Used Percent item
+      label: Item
+      name: SwapUsedPercentItem
+      required: false
+      type: TEXT
+      groupName: swap
+    - context: item
+      description: Swap Available item
+      label: Item
+      name: SwapAvailableItem
+      required: false
+      type: TEXT
+      groupName: swap
+    - context: item
+      description: Swap Available Percent item
+      label: Item
+      name: SwapAvailablePercentItem
+      required: false
+      type: TEXT
+      groupName: swap
+    - description: Hide Network label-item
+      label: hide
+      name: HideNetwork
+      required: false
+      type: BOOLEAN
+      groupName: network
+    - defaultValue: Network
+      description: Network title
+      label: Title
+      name: SystemOHNetworkTitle
+      required: false
+      type: TEXT
+      groupName: network
+    - defaultValue: iconify:bi:ethernet
+      description: Network Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: SystemOHNetworkIcon
+      required: false
+      type: TEXT
+      groupName: network
+    - context: item
+      description: Network Data Received item
+      label: Item
+      name: NetworkDataReceivedItem
+      required: false
+      type: TEXT
+      groupName: network
+    - context: item
+      description: Network Data Sent item
+      label: Item
+      name: NetworkDataSentItem
+      required: false
+      type: TEXT
+      groupName: network
+    - description: Hide reboot command label-item
+      label: hide
+      name: HideRebootCommand
+      required: false
+      type: BOOLEAN
+      groupName: command
+    - context: item
+      description: Reboot command switch item
+      label: Item
+      name: ExecRebootCommandItem
+      required: false
+      type: TEXT
+      groupName: command
+    - description: Hide power off command label-item
+      label: hide
+      name: HidePowerOffCommand
+      required: false
+      type: BOOLEAN
+      groupName: command
+    - context: item
+      description: Power off command switch item
+      label: Item
+      name: ExecPoweroffCommandItem
+      required: false
+      type: TEXT
+      groupName: command
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: cpu
+      label: Cpu
+    - name: memory
+      label: Memory
+    - name: storage
+      label: Storage
+    - name: swap
+      label: Swap
+    - name: network
+      label: Network
+    - name: command
+      label: Commands
+timestamp: Jan 5, 2022, 9:41:45 PM
+component: oh-list-item
+config:
+  after:  '=items[props.CPUTemperatureItem].displayState'
+  icon: =props.SystemOHIcon
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '="Uptime: " + items[props.SystemUptimeItem].displayState'
+  title: =props.SystemOHTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: '=themeOptions.dark === "dark" ? "rgb(35, 35, 35)" : "rgb(247, 247, 247)"'
+      slots:
+        default:
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =[props.CPULoad1Item, props.CPULoad5Item, props.CPULoad15Item, props.CPUTemperatureItem]
+              after: =items[props.CPUTemperatureItem].displayState
+              icon: =props.SystemOHCpuIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.CPULoad1Item].state + " - " + items[props.CPULoad5Item].state + " - " + items[props.CPULoad15Item].state
+              title: =props.SystemOHCpuTitle
+              visible: =!props.HideCpu
+          - component: oh-list-item
+            config:
+              after: =items[props.MemoryTotalItem].displayState
+              icon: =props.SystemOHMemoryIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.MemoryUsedItem].displayState + " (" +  items[props.MemoryUsedPercentItem].displayState + ") - " + items[props.MemoryAvailableItem].displayState + " (" +  items[props.MemoryAvailablePercentItem].displayState + ")"
+              title: =props.SystemOHMemoryTitle
+              visible: =!props.HideMemory
+          - component: oh-list-item
+            config:
+              after: =items[props.StorageTotalItem].displayState
+              icon: =props.SystemOHStorageIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.StorageUsedItem].displayState + " (" +  items[props.StorageUsedPercentItem].displayState + ") - " + items[props.StorageAvailableItem].displayState + " (" +  items[props.StorageAvailablePercentItem].displayState + ")"
+              title: =props.SystemOHStorageTitle
+              visible: =!props.HideStorage
+          - component: oh-list-item
+            config:
+              after: =items[props.SwapTotalItem].displayState
+              icon: =props.SystemOHSwapIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.SwapUsedItem].displayState + " (" +  items[props.SwapUsedPercentItem].displayState + ") - " + items[props.SwapAvailableItem].displayState + " (" +  items[props.SwapAvailablePercentItem].displayState + ")"
+              title: =props.SystemOHSwapTitle
+              visible: =!props.HideSwap
+          - component: oh-list-item
+            config:
+              icon: =props.SystemOHNetworkIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: ="▼" + items[props.NetworkDataReceivedItem].displayState + " ▲" + items[props.NetworkDataSentItem].displayState
+              title: =props.SystemOHNetworkTitle
+              visible: =!props.HideNetwork
+          - component: oh-list-item
+            config:
+              action: options
+              actionItem: =props.ExecRebootCommandItem
+              actionOptions: ON=Reboot
+              item: =props.ExecRebootCommandItem
+              listButton: true
+              listButtonColor: green
+              title: Reboot
+              visible: =!props.HideRebootCommand
+          - component: oh-list-item
+            config:
+              action: options
+              actionItem: =props.ExecPoweroffCommandItem
+              actionOptions: ON=Shutdown
+              item: =props.ExecPoweroffCommandItem
+              listButton: true
+              listButtonColor: green
+              title: Shutdown
+              visible: =!props.HidePowerOffCommand
