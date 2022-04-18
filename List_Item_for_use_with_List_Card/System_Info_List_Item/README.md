@@ -48,7 +48,7 @@ Support to use a light and a dark background.
 
 **Standard Library List Card**
 
-![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/System_Info_List_Item/screenshotsSystemInfoListItemScreenShot3.png)
+![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/System_Info_List_Item/screenshots/SystemInfoListItemScreenShot3.png)
 
 **Configure List**
 
