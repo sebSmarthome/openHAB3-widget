@@ -1,0 +1,382 @@
+uid: frs_Linky_list_item
+tags:
+  - list
+props:
+  parameters:
+    - defaultValue: Linky
+      description: Title
+      label: Title
+      name: LinkyTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - defaultValue: f7:bolt_fill
+      description: Linky Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: LinkyIcon
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Subscribed intensity level item (TIC:ISOUSC)
+      label: Item
+      name: SubscribedIntensityLevelItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: RMS current item (TIC:IINST)
+      label: Item
+      name: RMSCurrentItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Current pricing period item (TIC:PTEC)
+      label: Item
+      name: CurrentPricingPeriodItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Apparent power label-item
+      label: hide
+      name: HideApparentPower
+      required: false
+      type: BOOLEAN
+      groupName: power
+    - defaultValue: Apparent power
+      description: Apparent power title
+      label: Title
+      name: ApparentPowerTitle
+      required: false
+      type: TEXT
+      groupName: power
+    - defaultValue: f7:bolt_fill
+      description: Apparent power Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: ApparentPowerIcon
+      required: false
+      type: TEXT
+      groupName: power
+    - context: item
+      description: Apparent power item (TIC:PAPP)
+      label: Item
+      name: ApparentPowerItem
+      required: false
+      type: TEXT
+      groupName: power
+    - description: Hide Yesterday label-item
+      label: hide
+      name: HideYesterday
+      required: false
+      type: BOOLEAN
+      groupName: yesterday
+    - defaultValue: Yesterday
+      description: Yesterday energy usage title
+      label: Title
+      name: YesterdayEnergyUsageTitle
+      required: false
+      type: TEXT
+      groupName: yesterday
+    - defaultValue: iconify:system-uicons:calendar-last-day
+      description: Yesterday's peak power Icon - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: YesterdayEnergyUsageIcon
+      required: false
+      type: TEXT
+      groupName: yesterday
+    - context: item
+      description: Yesterday energy usage item
+      label: Item
+      name: YesterdayEnergyUsageItem
+      required: false
+      type: TEXT
+      groupName: yesterday
+    - context: item
+      description: Yesterday's peak power item
+      label: Item
+      name: YesterdaysPeakPowerItem
+      required: false
+      type: TEXT
+      groupName: yesterday
+    - context: item
+      description: Timestamp of the power peak item
+      label: Item
+      name: TimestampOfThePowerPeakItem
+      required: false
+      type: TEXT
+      groupName: yesterday
+    - description: Hide Current week label-item
+      label: hide
+      name: HideCurrentWeek
+      required: false
+      type: BOOLEAN
+      groupName: week
+    - defaultValue: Current week
+      description: Title
+      label: Title
+      name: CurrentWeekTitle
+      required: false
+      type: TEXT
+      groupName: week
+    - defaultValue: iconify:system-uicons:calendar-week
+      description: Current week Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: CurrentWeekIcon
+      required: false
+      type: TEXT
+      groupName: week
+    - context: item
+      description: Current week energy usage item
+      label: Item
+      name: CurrentWeekEnergyItem
+      required: false
+      type: TEXT
+      groupName: week
+    - context: item
+      description: Last week energy usage item
+      label: Item
+      name: LastWeekEnergyItem
+      required: false
+      type: TEXT
+      groupName: week
+    - description: Hide Current month label-item
+      label: hide
+      name: HideCurrentMonth
+      required: false
+      type: BOOLEAN
+      groupName: month
+    - defaultValue: Current month
+      description: Title
+      label: Title
+      name: CurrentMonthTitle
+      required: false
+      type: TEXT
+      groupName: month
+    - defaultValue: iconify:system-uicons:calendar-month
+      description: Current month Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: CurrentMonthIcon
+      required: false
+      type: TEXT
+      groupName: month
+    - context: item
+      description: Current month energy usage item
+      label: Item
+      name: CurrentMonthEnergyItem
+      required: false
+      type: TEXT
+      groupName: month
+    - context: item
+      description: Last month energy usage item
+      label: Item
+      name: LastMonthEnergyItem
+      required: false
+      type: TEXT
+      groupName: month
+    - description: Hide Current year label-item
+      label: hide
+      name: HideCurrentYear
+      required: false
+      type: BOOLEAN
+      groupName: year
+    - defaultValue: Current year
+      description: Title
+      label: Title
+      name: CurrentYearTitle
+      required: false
+      type: TEXT
+      groupName: year
+    - defaultValue: iconify:system-uicons:calendar
+      description: Current year Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: CurrentYearIcon
+      required: false
+      type: TEXT
+      groupName: year
+    - context: item
+      description: Current year energy usage item
+      label: Item
+      name: CurrentYearEnergyItem
+      required: false
+      type: TEXT
+      groupName: year
+    - context: item
+      description: Last year energy usage item
+      label: Item
+      name: LastYearEnergyItem
+      required: false
+      type: TEXT
+      groupName: year
+    - description: Hide Meter index label-item
+      label: hide
+      name: HideMeterIndex
+      required: false
+      type: BOOLEAN
+      groupName: index
+    - defaultValue: Meter index
+      description: Title
+      label: Title
+      name: MeterIndexTitle
+      required: false
+      type: TEXT
+      groupName: index
+    - defaultValue: iconify:mdi:meter-electric
+      description: Meter index Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: MeterIndexIcon
+      required: false
+      type: TEXT
+      groupName: index
+    - context: item
+      description: HC index item
+      label: Item
+      name: HCIndexItem
+      required: false
+      type: TEXT
+      groupName: index
+    - context: item
+      description: HP index item
+      label: Item
+      name: HPIndexItem
+      required: false
+      type: TEXT
+      groupName: index
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: power
+      label: Apparent power
+    - name: yesterday
+      label: Yesterday energy usage
+    - name: week
+      label: Week energy usage
+    - name: month
+      label: Month energy usage
+    - name: year
+      label: Year energy usage
+    - name: index
+      label: Meter index two tariff
+timestamp: Apr 23, 2022, 9:51:18 AM
+component: oh-list-item
+config:
+  accordionList: true
+  mediaList: true
+  after: =items[props.RMSCurrentItem].state + " / " + items[props.SubscribedIntensityLevelItem].state
+  icon: =props.LinkyIcon
+  iconColor: '=(items[props.CurrentPricingPeriodItem].displayState == "HP") ? "yellow" : "green"'
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: =items[props.CurrentPricingPeriodItem].displayState
+  title: =props.LinkyTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: '=themeOptions.dark === "dark" ? "rgb(35, 35, 35)" : "rgb(247, 247, 247)"'
+      slots:
+        default:
+          - component: oh-trend
+            config:
+              trendItem: =props.ApparentPowerItem
+              trendGradient: ['#22BD63']
+              trendStrokeWidth: 2
+              trendSampling: 30
+              visible: =!props.HideApparentPower
+          - component: oh-label-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =[props.ApparentPowerItem]
+              icon: =props.ApparentPowerIcon
+              iconColor: gray
+              item: =props.ApparentPowerItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.ApparentPowerTitle
+              visible: =!props.HideApparentPower
+          - component: oh-list-item
+            config:
+              after: =items[props.YesterdayEnergyUsageItem].displayState
+              icon: =props.YesterdayEnergyUsageIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="Peak: " + items[props.YesterdaysPeakPowerItem].displayState + " - " + items[props.TimestampOfThePowerPeakItem].displayState'
+              title: =props.YesterdayEnergyUsageTitle
+              visible: =!props.HideYesterday
+          - component: oh-list-item
+            config:
+              after: =items[props.CurrentWeekEnergyItem].displayState
+              icon: =props.CurrentWeekIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="Last week: " + items[props.LastWeekEnergyItem].displayState'
+              title: =props.CurrentWeekTitle
+              visible: =!props.HideCurrentWeek
+          - component: oh-list-item
+            config:
+              after: =items[props.CurrentMonthEnergyItem].displayState
+              icon: =props.CurrentMonthIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="Last month: " + items[props.LastMonthEnergyItem].displayState'
+              title: =props.CurrentMonthTitle
+              visible: =!props.HideCurrentMonth
+          - component: oh-list-item
+            config:
+              after: =items[props.CurrentYearEnergyItem].displayState
+              icon: =props.CurrentYearIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="Last year: " + items[props.LastYearEnergyItem].displayState'
+              title: =props.CurrentYearTitle
+              visible: =!props.HideCurrentYear
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerChartType: month
+              actionAnalyzerCoordSystem: aggregate
+              actionAnalyzerItems: =[props.HCIndexItem, props.HPIndexItem]
+              icon: =props.MeterIndexIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="HC: " + items[props.HCIndexItem].displayState + " - HP: " + items[props.HPIndexItem].displayState'
+              title: =props.MeterIndexTitle
+              visible: =!props.HideMeterIndex
