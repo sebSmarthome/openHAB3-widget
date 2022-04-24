@@ -17,6 +17,7 @@ Support to use a light and a dark background.
 * UVIndex Item
 * Alert Item - Alert level associated to given UV Index
 * UVMax item - Max UV Index for the day
+* UVMaxTime - Max UV Index datetime
 * Ozone item - Ozone level
 * SafeExposure item - Safe exposure time
 
@@ -34,6 +35,11 @@ Support to use a light and a dark background.
 
 ## Changelog
 
+### Version 0.2
+
+* New subtitle UV Max Time
+* update readme
+  
 ### Version 0.1
 
 * initial release

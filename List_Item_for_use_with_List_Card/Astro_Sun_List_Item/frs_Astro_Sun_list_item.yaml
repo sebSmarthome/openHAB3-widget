@@ -231,14 +231,14 @@ timestamp: Apr 10, 2022, 8:45:12 AM
 component: oh-list-item
 config:
   accordionList: true
-  after: '=props.SunPhaseNameItem ? items[props.SunPhaseNameItem].displayState : ""'
+  after: '=(props.StartTimeSunriseItem ? "↑ " + items[props.StartTimeSunriseItem].displayState : "") + " ↓ " + (props.StartTimeSunsetItem ? items[props.StartTimeSunsetItem].displayState : "")'
   icon: '=(items[props.SunDayNightItem].state == "ON") ? props.SunDayIcon : props.SunNightIcon'
   iconColor: '=(items[props.SunDayNightItem].state == "ON") ? "yellow" : "gray"'
   mediaList: true
   style:
     --f7-list-item-after-font-size: 16px
     --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
-  subtitle: '=(props.StartTimeSunriseItem ? "↑ " + items[props.StartTimeSunriseItem].displayState : "") + " ↓ " + (props.StartTimeSunsetItem ? items[props.StartTimeSunsetItem].displayState : "")'
+  subtitle: '=props.SunPhaseNameItem ? items[props.SunPhaseNameItem].displayState : ""'
   title: =props.SunTitle
 slots:
   accordion:

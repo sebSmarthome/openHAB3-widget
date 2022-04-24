@@ -9,7 +9,7 @@ Support to use a light and a dark background.
 **Configuration parameters:**
 
 * All title string
-* All icons - Use oh:iconName (openHAB icon), f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+* All icons - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
 * Visibility of Label item (Sunset, sunrise, radiation, total eclipse, partial eclipse)
 
 **items**
@@ -42,6 +42,11 @@ Support to use a light and a dark background.
 
 ## Changelog
 
+### Version 0.2
+
+* Sun Phase name : subtitle
+* Sunrise Start time and Sunset Start time : after
+  
 ### Version 0.1
 
 * initial release
