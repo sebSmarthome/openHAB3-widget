@@ -4,14 +4,14 @@ tags:
   - system
 props:
   parameters:
-    - defaultValue: Raspberry Pi OH
+    - default: Raspberry Pi OH
       description: Title
       label: Title
       name: SystemOHTitle
       required: false
       type: TEXT
       groupName: header
-    - defaultValue: iconify:mdi:raspberry-pi
+    - default: iconify:mdi:raspberry-pi
       description: System Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: SystemOHIcon
@@ -19,9 +19,16 @@ props:
       type: TEXT
       groupName: header
     - context: item
-      description: CPU Temperature item
+      description: Cpu Load % item
       label: Item
-      name: CPUTemperatureItem
+      name: CPULoadItem
+      required: false
+      type: TEXT
+      groupName: header
+    - default: Uptime
+      description: Uptime Title
+      label: Title
+      name: UptimeTitle
       required: false
       type: TEXT
       groupName: header
@@ -32,23 +39,36 @@ props:
       required: false
       type: TEXT
       groupName: header
+    - description: Hide Gauges
+      label: hide
+      name: HideGauges
+      required: false
+      type: BOOLEAN
+      groupName: gauge
     - description: Hide Cpu label-item
       label: hide
       name: HideCpu
       required: false
       type: BOOLEAN
       groupName: cpu
-    - defaultValue: Cpu
+    - default: Cpu
       description: Cpu title
       label: Title
       name: SystemOHCpuTitle
       required: false
       type: TEXT
       groupName: cpu
-    - defaultValue: iconify:whh:cpu
+    - default: iconify:whh:cpu
       description: Cpu Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: SystemOHCpuIcon
+      required: false
+      type: TEXT
+      groupName: cpu
+    - context: item
+      description: CPU Temperature item
+      label: Item
+      name: CPUTemperatureItem
       required: false
       type: TEXT
       groupName: cpu
@@ -79,14 +99,14 @@ props:
       required: false
       type: BOOLEAN
       groupName: memory
-    - defaultValue: Memory
+    - default: Memory
       description: Memory title
       label: Title
       name: SystemOHMemoryTitle
       required: false
       type: TEXT
       groupName: memory
-    - defaultValue: iconify:fa-solid:memory
+    - default: iconify:fa-solid:memory
       description: Memory Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: SystemOHMemoryIcon
@@ -134,14 +154,14 @@ props:
       required: false
       type: BOOLEAN
       groupName: storage
-    - defaultValue: Storage
+    - default: Storage
       description: Storage title
       label: Title
       name: SystemOHStorageTitle
       required: false
       type: TEXT
       groupName: storage
-    - defaultValue: iconify:bi:device-ssd-fill
+    - default: iconify:bi:device-ssd-fill
       description: Storage Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: SystemOHStorageIcon
@@ -189,14 +209,14 @@ props:
       required: false
       type: BOOLEAN
       groupName: swap
-    - defaultValue: Swap
+    - default: Swap
       description: Swap title
       label: Title
       name: SystemOHSwapTitle
       required: false
       type: TEXT
       groupName: swap
-    - defaultValue: iconify:ic:outline-swap-calls
+    - default: iconify:ic:outline-swap-calls
       description: Swap Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: SystemOHSwapIcon
@@ -244,14 +264,14 @@ props:
       required: false
       type: BOOLEAN
       groupName: network
-    - defaultValue: Network
+    - default: Network
       description: Network title
       label: Title
       name: SystemOHNetworkTitle
       required: false
       type: TEXT
       groupName: network
-    - defaultValue: iconify:bi:ethernet
+    - default: iconify:bi:ethernet
       description: Network Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: SystemOHNetworkIcon
@@ -278,6 +298,13 @@ props:
       required: false
       type: BOOLEAN
       groupName: command
+    - default: Reboot
+      description: Reboot command Title 
+      label: Title
+      name: RebootCommandTitle
+      required: false
+      type: TEXT
+      groupName: command
     - context: item
       description: Reboot command switch item
       label: Item
@@ -291,6 +318,13 @@ props:
       required: false
       type: BOOLEAN
       groupName: command
+    - default: Power off
+      description: Power off command Title 
+      label: Title
+      name: PowerOffCommandTitle
+      required: false
+      type: TEXT
+      groupName: command
     - context: item
       description: Power off command switch item
       label: Item
@@ -301,6 +335,8 @@ props:
   parameterGroups:
     - name: header
       label: Header
+    - name: gauge
+      label: Gauges CPU, Memory & Storage
     - name: cpu
       label: Cpu
     - name: memory
@@ -313,15 +349,15 @@ props:
       label: Network
     - name: command
       label: Commands
-timestamp: Jan 5, 2022, 9:41:45 PM
+timestamp: Nov 30, 2023, 9:50:47 AM
 component: oh-list-item
 config:
-  after:  '=items[props.CPUTemperatureItem].displayState'
+  after: =@props.CPULoadItem
   icon: =props.SystemOHIcon
   style:
     --f7-list-item-after-font-size: 16px
     --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
-  subtitle: '="Uptime: " + items[props.SystemUptimeItem].displayState'
+  subtitle: '=props.UptimeTitle  + ": " + @props.SystemUptimeItem'
   title: =props.SystemOHTitle
 slots:
   accordion:
@@ -329,15 +365,83 @@ slots:
       config:
         mediaList: true
         style:
-          background-color: '=themeOptions.dark === "dark" ? "rgb(35, 35, 35)" : "rgb(247, 247, 247)"'
+          background-color: '=themeOptions.dark === "dark" ? "rgb(35, 35, 35)" : "rgb(245, 245, 245)"'
       slots:
         default:
+          - component: f7-block
+            config:
+              visible: =!props.HideGauges
+              style:
+                margin: 0px
+                padding: 10px
+            slots:
+              default:
+                - component: f7-row
+                  config:
+                    style:
+                      text-align: center
+                  slots:
+                    default:
+                      - component: f7-col
+                        config:
+                          with: 33%
+                        slots:
+                          default:
+                            - component: oh-gauge
+                              config:
+                                borderBgColor: gray
+                                borderColor: "=(Number.parseFloat(items[props.CPULoadItem].state) >= '75') ? '#ff3b30' : (Number.parseFloat(items[props.CPULoadItem].state) >= '50') ? '#ff6b22' : (Number.parseFloat(items[props.CPULoadItem].state) >= '25') ? '#ffcc00' : (Number.parseFloat(items[props.CPULoadItem].state) >= '0') ? '#4cd964' : 'gray'"
+                                borderWidth: 25
+                                item: =props.CPULoadItem
+                                labelFontSize: 26
+                                labelText: =props.SystemOHCpuTitle
+                                type: circle
+                                valueFontSize: 34
+                                valueFontWeight: bold
+                                valueText: =@props.CPULoadItem
+                                valueTextColor: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                      - component: f7-col
+                        config:
+                          with: 33%
+                        slots:
+                          default:
+                            - component: oh-gauge
+                              config:
+                                borderBgColor: gray
+                                borderColor: "#9c27b0"
+                                borderWidth: 25
+                                item: =props.MemoryUsedPercentItem
+                                labelFontSize: 26
+                                labelText: =props.SystemOHMemoryTitle
+                                type: circle
+                                valueFontSize: 34
+                                valueFontWeight: bold
+                                valueText: =@props.MemoryUsedPercentItem
+                                valueTextColor: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                      - component: f7-col
+                        config:
+                          with: 33%
+                        slots:
+                          default:
+                            - component: oh-gauge
+                              config:
+                                borderBgColor: gray
+                                borderColor: "#5ac8fa"
+                                borderWidth: 25
+                                item: =props.StorageUsedPercentItem
+                                labelFontSize: 26
+                                labelText: =props.SystemOHStorageTitle
+                                type: circle
+                                valueFontSize: 34
+                                valueFontWeight: bold
+                                valueText: =@props.StorageUsedPercentItem
+                                valueTextColor: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
           - component: oh-list-item
             config:
               action: analyzer
               actionAnalyzerCoordSystem: time
               actionAnalyzerItems: =[props.CPULoad1Item, props.CPULoad5Item, props.CPULoad15Item, props.CPUTemperatureItem]
-              after: =items[props.CPUTemperatureItem].displayState
+              after: =@props.CPUTemperatureItem
               icon: =props.SystemOHCpuIcon
               iconColor: gray
               style:
@@ -347,12 +451,12 @@ slots:
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: =items[props.CPULoad1Item].state + " - " + items[props.CPULoad5Item].state + " - " + items[props.CPULoad15Item].state
+              subtitle: =@props.CPULoad1Item + " - " + @props.CPULoad5Item + " - " + @props.CPULoad15Item
               title: =props.SystemOHCpuTitle
               visible: =!props.HideCpu
           - component: oh-list-item
             config:
-              after: =items[props.MemoryTotalItem].displayState
+              after: =@props.MemoryTotalItem
               icon: =props.SystemOHMemoryIcon
               iconColor: gray
               style:
@@ -362,12 +466,12 @@ slots:
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: =items[props.MemoryUsedItem].displayState + " (" +  items[props.MemoryUsedPercentItem].displayState + ") - " + items[props.MemoryAvailableItem].displayState + " (" +  items[props.MemoryAvailablePercentItem].displayState + ")"
+              subtitle: =@props.MemoryUsedItem + " (" +  @props.MemoryUsedPercentItem + ") - " + @props.MemoryAvailableItem + " (" +  @props.MemoryAvailablePercentItem + ")"
               title: =props.SystemOHMemoryTitle
               visible: =!props.HideMemory
           - component: oh-list-item
             config:
-              after: =items[props.StorageTotalItem].displayState
+              after: =@props.StorageTotalItem
               icon: =props.SystemOHStorageIcon
               iconColor: gray
               style:
@@ -377,12 +481,12 @@ slots:
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: =items[props.StorageUsedItem].displayState + " (" +  items[props.StorageUsedPercentItem].displayState + ") - " + items[props.StorageAvailableItem].displayState + " (" +  items[props.StorageAvailablePercentItem].displayState + ")"
+              subtitle: =@props.StorageUsedItem + " (" +  @props.StorageUsedPercentItem + ") - " + @props.StorageAvailableItem + " (" +  @props.StorageAvailablePercentItem + ")"
               title: =props.SystemOHStorageTitle
               visible: =!props.HideStorage
           - component: oh-list-item
             config:
-              after: =items[props.SwapTotalItem].displayState
+              after: =@props.SwapTotalItem
               icon: =props.SystemOHSwapIcon
               iconColor: gray
               style:
@@ -392,7 +496,7 @@ slots:
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: =items[props.SwapUsedItem].displayState + " (" +  items[props.SwapUsedPercentItem].displayState + ") - " + items[props.SwapAvailableItem].displayState + " (" +  items[props.SwapAvailablePercentItem].displayState + ")"
+              subtitle: =@props.SwapUsedItem + " (" +  @props.SwapUsedPercentItem + ") - " + @props.SwapAvailableItem + " (" +  @props.SwapAvailablePercentItem + ")"
               title: =props.SystemOHSwapTitle
               visible: =!props.HideSwap
           - component: oh-list-item
@@ -406,26 +510,26 @@ slots:
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: ="▼" + items[props.NetworkDataReceivedItem].displayState + " ▲" + items[props.NetworkDataSentItem].displayState
+              subtitle: ="▼" + @props.NetworkDataReceivedItem + " ▲" + @props.NetworkDataSentItem
               title: =props.SystemOHNetworkTitle
               visible: =!props.HideNetwork
           - component: oh-list-item
             config:
               action: options
               actionItem: =props.ExecRebootCommandItem
-              actionOptions: ON=Reboot
+              actionOptions: '="ON=" + props.RebootCommandTitle'
               item: =props.ExecRebootCommandItem
               listButton: true
               listButtonColor: green
-              title: Reboot
+              title: =props.RebootCommandTitle
               visible: =!props.HideRebootCommand
           - component: oh-list-item
             config:
               action: options
               actionItem: =props.ExecPoweroffCommandItem
-              actionOptions: ON=Shutdown
+              actionOptions: '="ON=" + props.PowerOffCommandTitle'
               item: =props.ExecPoweroffCommandItem
               listButton: true
               listButtonColor: green
-              title: Shutdown
+              title: =props.PowerOffCommandTitle
               visible: =!props.HidePowerOffCommand

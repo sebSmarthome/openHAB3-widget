@@ -10,12 +10,13 @@ Support to use a light and a dark background.
 
 * All title string
 * Icons - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-* Visibility of Label item (Cpu, Memory, Storage, Swap, Network, Reboot, Shutdown)
+* Visibility of Gauges and Label item (Cpu, Memory, Storage, Swap, Network, Reboot, Shutdown)
 
 **items Systeminfo Binding**
 
 * CPU Temperature item
 * System Uptime item
+* Cpu Load% item
 * Cpu Load1 item
 * Cpu Load5 item
 * Cpu Load15 item
@@ -55,6 +56,14 @@ Support to use a light and a dark background.
 ![Screen3](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item/screenshots/AstroMoonListItemScreenShot2.PNG)
 
 ## Changelog
+
+### Version 0.2
+
+* New Cpu Load% item
+* New parameters for Uptime title and commands title Reboot/Shutdown
+* New parameters for Gauges visibility
+* New Gauges Cpu, memory and storage
+* use @ symbol in front of an item name string as a shortcut to the displayState from the items dictionary with a fallback to the raw state
 
 ### Version 0.1
 
