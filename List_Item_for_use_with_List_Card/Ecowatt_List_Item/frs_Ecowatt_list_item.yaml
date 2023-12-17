@@ -1,0 +1,141 @@
+uid: frs_Ecowatt_list_item
+tags:
+  - list
+props:
+  parameters:
+    - default: Ecowatt
+      description: Ecowatt Title
+      label: Title
+      name: EcowattTitle
+      required: false
+      type: TEXT
+    - default: Maintenant
+      description: Title
+      label: Title
+      name: maintenantTitle
+      required: false
+      type: TEXT
+      groupName: maintenant
+    - context: item
+      default: Ecowatt_CurrentHourSignal
+      description: The signal relating to the forecast consumption level for the current hour Item
+      label: Item
+      name: maintenantItem
+      required: false
+      type: TEXT
+      groupName: maintenant
+    - default: Aujourd'hui
+      description: Title
+      label: Title
+      name: aujourdhuiTitle
+      required: false
+      type: TEXT
+      groupName: aujourdhui
+    - context: item
+      default: Ecowatt_TodaySignal
+      description: The signal relating to the forecast consumption level for today Item
+      label: Item
+      name: aujourdhuiItem
+      required: false
+      type: TEXT
+      groupName: aujourdhui
+    - default: Demain
+      description: Title
+      label: Title
+      name: DemainTitle
+      required: false
+      type: TEXT
+      groupName: demain
+    - context: item
+      default: Ecowatt_TomorrowSignal
+      description: The signal relating to the forecast consumption level for tomorrow Item
+      label: Item
+      name: DemainItem
+      required: false
+      type: TEXT
+      groupName: demain
+  parameterGroups:
+    - name: maintenant
+      label: Maintenant
+    - name: aujourdhui
+      label: Aujourd'hui
+    - name: demain
+      label: Demain
+    - name: myaction
+      context: action
+      label: Action
+timestamp: Nov 28, 2022, 3:56:16 PM
+component: oh-list-item
+config:
+  stylesheet: >
+    i.icon.customiconecowatt {
+      background: url("/static/icons/ecowatt.png") no-repeat center;
+      background-size: cover;
+      height: 30px;
+      width: 30px;
+    }
+  accordionList: true
+  icon: f7:bolt_fill
+  iconColor: '=(Number.parseFloat(items[props.maintenantItem].state) == "1") ? "green" : (Number.parseFloat(items[props.maintenantItem].state) == "2") ? "orange" : "red"'
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=props.maintenantItem ? items[props.maintenantItem].displayState : ""'
+  title: =props.EcowattTitle
+slots:
+  after:
+    - component: oh-link
+      config:
+        actionPropsParameterGroup: myaction
+        icon: customiconecowatt
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              icon: f7:bolt_fill
+              iconColor: '=(Number.parseFloat(items[props.maintenantItem].state) == "1") ? "green" : (Number.parseFloat(items[props.maintenantItem].state) == "2") ? "orange" : "red"'
+              item: =props.maintenantItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.maintenantTitle
+          - component: oh-label-item
+            config:
+              icon: f7:bolt_fill
+              iconColor: '=(Number.parseFloat(items[props.aujourdhuiItem].state) == "1") ? "green" : (Number.parseFloat(items[props.aujourdhuiItem].state) == "2") ? "orange" : "red"'
+              item: =props.aujourdhuiItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.aujourdhuiTitle
+          - component: oh-label-item
+            config:
+              icon: f7:bolt_fill
+              iconColor: '=(Number.parseFloat(items[props.DemainItem].state) == "1") ? "green" : (Number.parseFloat(items[props.DemainItem].state) == "2") ? "orange" : "red"'
+              item: =props.DemainItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.DemainTitle
