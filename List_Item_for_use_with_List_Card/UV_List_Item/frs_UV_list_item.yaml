@@ -26,6 +26,12 @@ props:
       required: false
       type: TEXT
       groupName: header
+    - description: Hide Gauges
+      label: hide
+      name: HideGauges
+      required: false
+      type: BOOLEAN
+      groupName: gauge
     - description: Hide Max UV Index label-item
       label: hide
       name: HideUVIndexMax
@@ -110,6 +116,8 @@ props:
   parameterGroups:
     - name: header
       label: Header
+    - name: gauge
+      label: Gauge
     - name: UvMax
       label: UV Max
     - name: Ozone
