@@ -5,17 +5,10 @@ tags:
   - weather
 props:
   parameters:
-    - defaultValue: UV Index
+    - default: UV Index
       description: UV Index Title
       label: Title
       name: IndiceUVTitle
-      required: false
-      type: TEXT
-      groupName: header
-    - description: UV Index Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-      defaultValue: iconify:carbon:uv-index-alt
-      label: Icon
-      name: IconIndiceUV
       required: false
       type: TEXT
       groupName: header
@@ -39,22 +32,15 @@ props:
       required: false
       type: BOOLEAN
       groupName: UvMax
-    - description: Max UV Index Title
-      defaultValue: Max UV Index
+    - default: Max UV Index
+      description: Max UV Index Title
       label: Title
       name: IndiceUVMaxTitle
       required: false
       type: TEXT
       groupName: UvMax
-    - description: Max UV Index Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-      defaultValue: iconify:carbon:uv-index-alt
-      label: Icon
-      name: IconIndiceUVMax
-      required: false
-      type: TEXT
-      groupName: UvMax
     - context: item
-      description: UV Max Index Item
+      description: Max UV Index Item
       label: Item
       name: IndiceUVMaxItem
       required: false
@@ -73,15 +59,15 @@ props:
       required: false
       type: BOOLEAN
       groupName: Ozone
-    - description: Ozone level Title
-      defaultValue: Ozone level
+    - default: Ozone level
+      description: Ozone level Title
       label: Title
       name: OzoneTitle
       required: false
       type: TEXT
       groupName: Ozone
-    - description: Ozone level Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-      defaultValue: iconify:tabler:letter-o
+    - default: oh:ozone
+      description: Ozone level Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: IconOzone
       required: false
@@ -100,15 +86,15 @@ props:
       required: false
       type: BOOLEAN
       groupName: Exposition
-    - description: Safe exposure time Title
-      defaultValue: Safe exposure time
+    - default: Safe exposure time
+      description: Safe exposure time Title
       label: Title
       name: ExpositionTitle
       required: false
       type: TEXT
       groupName: Exposition
-    - description: Safe exposure time Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-      defaultValue: f7:timer
+    - default: iconify:mdi:sunglasses
+      description: Safe exposure time Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
       label: Icon
       name: IconExposition
       required: false
@@ -125,23 +111,22 @@ props:
     - name: header
       label: Header
     - name: UvMax
-      label: Max UV Index for the day
+      label: UV Max
     - name: Ozone
       label: Ozone
     - name: Exposition
-      label: Safe exposure
-timestamp: Dec 31, 2021, 9:48:25 PM
+      label: Exposition
+timestamp: Dec 18, 2023, 12:43:32 PM
 component: oh-list-item
 config:
   accordionList: true
-  after: '=props.CurrentAlerteUVItem ? items[props.CurrentAlerteUVItem].displayState : ""'
-  icon: '=(!Number.isFinite(Number.parseFloat(items[props.CurrentIndiceUVItem].state))) ? "f7:question_circle" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 8) ? props.IconIndiceUV : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 6) ? props.IconIndiceUV : props.IconIndiceUV'
-  iconColor: '=(!Number.isFinite(Number.parseFloat(items[props.CurrentIndiceUVItem].state))) ? "gray" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 11) ? "violet" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 8) ? "red" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 6) ? "orange" : (Number.parseFloat(items[props.CurrentIndiceUVItem].state) >= 3) ? "yellow" : "green"'
+  after: '=props.CurrentAlerteUVItem ? @props.CurrentAlerteUVItem : ""'
+  icon: '=(Number.parseFloat(@props.CurrentIndiceUVItem) == "1") ? "iconify:meteocons:uv-index-1-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "2") ? "iconify:meteocons:uv-index-2-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "3") ? "iconify:meteocons:uv-index-3-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "4") ? "iconify:meteocons:uv-index-4-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "5") ? "iconify:meteocons:uv-index-5-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "6") ? "iconify:meteocons:uv-index-6-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "7") ? "iconify:meteocons:uv-index-7-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "8") ? "iconify:meteocons:uv-index-8-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "9") ? "iconify:meteocons:uv-index-9-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "10") ? "iconify:meteocons:uv-index-10-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "11") ? "iconify:meteocons:uv-index-11-fill" : "iconify:meteocons:uv-index"'
   mediaList: true
   style:
     --f7-list-item-after-font-size: 16px
     --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
-  subtitle: =items[props.TimeUVMaxItem].displayState
+  subtitle: =@props.CurrentIndiceUVItem
   title: =props.IndiceUVTitle
 slots:
   accordion:
@@ -152,10 +137,99 @@ slots:
           background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
       slots:
         default:
+          - component: f7-block
+            config:
+              visible: =!props.HideGauges
+              style:
+                margin-top: -20px
+                margin-left: 0px
+                margin-right: 0px
+                margin-bottom: 0px
+                padding: 10px
+            slots:
+              default:
+                - component: oh-chart
+                  config:
+                    options:
+                      backgroundColor: transparent
+                  slots:
+                    series:
+                      - component: oh-data-series
+                        config:
+                          axisLabel:
+                            show: false
+                          axisLine:
+                            lineStyle:
+                              color:
+                                - - 0.2
+                                  - "#4cd964"
+                                - - 0.4
+                                  - "#ffcc00"
+                                - - 0.6
+                                  - "#ff9500"
+                                - - 0.8
+                                  - "#ff3b30"
+                                - - 1
+                                  - "#9c27b0"
+                              width: 30
+                          axisTick:
+                            show: false
+                          data:
+                            - value: =Number.parseFloat(@@props.CurrentIndiceUVItem)
+                          detail:
+                            fontSize: 20
+                            formatter: =@props.CurrentAlerteUVItem
+                            offsetCenter:
+                              - 0
+                              - 30%
+                            valueAnimation: true
+                          itemStyle:
+                            borderCap: round
+                            borderJoin: miter
+                          max: 16
+                          min: 0
+                          pointer:
+                            icon: path://M2090.36389,615.30999 L2090.36389,615.30999 C2091.48372,615.30999 2092.40383,616.194028 2092.44859,617.312956 L2096.90698,728.755929 C2097.05155,732.369577 2094.2393,735.416212 2090.62566,735.56078 C2090.53845,735.564269 2090.45117,735.566014 2090.36389,735.566014 L2090.36389,735.566014 C2086.74736,735.566014 2083.81557,732.63423 2083.81557,729.017692 C2083.81557,728.930412 2083.81732,728.84314 2083.82081,728.755929 L2088.2792,617.312956 C2088.32396,616.194028 2089.24407,615.30999 2090.36389,615.30999 Z
+                            itemStyle:
+                              color: "=themeOptions.dark === 'dark' ? 'rgb(247, 247, 247)' : 'rgb(35, 35, 35)'"
+                            length: 100%
+                            offsetCenter:
+                              - 0
+                              - 10%
+                          radius: 82%
+                          splitLine:
+                            show: false
+                          splitNumber: 16
+                          title:
+                            fontSize: 26
+                            offsetCenter:
+                              - 0
+                              - -35%
+                          type: gauge
+                          startAngle: 180
+                          endAngle: 0
+                - component: f7-row
+                  config:
+                    class:
+                      - text-align-center
+                    style:
+                      margin-top: -224px
+                      margin-bottom: 70px
+                  slots:
+                    default:
+                      - component: f7-col
+                        config:
+                          style:
+                            background: rgba(233, 196, 106, 0)
+                        slots:
+                          default:
+                            - component: oh-icon
+                              config:
+                                height: 50px
+                                icon: '=(Number.parseFloat(@props.CurrentIndiceUVItem) == "1") ? "iconify:meteocons:uv-index-1-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "2") ? "iconify:meteocons:uv-index-2-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "3") ? "iconify:meteocons:uv-index-3-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "4") ? "iconify:meteocons:uv-index-4-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "5") ? "iconify:meteocons:uv-index-5-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "6") ? "iconify:meteocons:uv-index-6-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "7") ? "iconify:meteocons:uv-index-7-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "8") ? "iconify:meteocons:uv-index-8-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "9") ? "iconify:meteocons:uv-index-9-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "10") ? "iconify:meteocons:uv-index-10-fill" : (Number.parseFloat(@props.CurrentIndiceUVItem) == "11") ? "iconify:meteocons:uv-index-11-fill" : "iconify:meteocons:uv-index"'
           - component: oh-label-item
             config:
-              icon: =props.IconIndiceUVMax
-              iconColor: gray
+              icon: '=(Number.parseFloat(@props.IndiceUVMaxItem) == "1") ? "iconify:meteocons:uv-index-1-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "2") ? "iconify:meteocons:uv-index-2-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "3") ? "iconify:meteocons:uv-index-3-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "4") ? "iconify:meteocons:uv-index-4-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "5") ? "iconify:meteocons:uv-index-5-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "6") ? "iconify:meteocons:uv-index-6-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "7") ? "iconify:meteocons:uv-index-7-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "8") ? "iconify:meteocons:uv-index-8-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "9") ? "iconify:meteocons:uv-index-9-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "10") ? "iconify:meteocons:uv-index-10-fill" : (Number.parseFloat(@props.IndiceUVMaxItem) == "11") ? "iconify:meteocons:uv-index-11-fill" : "iconify:meteocons:uv-index"'
               item: =props.IndiceUVMaxItem
               style:
                 --f7-list-item-after-font-size: 15px
@@ -163,10 +237,9 @@ slots:
                 --f7-list-item-subtitle-font-size: 14px
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
-                --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.TimeUVMaxItem
               title: =props.IndiceUVMaxTitle
-              subtitle: =items[props.EndTimeSunriseItem].displayState
               visible: =!props.HideUVIndexMax
           - component: oh-label-item
             config:
@@ -175,7 +248,6 @@ slots:
               actionAnalyzerCoordSystem: aggregate
               actionAnalyzerItems: =[props.OzoneItem]
               icon: =props.IconOzone
-              iconColor: gray
               item: =props.OzoneItem
               style:
                 --f7-list-item-after-font-size: 15px

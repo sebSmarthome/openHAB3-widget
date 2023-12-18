@@ -25,6 +25,10 @@ Support to use a light and a dark background.
 * PM2.5 value item
 * PM2.5 Alert Level item
 
+## Screenshots
+
+![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item/screenshots/AirQualityListItemScreenShot.gif)
+
 **Standard Library List Card**
 
 ![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item/screenshots/AirQualityListItemScreenShot3.PNG)

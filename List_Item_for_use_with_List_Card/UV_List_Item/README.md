@@ -1,4 +1,4 @@
-![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/UV_List_Item/screenshots/UVListItemScreenShot.gif)
+![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/UV_List_Item/screenshots/UVListItemScreenShot4.PNG)
 
 This is an UI **List Item** Widget to view the UV Index information with the [OpenUV Binding](https://www.openhab.org/addons/bindings/openuv/).
 
@@ -9,8 +9,8 @@ Support to use a light and a dark background.
 **Configuration parameters:**
 
 * All title string
-* All Icons - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-* Visibility of Label item (Max UV Index for the day, Ozone level, Safe exposure time)
+* Icons - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+* Visibility of Gauges and Label item (Max UV Index for the day, Ozone level, Safe exposure time)
 
 **items**
 
@@ -37,8 +37,11 @@ Support to use a light and a dark background.
 
 ### Version 0.2
 
+* New icons <https://icon-sets.iconify.design/meteocons/> & <https://www.visualpharm.com/free-icons/ozone-595b40b85ba036ed117da791>
 * New subtitle UV Max Time
-* update readme
+* New parameters for Gauges visibility
+* New Gauges Indice
+* use @ symbol in front of an item name string as a shortcut to the displayState from the items dictionary with a fallback to the raw state
   
 ### Version 0.1
 
