@@ -10,7 +10,7 @@ Support to use a light and a dark background.
 
 * All title string
 * All Icons - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
-* Visibility of Label item (No2, O3, PM10, PM2.5)
+* Visibility of Gauges and Label item (No2, O3, PM10, PM2.5)
 
 **items**
 
@@ -25,10 +25,6 @@ Support to use a light and a dark background.
 * PM2.5 value item
 * PM2.5 Alert Level item
 
-## Screenshots
-
-![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item/screenshots/AirQualityListItemScreenShot4.PNG)
-
 **Standard Library List Card**
 
 ![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item/screenshots/AirQualityListItemScreenShot3.PNG)
@@ -39,6 +35,12 @@ Support to use a light and a dark background.
 
 ## Changelog
 
+### Version 0.2
+
+* New parameters for Gauges visibility
+* New Gauges Indice
+* use @ symbol in front of an item name string as a shortcut to the displayState from the items dictionary with a fallback to the raw state
+  
 ### Version 0.1
 
 * initial release
