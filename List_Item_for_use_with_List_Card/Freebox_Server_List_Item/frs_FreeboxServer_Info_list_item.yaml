@@ -1,0 +1,617 @@
+uid: frs_FreeboxServer_Info_list_item
+tags:
+  - freebox
+  - list
+props:
+  parameters:
+    - default: Freebox Serveur
+      description: Title
+      label: Title
+      name: headerTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - default: iconify:bi:router-fill
+      description: Freebox Serveur Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: headerIcon
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      default: Freebox_Serveur_Line_Status
+      description: Line Status item
+      label: Item
+      name: LineStatusItem
+      required: false
+      type: TEXT
+      groupName: header
+    - default: Uptime
+      description: Uptime Title
+      label: Title
+      name: UptimeTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      default: Freebox_Serveur_Uptime
+      description: Freebox Serveur Uptime item
+      label: Item
+      name: FreeboxServeurUptimeItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide CPU Temperature label-item
+      label: hide
+      name: HideTempCpu
+      required: false
+      type: BOOLEAN
+      groupName: tempcpu
+    - default: CPU Temp
+      description: CPU temperature title
+      label: Title
+      name: CPUTempTitle
+      required: false
+      type: TEXT
+      groupName: tempcpu
+    - default: iconify:whh:cpu
+      description: Cpu temperature Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: CPUTempIcon
+      required: false
+      type: TEXT
+      groupName: tempcpu
+    - context: item
+      default: Freebox_Serveur_Temperature_CPU_AP
+      description: Temperature CPU AP item
+      label: Item
+      name: CPUAPItem
+      required: false
+      type: TEXT
+      groupName: tempcpu
+    - context: item
+      default: Freebox_Serveur_Temperature_CPU_CP_Master
+      description: Temperature CPU Master item
+      label: Item
+      name: CPUMasterItem
+      required: false
+      type: TEXT
+      groupName: tempcpu
+    - context: item
+      default: Freebox_Serveur_Temperature_CPU_CP_Slave
+      description: Temperature CPU Slave item
+      label: Item
+      name: CPUSlaveItem
+      required: false
+      type: TEXT
+      groupName: tempcpu
+    - description: Hide temperature label-item
+      label: hide
+      name: Hidetemp
+      required: false
+      type: BOOLEAN
+      groupName: temperature
+    - default: Temperature
+      description: Temperature title
+      label: Title
+      name: TemperatureTitle
+      required: false
+      type: TEXT
+      groupName: temperature
+    - default: f7:thermometer
+      description: Temperature Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: TemperatureIcon
+      required: false
+      type: TEXT
+      groupName: temperature
+    - context: item
+      default: Freebox_Serveur_Temperature_Disque_dur_1
+      description: Temperature HDD item
+      label: Item
+      name: TemperatureHDDItem
+      required: false
+      type: TEXT
+      groupName: temperature
+    - context: item
+      default: Freebox_Serveur_Temperature_1
+      description: Temperature 1 item
+      label: Item
+      name: Temperature1Item
+      required: false
+      type: TEXT
+      groupName: temperature
+    - context: item
+      default: Freebox_Serveur_Temperature_2
+      description: Temperature 2 item
+      label: Item
+      name: Temperature2Item
+      required: false
+      type: TEXT
+      groupName: temperature
+    - context: item
+      default: Freebox_Serveur_Temperature_3
+      description: Temperature 3 item
+      label: Item
+      name: Temperature3Item
+      required: false
+      type: TEXT
+      groupName: temperature
+    - description: Hide Fan label-item
+      label: hide
+      name: HideFan
+      required: false
+      type: BOOLEAN
+      groupName: fan
+    - default: Fan
+      description: Fan title
+      label: Title
+      name: FanTitle
+      required: false
+      type: TEXT
+      groupName: fan
+    - default: iconify:grommet-icons:fan-option
+      description: Fan Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: FanIcon
+      required: false
+      type: TEXT
+      groupName: fan
+    - context: item
+      default: Freebox_Serveur_Vitesse_Ventilateur_1
+      description: Fan 1 item
+      label: Item
+      name: Fan1Item
+      required: false
+      type: TEXT
+      groupName: fan
+    - context: item
+      default: Freebox_Serveur_Vitesse_Ventilateur_2
+      description: Fan 2 item
+      label: Item
+      name: Fan2Item
+      required: false
+      type: TEXT
+      groupName: fan
+    - description: Hide Bandwidth label-item
+      label: hide
+      name: HideBandwidth
+      required: false
+      type: BOOLEAN
+      groupName: network
+    - default: Bandwidth
+      description: Bandwidth title
+      label: Title
+      name: BandwidthTitle
+      required: false
+      type: TEXT
+      groupName: network
+    - default: iconify:bi:ethernet
+      description: Bandwidth Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: BandwidthIcon
+      required: false
+      type: TEXT
+      groupName: network
+    - context: item
+      default: Freebox_Serveur_Bandwidth_Usage_Down
+      description: Bandwidth Usage Down item
+      label: Item
+      name: BandwidthUsageDownItem
+      required: false
+      type: TEXT
+      groupName: network
+    - context: item
+      default: Freebox_Serveur_Download_Rate
+      description: Download Rate item
+      label: Item
+      name: DownloadRateItem
+      required: false
+      type: TEXT
+      groupName: network
+    - context: item
+      default: Freebox_Serveur_Bandwidth_Usage_Up
+      description: Bandwidth Usage Up item
+      label: Item
+      name: BandwidthUsageUpItem
+      required: false
+      type: TEXT
+      groupName: network
+    - context: item
+      default: Freebox_Serveur_Upload_Rate
+      description: Upload Rate item
+      label: Item
+      name: UploadRateItem
+      required: false
+      type: TEXT
+      groupName: network
+    - description: Hide Wifi label-item
+      label: hide
+      name: HideWifi
+      required: false
+      type: BOOLEAN
+      groupName: settings
+    - default: Wifi
+      description: Wifi title
+      label: Title
+      name: WifiTitle
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:mdi:wifi-check
+      description: Wifi On Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: WifiOnIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:mdi:wifi-off
+      description: Wifi Off Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: WifiOffIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - context: item
+      default: Freebox_Serveur_Wifi_Enabled
+      description: wifi item
+      label: Item
+      name: WifiItem
+      required: false
+      type: TEXT
+      groupName: settings
+    - description: Hide Air Media label-item
+      label: hide
+      name: HideAirMedia
+      required: false
+      type: BOOLEAN
+      groupName: settings
+    - default: Air Media
+      description: Air Media title
+      label: Title
+      name: AirMediaTitle
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:mdi:apple-airplay
+      description: Air Media Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: AirMediaIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - context: item
+      default: Freebox_Serveur_Air_Media_Enabled
+      description: Air media item
+      label: Item
+      name: AirMediaItem
+      required: false
+      type: TEXT
+      groupName: settings
+    - description: Hide UPnP AV label-item
+      label: hide
+      name: HideUPnPAV
+      required: false
+      type: BOOLEAN
+      groupName: settings
+    - default: UPnP AV
+      description: UPnP AV title
+      label: Title
+      name: UPnPAVTitle
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:material-symbols:video-file-outline
+      description: UPnP AV Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: UPnPAVIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - context: item
+      default: Freebox_Serveur_UPnP_AV_Enabled
+      description: UPnP AV item
+      label: Item
+      name: UPnPAVItem
+      required: false
+      type: TEXT
+      groupName: settings
+    - description: Hide FTP label-item
+      label: hide
+      name: HideUFTP
+      required: false
+      type: BOOLEAN
+      groupName: settings
+    - default: FTP
+      description: FTP title
+      label: Title
+      name: FTPTitle
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:mdi:server-network
+      description: FTP Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: FTPIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - context: item
+      default: Freebox_Serveur_FTP_Server_Enabled
+      description: FTP item
+      label: Item
+      name: FtpItem
+      required: false
+      type: TEXT
+      groupName: settings
+    - description: Hide Windows File Sharing label-item
+      label: hide
+      name: HideWindowsFileSharing
+      required: false
+      type: BOOLEAN
+      groupName: settings
+    - default: Windows File Sharing
+      description: Windows File Sharing title
+      label: Title
+      name: WindowsFileSharingTitle
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:mdi:folder-network
+      description: Windows File Sharing Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: WindowsFileSharingIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - context: item
+      default: Freebox_Serveur_Windows_File_Sharing_Enabled
+      description: Windows File Sharing item
+      label: Item
+      name: WindowsFileSharingItem
+      required: false
+      type: TEXT
+      groupName: settings
+    - description: Hide Windows Printer Sharing label-item
+      label: hide
+      name: HideWindowsPrinterSharing
+      required: false
+      type: BOOLEAN
+      groupName: settings
+    - default: Windows Printer Sharing
+      description: Windows Printer Sharing title
+      label: Title
+      name: WindowsPrinterSharingTitle
+      required: false
+      type: TEXT
+      groupName: settings
+    - default: iconify:mdi:printer-pos-network
+      description: Windows Printer Sharing Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: WindowsPrinterSharingIcon
+      required: false
+      type: TEXT
+      groupName: settings
+    - context: item
+      default: Freebox_Serveur_Windows_Printer_Sharing_Enabled
+      description: Windows Printer Sharing item
+      label: Item
+      name: WindowsPrinterSharingItem
+      required: false
+      type: TEXT
+      groupName: settings
+    - description: Hide reboot command label-item
+      label: hide
+      name: HideRebootCommand
+      required: false
+      type: BOOLEAN
+      groupName: command
+    - context: item
+      description: Reboot command switch item
+      label: Item
+      name: ExecRebootCommandItem
+      required: false
+      type: TEXT
+      groupName: command
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: tempcpu
+      label: Température Cpu
+    - name: temperature
+      label: Température
+    - name: fan
+      label: Fan
+    - name: network
+      label: Network
+    - name: settings
+      label: Settings
+    - name: command
+      label: Commands
+timestamp: Dec 18, 2023, 9:51:03 PM
+component: oh-list-item
+config:
+  after: =@props.LineStatusItem
+  icon: =props.headerIcon
+  iconColor: '=(@@props.LineStatusItem == "UP") ? "#4cd964" : "#ff3b30"'
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=props.UptimeTitle  + ": " + @props.FreeboxServeurUptimeItem'
+  title: =props.headerTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: '=themeOptions.dark === "dark" ? "rgb(35, 35, 35)" : "rgb(247, 247, 247)"'
+      slots:
+        default:
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =[props.CPUAPItem, props.CPUMasterItem, props.CPUSlaveItem]
+              icon: =props.CPUTempIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.CPUAPItem + " - " + @props.CPUMasterItem + " - " + @props.CPUSlaveItem
+              title: =props.CPUTempTitle
+              visible: =!props.HideTempCpu
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =[props.Temperature1Item, props.Temperature2Item, props.Temperature3Item, props.TemperatureHDDItem]
+              after: =@props.TemperatureHDDItem
+              icon: =props.TemperatureIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.Temperature1Item + " - " +  @props.Temperature2Item + " - " + @props.Temperature3Item
+              title: =props.TemperatureTitle
+              visible: =!props.Hidetemp
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =[props.Fan1Item, props.Fan2Item]
+              icon: =props.FanIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.Fan1Item + " - " +  @props.Fan2Item
+              title: =props.FanTitle
+              visible: =!props.HideFan
+          - component: oh-list-item
+            config:
+              after: ="↓ " + @props.BandwidthUsageDownItem + " - ↑ " + @props.BandwidthUsageUpItem
+              icon: =props.BandwidthIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: ="↓ " + @props.DownloadRateItem + " - ↑ " + @props.UploadRateItem
+              title: =props.BandwidthTitle
+              visible: =!props.HideBandwidth
+          - component: oh-toggle-item
+            config:
+              icon: '=(@@props.WifiItem == "ON") ? props.WifiOnIcon : props.WifiOffIcon'
+              iconColor: '=(@@props.WifiItem == "ON") ? "#4cd964" : "#ff3b30"'
+              item: =props.WifiItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.WifiTitle
+              visible: =!props.HideWifi
+          - component: oh-toggle-item
+            config:
+              icon: =props.AirMediaIcon
+              iconColor: '=(@@props.AirMediaItem == "ON") ? "#4cd964" : "#ff3b30"'
+              item: =props.AirMediaItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.AirMediaTitle
+              visible: =!props.HideAirMedia
+          - component: oh-toggle-item
+            config:
+              icon: =props.UPnPAVIcon
+              iconColor: '=(@@props.UPnPAVItem == "ON") ? "#4cd964" : "#ff3b30"'
+              item: =props.UPnPAVItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.UPnPAVTitle
+              visible: =!props.HideUPnPAV
+          - component: oh-toggle-item
+            config:
+              icon: =props.FTPIcon
+              iconColor: '=(@@props.FtpItem == "ON") ? "#4cd964" : "#ff3b30"'
+              item: =props.FtpItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.FTPTitle
+              visible: =!props.HideFTP
+          - component: oh-toggle-item
+            config:
+              icon: =props.WindowsFileSharingIcon
+              iconColor: '=(@@props.WindowsFileSharingItem == "ON") ? "#4cd964" : "#ff3b30"'
+              item: =props.WindowsFileSharingItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.WindowsFileSharingTitle
+              visible: =!props.HideWindowsFileSharing
+          - component: oh-toggle-item
+            config:
+              icon: =props.WindowsPrinterSharingIcon
+              iconColor: '=(@@props.WindowsPrinterSharingItem == "ON") ? "#4cd964" : "#ff3b30"'
+              item: =props.WindowsPrinterSharingItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.WindowsPrinterSharingTitle
+              visible: =!props.HideWindowsPrinterSharing
+          - component: oh-list-item
+            config:
+              action: options
+              actionItem: =props.ExecRebootCommandItem
+              actionOptions: ON=Redémarrer
+              item: =props.ExecRebootCommandItem
+              listButton: true
+              listButtonColor: green
+              title: Redémarrer
+              visible: =!props.HideRebootCommand
