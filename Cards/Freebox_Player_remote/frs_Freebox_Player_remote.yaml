@@ -1,0 +1,713 @@
+uid: frs_Freebox_Player_remote
+tags: []
+props:
+  parameters:
+    - default: FREEBOX
+      description: Remote Title
+      label: Title
+      name: RemoteTitle
+      required: false
+      type: TEXT
+    - context: item
+      default: Freebox_Player_Remote_Key_Code
+      description: The item to send the command to
+      label: Item
+      name: item
+      required: false
+      type: TEXT
+    - context: item
+      default: Freebox_Player_Player_Status
+      description: The Player status item
+      label: Item
+      name: statusitem
+      required: false
+      type: TEXT
+  parameterGroups: []
+timestamp: Dec 18, 2023, 11:20:33 AM
+component: f7-card
+config:
+  style:
+    --f7-card-content-padding-horizontal: 8px
+    --f7-card-content-padding-vertical: 8px
+    display: flex
+    flex-direction: row
+    justify-content: center
+    min-width: 14rem
+slots:
+  content:
+    - component: f7-block
+      config:
+        style:
+          background-color: "#808080"
+          border-radius: 16px
+          height: 41rem
+          margin: 0px
+          padding: 0px
+          width: 12.5rem
+      slots:
+        default:
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: tv
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 18px
+                font-weight: 400
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 20px
+                width: 40px
+              text: TV
+          - component: Label
+            config:
+              color: white
+              style:
+                display: flex
+                font-size: 16px
+                height: 40px
+                left: 68px
+                position: absolute
+                top: 20px
+                width: 60px
+              text: =props.RemoteTitle
+          - component: Label
+            config:
+              color: white
+              style:
+                display: flex
+                font-size: 14px
+                height: 40px
+                left: 75px
+                position: absolute
+                textTransform: lowercase
+                top: 36px
+                width: 60px
+              text: =items[props.statusitem].displayState
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: power
+              actionItem: =props.item
+              color: white
+              iconF7: power
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 20px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 1
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 80px
+                width: 40px
+              text: 1
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 2
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 80px
+                width: 40px
+              text: 2
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 3
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 80px
+                width: 40px
+              text: 3
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 4
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 130px
+                width: 40px
+              text: 4
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 5
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 130px
+                width: 40px
+              text: 5
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 6
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 130px
+                width: 40px
+              text: 6
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 7
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 180px
+                width: 40px
+              text: 7
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 8
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 180px
+                width: 40px
+              text: 8
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 9
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 180px
+                width: 40px
+              text: 9
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: 0
+              actionItem: =props.item
+              color: white
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                font-size: 26px
+                font-weight: 400
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 230px
+                width: 40px
+              text: "0"
+          - component: f7-badge
+            config:
+              style:
+                --f7-badge-bg-color: rgb(116,116,116)
+                border-radius: 50%
+                height: 145px
+                left: 28px
+                position: absolute
+                top: 288px
+                width: 145px
+                z-index: 1
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: ok
+              actionItem: =props.item
+              style:
+                --f7-button-bg-color: "#808080"
+                border-radius: 50%
+                display: flex
+                height: 50px
+                left: 75px
+                position: absolute
+                top: 336px
+                width: 50px
+                z-index: 2
+          - component: oh-link
+            config:
+              action: command
+              actionCommand: ok
+              actionItem: =props.item
+              color: white
+              style:
+                border-radius: 50%
+                display: flex
+                font-size: 22px
+                font-weight: 400
+                height: 50px
+                left: 74px
+                position: absolute
+                top: 336px
+                width: 50px
+                z-index: 2
+              text: OK
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: back
+              actionItem: =props.item
+              color: white
+              iconF7: arrow_left
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 262px
+                width: 40px
+                z-index: 1
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: up
+              actionItem: =props.item
+              color: white
+              iconF7: chevron_up
+              iconSize: 35
+              style:
+                border-radius: 20px
+                display: flex
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 286px
+                width: 40px
+                z-index: 2
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: blue
+              actionItem: =props.item
+              color: white
+              iconF7: search
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                display: flex
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 262px
+                width: 40px
+                z-index: 1
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: left
+              actionItem: =props.item
+              color: white
+              iconF7: chevron_left
+              iconSize: 35
+              style:
+                border-radius: 20px
+                display: flex
+                height: 40px
+                left: 27px
+                position: absolute
+                top: 344px
+                width: 40px
+                z-index: 2
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: right
+              actionItem: =props.item
+              color: white
+              iconF7: chevron_right
+              iconSize: 35
+              style:
+                border-radius: 20px
+                display: flex
+                height: 40px
+                left: 134px
+                position: absolute
+                top: 344px
+                width: 40px
+                z-index: 2
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: list
+              actionItem: =props.item
+              color: white
+              iconF7: bars
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60%
+                display: flex
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 419px
+                width: 40px
+                z-index: 1
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: down
+              actionItem: =props.item
+              color: white
+              iconF7: chevron_down
+              iconSize: 35
+              style:
+                border-radius: 60%
+                display: flex
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 394px
+                width: 40px
+                z-index: 2
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: info
+              actionItem: =props.item
+              color: black
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60%
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 419px
+                width: 40px
+                z-index: 1
+          - component: oh-link
+            config:
+              action: command
+              actionCommand: info
+              actionItem: =props.item
+              color: white
+              style:
+                display: flex
+                font-size: 26px
+                left: 157px
+                position: absolute
+                top: 419px
+                z-index: 2
+              text: i
+          - component: f7-badge
+            config:
+              style:
+                --f7-badge-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                height: 104px
+                left: 20px
+                position: absolute
+                top: 482px
+                width: 40px
+                z-index: 0
+            slots:
+              default:
+                - component: Label
+                  config:
+                    style:
+                      font-size: 20px
+                      font-weight: 400
+                    text: V
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: vol_inc
+              actionItem: =props.item
+              color: white
+              iconF7: plus
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 482px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: home
+              actionItem: =props.item
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                display: flex
+                height: 36px
+                left: 70px
+                position: absolute
+                top: 450px
+                width: 60px
+          - component: oh-link
+            config:
+              action: command
+              actionCommand: home
+              actionItem: =props.item
+              color: white
+              style:
+                border-radius: 60px
+                display: flex
+                font-size: 22px
+                font-style: italic
+                font-weight: 400
+                height: 36px
+                left: 70px
+                position: absolute
+                top: 448px
+                width: 60px
+              text: free
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: mute
+              actionItem: =props.item
+              color: white
+              iconF7: speaker_slash
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                display: flex
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 496px
+                width: 40px
+          - component: f7-badge
+            config:
+              style:
+                --f7-badge-bg-color: rgb(116,116,116)
+                border-radius: 20px
+                height: 104px
+                left: 140px
+                position: absolute
+                top: 482px
+                width: 40px
+                z-index: 0
+            slots:
+              default:
+                - component: Label
+                  config:
+                    style:
+                      font-size: 20px
+                      font-weight: 400
+                    text: P
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: prgm_inc
+              actionItem: =props.item
+              color: white
+              iconF7: plus
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 482px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: vol_dec
+              actionItem: =props.item
+              color: white
+              iconF7: minus
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 546px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: rec
+              actionItem: =props.item
+              color: white
+              iconF7: circle_fill
+              iconSize: 20
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 546px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: prgm_dec
+              actionItem: =props.item
+              color: white
+              iconF7: minus
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 546px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: =props.previous
+              actionItem: =props.item
+              color: white
+              iconF7: chevron_left_2
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 20px
+                position: absolute
+                top: 600px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: =props.stop
+              actionItem: =props.item
+              color: white
+              iconF7: playpause
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 80px
+                position: absolute
+                top: 600px
+                width: 40px
+          - component: oh-button
+            config:
+              action: command
+              actionCommand: =props.next
+              actionItem: =props.item
+              color: white
+              iconF7: chevron_right_2
+              iconSize: 25
+              style:
+                --f7-button-bg-color: rgb(116,116,116)
+                border-radius: 60px
+                color: white
+                display: flex
+                height: 40px
+                left: 140px
+                position: absolute
+                top: 600px
+                width: 40px
