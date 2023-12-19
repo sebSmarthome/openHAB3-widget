@@ -1,0 +1,200 @@
+uid: frs_Freebox_phone_list_item
+tags:
+  - freebox
+  - list
+props:
+  parameters:
+    - default: Téléphone Freebox
+      description: Header Title
+      label: Title
+      name: HeaderTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: phone onhook item
+      label: Item
+      name: phone_onhook_item
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: phone state item
+      label: Item
+      name: phone_state_item
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: ringing state item
+      label: Item
+      name: ringing_state_item
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Missed Calling Nbrs item
+      label: Item
+      name: Missed_Calling_Nbrs_item
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Incoming Call Duration item
+      label: Item
+      name: Incoming_Call_Duration_item
+      required: false
+      type: TEXT
+      groupName: IncomingCall
+    - context: item
+      description: Incoming Call Timestamp item
+      label: Item
+      name: Incoming_Call_Timestamp_item
+      required: false
+      type: TEXT
+      groupName: IncomingCall
+    - context: item
+      description: Accepted Caller item
+      label: Item
+      name: Incoming_Accepted_Caller_item
+      required: false
+      type: TEXT
+      groupName: IncomingCall
+    - context: item
+      description: Accepted Number item
+      label: Item
+      name: Incoming_Accepted_Number_item
+      required: false
+      type: TEXT
+      groupName: IncomingCall
+    - context: item
+      description: Outgoing Call Duration item
+      label: Item
+      name: Outgoing_Call_Duration_item
+      required: false
+      type: TEXT
+      groupName: OutgoingCall
+    - context: item
+      description: Outgoing Call Timestamp item
+      label: Item
+      name: Outgoing_Call_Timestamp_item
+      required: false
+      type: TEXT
+      groupName: OutgoingCall
+    - context: item
+      description: Called Name item
+      label: Item
+      name: Outgoing_Called_Name_item
+      required: false
+      type: TEXT
+      groupName: OutgoingCall
+    - context: item
+      description: Called Number item
+      label: Item
+      name: Outgoing_Called_Number_item
+      required: false
+      type: TEXT
+      groupName: OutgoingCall
+    - context: item
+      description: Missed Call Timestamp item
+      label: Item
+      name: Missed_Call_Timestamp_item
+      required: false
+      type: TEXT
+      groupName: MissedCall
+    - context: item
+      description: Missed Caller Name item
+      label: Item
+      name: Missed_Caller_Name_item
+      required: false
+      type: TEXT
+      groupName: MissedCall
+    - context: item
+      description: Missed Calling Number item
+      label: Item
+      name: Missed_Calling_Number_item
+      required: false
+      type: TEXT
+      groupName: MissedCall
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: IncomingCall
+      label: Incoming Call
+    - name: OutgoingCall
+      label: Outgoing Call
+    - name: MissedCall
+      label: Missed Call
+timestamp: Dec 19, 2023, 8:15:28 PM
+component: oh-list-item
+config:
+  after: '=props.phone_state_item ? @props.phone_state_item : ""'
+  icon: '=(@@props.phone_state_item !== "WORKING") ? "iconify:mdi:phone-hangup" : (@@props.ringing_state_item == "ON") && (@@props.phone_state_item == "WORKING") && (@@props.phone_onhook_item == "ON")? "iconify:mdi:phone-ring" : (@@props.phone_onhook_item == "OFF") && (@@props.phone_state_item == "WORKING") ? "iconify:mdi:phone-in-talk" : (@@props.phone_onhook_item == "ON") && (@@props.Missed_Calling_Nbrs_item == "0") && (@@props.ringing_state_item == "OFF") && (@@props.phone_state_item == "WORKING") ? "iconify:mdi:phone-hangup" : (@@props.Missed_Calling_Nbrs_item > "0") && (@@props.ringing_state_item == "OFF") && (@@props.phone_state_item == "WORKING") && (@@props.phone_onhook_item == "ON") ? "iconify:mdi:phone-missed" : "iconify:mdi:phone-hangup"'
+  iconColor: '=(@@props.phone_state_item !== "WORKING") ? "#ff3b30" : (@@props.ringing_state_item == "ON") && (@@props.phone_state_item == "WORKING") && (@@props.phone_onhook_item == "ON")? "#ff9500" : (@@props.phone_onhook_item == "OFF") && (@@props.phone_state_item == "WORKING") ? "#ffcc00" : (@@props.phone_onhook_item == "ON") && (@@props.Missed_Calling_Nbrs_item == "0") && (@@props.ringing_state_item == "OFF") && (@@props.phone_state_item == "WORKING") ? "#4cd964" : (@@props.Missed_Calling_Nbrs_item > "0") && (@@props.ringing_state_item == "OFF") && (@@props.phone_state_item == "WORKING") && (@@props.phone_onhook_item == "ON") ? "#ffcc00" : "gray"'
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=(@@props.phone_state_item !== "WORKING") ? "Hors service" : (@@props.ringing_state_item == "ON") && (@@props.phone_state_item == "WORKING") && (@@props.phone_onhook_item == "ON")? "Appel en cours !" : (@@props.phone_onhook_item == "OFF") && (@@props.phone_state_item == "WORKING") ? "Communication en cours" : (@@props.phone_onhook_item == "ON") && (@@props.Missed_Calling_Nbrs_item == "0") && (@@props.ringing_state_item == "OFF") && (@@props.phone_state_item == "WORKING") ? "" : (@@props.Missed_Calling_Nbrs_item > "0") && (@@props.ringing_state_item == "OFF") && (@@props.phone_state_item == "WORKING") && (@@props.phone_onhook_item == "ON") ? @@props.Missed_Calling_Nbrs_item + " appels manqué(s)" : "Inconnu"'
+  title: =props.HeaderTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              after: '=props.Incoming_Accepted_Number_item ? @@props.Incoming_Accepted_Number_item : ""'
+              icon: iconify:mdi:phone-incoming
+              iconColor: gray
+              mediaList: true
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.Incoming_Call_Timestamp_item + " - " + @props.Incoming_Call_Duration_item
+              title: '=@@props.Incoming_Accepted_Caller_item === "NULL" ? "Inconnu" : @@props.Incoming_Accepted_Caller_item'
+          - component: oh-label-item
+            config:
+              after: '=props.Outgoing_Called_Number_item ? @@props.Outgoing_Called_Number_item : ""'
+              icon: iconify:mdi:phone-outgoing
+              iconColor: gray
+              mediaList: true
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.Outgoing_Call_Timestamp_item + " - " + @props.Outgoing_Call_Duration_item
+              title: '=@@props.Outgoing_Called_Name_item === "NULL" ? "Inconnu" : @@props.Outgoing_Called_Name_item'
+          - component: oh-label-item
+            config:
+              after: '=props.Missed_Calling_Number_item ? @@props.Missed_Calling_Number_item : ""'
+              icon: iconify:mdi:phone-missed
+              iconColor: gray
+              mediaList: true
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.Missed_Call_Timestamp_item
+              title: '=@@props.Missed_Caller_Name_item === "NULL" ? "Inconnu" : @props.Missed_Caller_Name_item'
+          - component: oh-list-item
+            config:
+              action: command
+              actionCommand: "0"
+              actionItem: =props.Missed_Calling_Nbrs_item
+              item: =props.Missed_Calling_Nbrs_item
+              listButton: true
+              title: Raz Appels manqués
