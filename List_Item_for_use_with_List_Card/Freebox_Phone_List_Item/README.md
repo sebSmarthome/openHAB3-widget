@@ -33,9 +33,9 @@ Rule for Number Missed Calling item
 
 ## Screenshots
 
-![Screen4|758x152](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item/screenshots/FreeboxPhoneAppelEnCours.jpg)
-![Screen5|756x152](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item/screenshots/FreeboxPhoneAppelManque.jpg)
-![Screen6|756x152](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item/screenshots/FreeboxPhoneCommunicationEnCours.jpg)
+![Screen4|379x76](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item/screenshots/FreeboxPhoneAppelEnCours.jpg)
+![Screen5|378x76](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item/screenshots/FreeboxPhoneAppelManque.jpg)
+![Screen6|378x76](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item/screenshots/FreeboxPhoneCommunicationEnCours.jpg)
 
 ## Changelog
   
