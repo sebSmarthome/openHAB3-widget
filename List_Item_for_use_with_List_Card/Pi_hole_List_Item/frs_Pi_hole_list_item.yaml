@@ -4,54 +4,396 @@ tags:
 props:
   parameters:
     - default: Pi-hole
-      description: Pi-hole Title
+      description: Header Title
       label: Title
-      name: PiholeTitle
+      name: HeaderTitle
       required: false
       type: TEXT
+      groupName: header
+    - default: iconify:simple-icons:pihole
+      description: Header Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconHeader
+      required: false
+      type: TEXT
+      groupName: header
     - context: item
-      default: PiHoleHTTPAPI_ads_percentage_today
-      description: Publicités bloquées aujourd'hui %
+      default: ReseauPiHoleFreeboxVM_Reachable
+      description: Status item
       label: Item
-      name: ads_percentage_todayItem
+      name: status_item
       required: false
       type: TEXT
+      groupName: header
+    - description: Hide blocking
+      label: hide
+      name: HideBlocking
+      required: false
+      type: BOOLEAN
+      groupName: blocking
+    - default: f7:shield_fill
+      description: Blocking enabled Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconBlockingEnabled
+      required: false
+      type: TEXT
+      groupName: blocking
+    - default: Blocking enabled
+      description: Blocking enabled text
+      label: Title
+      name: BlockingEnabledText
+      required: false
+      type: TEXT
+      groupName: blocking  
+    - default: f7:shield_slash_fill
+      description: Blocking disabled Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconBlockingDisabled
+      required: false
+      type: TEXT
+      groupName: blocking
+    - default: Blocking disabled
+      description: Blocking disabled text
+      label: Title
+      name: BlockingDisabledText
+      required: false
+      type: TEXT
+      groupName: blocking  
     - context: item
-      default: PiHoleHTTPcommand_PiHoleCommande
-      description: Pi-Hole Activation
+      default: PiHoleHTTPcommand_PiHoleActivation
+      description: blocking item
       label: Item
       name: PiHoleCommandeItem
       required: false
       type: TEXT
+      groupName: blocking
+    - description: Hide Queries total
+      label: hide
+      name: HideQueriesTotal
+      required: false
+      type: BOOLEAN
+      groupName: queries
+    - default: Queries total
+      description: Queries total Title
+      label: Title
+      name: queries_totalPiholeTitle
+      required: false
+      type: TEXT
+      groupName: queries
+    - default: f7:globe
+      description: Queries total Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconQueriesTotal
+      required: false
+      type: TEXT
+      groupName: queries
+    - context: item
+      default: PiHoleHTTPAPI_dns_queries_today
+      description: dns queries today Item
+      label: Item
+      name: queries_totalPiholeItem
+      required: false
+      type: TEXT
+      groupName: queries
+    - default: Cached
+      description: Queries cached text
+      label: Title
+      name: QueriesCachedText
+      required: false
+      type: TEXT
+      groupName: queries
+    - context: item
+      default: PiHoleHTTPAPI_queries_cached
+      description: queries cached Item
+      label: Item
+      name: queries_cachedItem
+      required: false
+      type: TEXT
+      groupName: queries
+    - default: Clients
+      description: Clients text
+      label: Title
+      name: ClientsText
+      required: false
+      type: TEXT
+      groupName: queries
+    - context: item
+      default: PiHoleHTTPAPI_unique_clients
+      description: unique clients Item
+      label: Item
+      name: clientsItem
+      required: false
+      type: TEXT
+      groupName: queries
+    - description: Hide Queries blocked
+      label: hide
+      name: HideQueriesBlocked
+      required: false
+      type: BOOLEAN
+      groupName: queriesblocked
+    - default: Queries blocked
+      description: Queries today Title
+      label: Title
+      name: queries_todayPiholeTitle
+      required: false
+      type: TEXT
+      groupName: queriesblocked
+    - default: f7:hand_raised_slash
+      description: Queries blocked Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconQueriesBlocked
+      required: false
+      type: TEXT
+      groupName: queriesblocked
+    - context: item
+      default: PiHoleHTTPAPI_ads_blocked_today
+      description: ads blocked today Item
+      label: Item
+      name: queries_todayPiholeItem
+      required: false
+      type: TEXT
+      groupName: queriesblocked
+    - context: item
+      default: PiHoleHTTPAPI_ads_percentage_today
+      description: ads percentage today Item
+      label: Item
+      name: ads_percentage_todayItem
+      required: false
+      type: TEXT
+      groupName: queriesblocked
+    - description: Hide Domains blocked
+      label: hide
+      name: HideDomainsBlocked
+      required: false
+      type: BOOLEAN
+      groupName: domainsblocked
+    - default: Domains blocked
+      description: Domains blocked Title
+      label: Title
+      name: DomainesTitle
+      required: false
+      type: TEXT
+      groupName: domainsblocked
+    - default: f7:list_dash
+      description: Domains blocked Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconDomainsBlocked
+      required: false
+      type: TEXT
+      groupName: domainsblocked
+    - context: item
+      default: PiHoleHTTPAPI_domains_being_blocked
+      description: domains being blocked Item
+      label: Item
+      name: DomaineItem
+      required: false
+      type: TEXT
+      groupName: domainsblocked
+    - default: Last gravity update
+      description: Last gravity update text
+      label: Title
+      name: LastGravityUpdateText
+      required: false
+      type: TEXT
+      groupName: domainsblocked
+    - context: item
+      default: PiHoleHTTPAPI_gravity_last_updated_absolute
+      description: gravity last updated absolute Item
+      label: Item
+      name: last_updatedItem
+      required: false
+      type: TEXT
+      groupName: domainsblocked
+    - description: Hide Core Update
+      label: hide
+      name: HideCoreUpdate
+      required: false
+      type: BOOLEAN
+      groupName: update
+    - default: Core update
+      description: Core update Title
+      label: Title
+      name: CoreTitle
+      required: false
+      type: TEXT
+      groupName: update
+    - default: iconify:simple-icons:pihole
+      description: Core update Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconCoreUpdate
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Core_Update_Available
+      description: Core Update Available switch item
+      label: Item
+      name: core_update_available_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Current_Core_Version
+      description: Current Core Version string item
+      label: Item
+      name: core_current_version_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Latest_Core_Version
+      description: Latest Core Version string item
+      label: Item
+      name: core_latest_version_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - description: Hide Interface web Update
+      label: hide
+      name: HideWebUpdate
+      required: false
+      type: BOOLEAN
+      groupName: update
+    - default: Web Interface update
+      description: Web Interface update Title
+      label: Title
+      name: WebInterfaceTitle
+      required: false
+      type: TEXT
+      groupName: update
+    - default: iconify:carbon:gui
+      description: Web Interface Update Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconWebUpdate
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Web_Update_Available
+      description: Web Interface Update Available switch item
+      label: Item
+      name: web_update_available_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Current_Web_Version
+      description: Current Web Interface update string item
+      label: Item
+      name: web_current_version_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Latest_Web_Version
+      description: Latest Web Interface update string item
+      label: Item
+      name: web_latest_version_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - description: Hide FTL Update
+      label: hide
+      name: HideFTLUpdate
+      required: false
+      type: BOOLEAN
+      groupName: update
+    - default: FTLDNS update
+      description: FTL update Title
+      label: Title
+      name: FTLTitle
+      required: false
+      type: TEXT
+      groupName: update
+    - default: iconify:carbon:dns-services
+      description: FTL Update Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconFTLUpdate
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_FTL_Update_Available
+      description: FTL Update Available switch item
+      label: Item
+      name: ftl_update_available_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Current_FTL_Version
+      description: Current FTL update string item
+      label: Item
+      name: ftl_current_version_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - context: item
+      default: PiHole_Latest_FTL_Version
+      description: Latest FTL update string item
+      label: Item
+      name: ftl_latest_version_Item
+      required: false
+      type: TEXT
+      groupName: update
+    - description: Hide link web page
+      label: hide
+      name: HideLink
+      required: false
+      type: BOOLEAN
+      groupName: webpage
+    - default: Web interface
+      description: Web interface Title
+      label: Title
+      name: WebInterfaceLinkTitle
+      required: false
+      type: TEXT
+      groupName: webpage
+    - default: iconify:carbon:gui-management
+      description: Web page link Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: IconWebPage
+      required: false
+      type: TEXT
+      groupName: webpage
   parameterGroups:
-    - name: maintenant
-      label: Maintenant
-    - name: aujourdhui
-      label: Aujourd'hui
-    - name: demain
-      label: Demain
-    - name: myaction
+    - name: header
+      label: Header
+    - name: blocking
+      label: Blocking command
+    - name: queries
+      label: Queries total
+    - name: queriesblocked
+      label: Queries blocked
+    - name: domainsblocked
+      label: Domains blocked
+    - name: update
+      label: Update
+    - name: webpage
       context: action
-      label: Action
-timestamp: Nov 28, 2022, 3:56:16 PM
+      label: Web interface
+timestamp: Dec 19, 2023, 9:32:05 AM
 component: oh-list-item
 config:
   accordionList: true
-  icon: f7:bolt_fill
-  iconColor: '=(Number.parseFloat(items[props.maintenantItem].state) == "1") ? "green" : (Number.parseFloat(items[props.maintenantItem].state) == "2") ? "orange" : "red"'
+  after: =@props.core_current_version_Item
+  badge: '=(@@props.core_update_available_Item == "ON") ? @props.core_latest_version_Item : ""'
+  badgeColor: orange
+  icon: =props.IconHeader
+  iconColor: '=(@@props.status_item == "ON") ? "#4cd964" : "#ff3b30"'
   mediaList: true
   style:
-    --f7-list-item-after-font-size: 16px
+    --f7-badge-font-size: 15px
+    --f7-badge-padding: 0 6px
+    --f7-list-item-after-font-size: 15px
     --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
-  subtitle: =props.ads_percentage_todayItem
-  title: =props.PiholeTitle
-  after: =items[props.PiHoleCommandeItem].displayState
+  stylesheet: >
+    .badge {
+      margin-left: 6px
+    }
+  subtitle: '=(@@props.PiHoleCommandeItem == "ON") ? props.BlockingEnabledText : props.BlockingDisabledText'
+  title: =props.HeaderTitle
 slots:
-  after:
-    - component: oh-link
-      config:
-        actionPropsParameterGroup: myaction
-        icon: customiconecowatt
   accordion:
     - component: f7-list
       config:
@@ -60,11 +402,11 @@ slots:
           background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
       slots:
         default:
-          - component: oh-label-item
+          - component: oh-toggle-item
             config:
-              icon: f7:bolt_fill
-              iconColor: '=(Number.parseFloat(items[props.maintenantItem].state) == "1") ? "green" : (Number.parseFloat(items[props.maintenantItem].state) == "2") ? "orange" : "red"'
-              item: =props.maintenantItem
+              icon: '=(@@props.PiHoleCommandeItem == "ON") ? props.IconBlockingEnabled : props.IconBlockingDisabled'
+              iconColor: '=(@@props.PiHoleCommandeItem == "ON") ? "green" : "orange"'
+              item: =props.PiHoleCommandeItem
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
@@ -73,32 +415,123 @@ slots:
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              title: =props.maintenantTitle
+              title: '=(@@props.PiHoleCommandeItem == "ON") ? props.BlockingEnabledText : props.BlockingDisabledText'
+              visible: =!props.HideBlocking
           - component: oh-label-item
             config:
-              icon: f7:bolt_fill
-              iconColor: '=(Number.parseFloat(items[props.aujourdhuiItem].state) == "1") ? "green" : (Number.parseFloat(items[props.aujourdhuiItem].state) == "2") ? "orange" : "red"'
-              item: =props.aujourdhuiItem
+              icon: =props.IconQueriesTotal
+              iconColor: gray
+              item: =props.queries_totalPiholeItem
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-subtitle-font-size: 14px
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
-                --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              title: =props.aujourdhuiTitle
+              subtitle: '=props.QueriesCachedText + ": " + @props.queries_cachedItem + " - " + @props.clientsItem + " " + props.ClientsText'
+              title: =props.queries_totalPiholeTitle
+              visible: =!props.HideQueriesTotal
           - component: oh-label-item
             config:
-              icon: f7:bolt_fill
-              iconColor: '=(Number.parseFloat(items[props.DemainItem].state) == "1") ? "green" : (Number.parseFloat(items[props.DemainItem].state) == "2") ? "orange" : "red"'
-              item: =props.DemainItem
+              icon: =props.IconQueriesBlocked
+              iconColor: gray
+              item: =props.queries_todayPiholeItem
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-subtitle-font-size: 14px
                 --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.ads_percentage_todayItem
+              title: =props.queries_todayPiholeTitle
+              visible: =!props.HideQueriesBlocked
+          - component: oh-label-item
+            config:
+              icon: =props.IconDomainsBlocked
+              iconColor: gray
+              item: =props.DomaineItem
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =props.LastGravityUpdateText + " " + dayjs(@@props.last_updatedItem).fromNow()
+              title: =props.DomainesTitle
+              visible: =!props.HideDomainsBlocked
+          - component: oh-list-item
+            config:
+              after: =@props.core_current_version_Item
+              badge: '=(@@props.core_update_available_Item == "ON") ? @props.core_latest_version_Item : ""'
+              badgeColor: orange
+              icon: =props.IconCoreUpdate
+              iconColor: '=(@@props.core_update_available_Item == "ON") ? "orange" : "gray"'
+              style:
+                --f7-badge-font-size: 15px
+                --f7-badge-padding: 0 6px
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              title: =props.DemainTitle
+              title: =props.CoreTitle
+              visible: =!props.HideCoreUpdate
+          - component: oh-list-item
+            config:
+              after: =@props.ftl_current_version_Item
+              badge: '=(@@props.ftl_update_available_Item == "ON") ? @props.ftl_latest_version_Item : ""'
+              badgeColor: orange
+              icon: =props.IconFTLUpdate
+              iconColor: '=(@@props.ftl_update_available_Item == "ON") ? "orange" : "gray"'
+              style:
+                --f7-badge-font-size: 15px
+                --f7-badge-padding: 0 6px
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.FTLTitle
+              visible: =!props.HideFTLUpdate
+          - component: oh-list-item
+            config:
+              after: =@props.web_current_version_Item
+              badge: '=(@@props.web_update_available_Item == "ON") ? @props.web_latest_version_Item : ""'
+              badgeColor: orange
+              icon: =props.IconWebUpdate
+              iconColor: '=(@@props.web_update_available_Item == "ON") ? "orange" : "gray"'
+              style:
+                --f7-badge-font-size: 15px
+                --f7-badge-padding: 0 6px
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.WebInterfaceTitle
+              visible: =!props.HideWebUpdate
+          - component: oh-list-item
+            config:
+              icon: =props.IconWebPage
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.WebInterfaceLinkTitle
+              visible: =!props.HideLink
+            slots:
+              after:
+                - component: oh-button
+                  config:
+                    actionPropsParameterGroup: webpage
+                    fill: false
+                    iconMaterial: open_in_new
+                    iconSize: 28px
+                    raised: false
+                    small: true
