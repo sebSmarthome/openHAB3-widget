@@ -18,7 +18,6 @@ props:
       type: TEXT
       groupName: header
     - context: item
-      default: ReseauPiHoleFreeboxVM_Reachable
       description: Status item
       label: Item
       name: status_item
@@ -60,7 +59,6 @@ props:
       type: TEXT
       groupName: blocking  
     - context: item
-      default: PiHoleHTTPcommand_PiHoleActivation
       description: blocking item
       label: Item
       name: PiHoleCommandeItem
@@ -88,7 +86,6 @@ props:
       type: TEXT
       groupName: queries
     - context: item
-      default: PiHoleHTTPAPI_dns_queries_today
       description: dns queries today Item
       label: Item
       name: queries_totalPiholeItem
@@ -103,7 +100,6 @@ props:
       type: TEXT
       groupName: queries
     - context: item
-      default: PiHoleHTTPAPI_queries_cached
       description: queries cached Item
       label: Item
       name: queries_cachedItem
@@ -118,7 +114,6 @@ props:
       type: TEXT
       groupName: queries
     - context: item
-      default: PiHoleHTTPAPI_unique_clients
       description: unique clients Item
       label: Item
       name: clientsItem
@@ -146,7 +141,6 @@ props:
       type: TEXT
       groupName: queriesblocked
     - context: item
-      default: PiHoleHTTPAPI_ads_blocked_today
       description: ads blocked today Item
       label: Item
       name: queries_todayPiholeItem
@@ -154,7 +148,6 @@ props:
       type: TEXT
       groupName: queriesblocked
     - context: item
-      default: PiHoleHTTPAPI_ads_percentage_today
       description: ads percentage today Item
       label: Item
       name: ads_percentage_todayItem
@@ -182,7 +175,6 @@ props:
       type: TEXT
       groupName: domainsblocked
     - context: item
-      default: PiHoleHTTPAPI_domains_being_blocked
       description: domains being blocked Item
       label: Item
       name: DomaineItem
@@ -197,7 +189,6 @@ props:
       type: TEXT
       groupName: domainsblocked
     - context: item
-      default: PiHoleHTTPAPI_gravity_last_updated_absolute
       description: gravity last updated absolute Item
       label: Item
       name: last_updatedItem
@@ -225,7 +216,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Core_Update_Available
       description: Core Update Available switch item
       label: Item
       name: core_update_available_Item
@@ -233,7 +223,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Current_Core_Version
       description: Current Core Version string item
       label: Item
       name: core_current_version_Item
@@ -241,7 +230,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Latest_Core_Version
       description: Latest Core Version string item
       label: Item
       name: core_latest_version_Item
@@ -269,7 +257,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Web_Update_Available
       description: Web Interface Update Available switch item
       label: Item
       name: web_update_available_Item
@@ -277,7 +264,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Current_Web_Version
       description: Current Web Interface update string item
       label: Item
       name: web_current_version_Item
@@ -285,7 +271,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Latest_Web_Version
       description: Latest Web Interface update string item
       label: Item
       name: web_latest_version_Item
@@ -313,7 +298,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_FTL_Update_Available
       description: FTL Update Available switch item
       label: Item
       name: ftl_update_available_Item
@@ -321,7 +305,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Current_FTL_Version
       description: Current FTL update string item
       label: Item
       name: ftl_current_version_Item
@@ -329,7 +312,6 @@ props:
       type: TEXT
       groupName: update
     - context: item
-      default: PiHole_Latest_FTL_Version
       description: Latest FTL update string item
       label: Item
       name: ftl_latest_version_Item
