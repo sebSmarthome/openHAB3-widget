@@ -4,91 +4,130 @@ tags:
 props:
   parameters:
     - default: Ecowatt
-      description: Ecowatt Title
+      description: Header Title
       label: Title
       name: EcowattTitle
       required: false
       type: TEXT
-    - default: Maintenant
-      description: Title
+      groupName: header
+    - default: ecowatt
+      description: icon name without ".png", located in static/icons/ folder
+      label: Icon
+      name: iconimage
+      required: false
+      type: TEXT
+      groupName: header
+    - default: Current Hour
+      description: Current Hour Signal Title
       label: Title
       name: maintenantTitle
       required: false
       type: TEXT
-      groupName: maintenant
+      groupName: header
     - context: item
-      default: Ecowatt_CurrentHourSignal
       description: The signal relating to the forecast consumption level for the current hour Item
       label: Item
       name: maintenantItem
       required: false
       type: TEXT
-      groupName: maintenant
-    - default: Aujourd'hui
-      description: Title
+      groupName: header
+    - default: Today
+      description: Today Signal Title
       label: Title
       name: aujourdhuiTitle
       required: false
       type: TEXT
       groupName: aujourdhui
     - context: item
-      default: Ecowatt_TodaySignal
       description: The signal relating to the forecast consumption level for today Item
       label: Item
       name: aujourdhuiItem
       required: false
       type: TEXT
       groupName: aujourdhui
-    - default: Demain
-      description: Title
+    - default: Tomorrow
+      description: Tomorrow Signal Title
       label: Title
       name: DemainTitle
       required: false
       type: TEXT
       groupName: demain
     - context: item
-      default: Ecowatt_TomorrowSignal
       description: The signal relating to the forecast consumption level for tomorrow Item
       label: Item
       name: DemainItem
       required: false
       type: TEXT
       groupName: demain
+    - default: In Two Days
+      description: In Two Days Signal Title
+      label: Title
+      name: ApresDemainTitle
+      required: false
+      type: TEXT
+      groupName: apresdemain
+    - context: item
+      description: The signal relating to the forecast consumption level in two days signal Item
+      label: Item
+      name: ApresDemainItem
+      required: false
+      type: TEXT
+      groupName: apresdemain
+    - default: In Three Days
+      description: In Three Days Signal Title
+      label: Title
+      name: troisjTitle
+      required: false
+      type: TEXT
+      groupName: dans3j
+    - context: item
+      description: The signal relating to the forecast consumption level in three days signal Item
+      label: Item
+      name: troisjItem
+      required: false
+      type: TEXT
+      groupName: dans3j
   parameterGroups:
-    - name: maintenant
-      label: Maintenant
+    - name: header
+      label: Header
     - name: aujourdhui
-      label: Aujourd'hui
+      label: Today
     - name: demain
-      label: Demain
-    - name: myaction
-      context: action
-      label: Action
-timestamp: Nov 28, 2022, 3:56:16 PM
+      label: Tomorrow
+    - name: apresdemain
+      label: In Two Days
+    - name: dans3j
+      label: In Three Days
+timestamp: Dec 20, 2023, 2:40:26 PM
 component: oh-list-item
 config:
-  stylesheet: >
-    i.icon.customiconecowatt {
-      background: url("/static/icons/ecowatt.png") no-repeat center;
-      background-size: cover;
-      height: 30px;
-      width: 30px;
-    }
   accordionList: true
-  icon: f7:bolt_fill
-  iconColor: '=(Number.parseFloat(items[props.maintenantItem].state) == "1") ? "green" : (Number.parseFloat(items[props.maintenantItem].state) == "2") ? "orange" : "red"'
   mediaList: true
-  style:
-    --f7-list-item-after-font-size: 16px
-    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
-  subtitle: '=props.maintenantItem ? items[props.maintenantItem].displayState : ""'
+  icon: ecowatt
+  stylesheet: >
+    .animecowattred {
+      animation: flashingbgecowattred 1s linear 0s infinite;
+    } @keyframes flashingbgecowattred {
+      0%   {color: #ff3b30; opacity: 0}
+      25%  {color: #ff3b30; opacity: 1}
+      50%  {color: #ff3b30; opacity: 1}
+      75%  {color: #ff3b30; opacity: 0}
+      100% {color: #ff3b30; opacity: 0}
+    } .animecowattorange {
+      animation: flashingbgecowattorange 1s linear 0s infinite;
+    } @keyframes flashingbgecowattorange {
+      0%   {color: #ff9500; opacity: 0.6}
+      25%  {color: #ff9500; opacity: 1}
+      50%  {color: #ff9500; opacity: 1}
+      75%  {color: #ff9500; opacity: 0.6}
+      100% {color: #ff9500; opacity: 0.6}
+    } .ecowattgreen {
+      color: #4cd964;
+      opacity: 1
+    }
+  subtitle: '=props.maintenantItem ? @props.maintenantItem : ""'
   title: =props.EcowattTitle
 slots:
-  after:
-    - component: oh-link
-      config:
-        actionPropsParameterGroup: myaction
-        icon: customiconecowatt
   accordion:
     - component: f7-list
       config:
@@ -97,45 +136,183 @@ slots:
           background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
       slots:
         default:
-          - component: oh-label-item
+          - component: f7-list-item
             config:
-              icon: f7:bolt_fill
-              iconColor: '=(Number.parseFloat(items[props.maintenantItem].state) == "1") ? "green" : (Number.parseFloat(items[props.maintenantItem].state) == "2") ? "orange" : "red"'
-              item: =props.maintenantItem
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-                --f7-list-item-subtitle-font-size: 14px
-                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              title: =props.maintenantTitle
+            slots:
+              media:
+                - component: f7-icon
+                  config:
+                    class: '=(Number.parseFloat(@@props.maintenantItem) == "0") ? "ecowattgreen" : (Number.parseFloat(@@props.maintenantItem) == "1") ? "ecowattgreen" : (Number.parseFloat(@@props.maintenantItem) == "2") ? "animecowattorange" : "animecowattred"'
+                    f7: '=(Number.parseFloat(@@props.maintenantItem) == "0") ? "checkmark_alt_circle_fill" : (Number.parseFloat(@@props.maintenantItem) == "1") ? "checkmark_alt_circle_fill" : (Number.parseFloat(@@props.maintenantItem) == "2") ? "exclamationmark_circle_fill" : "bolt_fill"'
+                    style:
+                      font-size: 32px
+                      width: 32px
+                      height: 32px
+                  slots:
+                    default:
+                      - component: f7-badge
+                        config:
+                          bg-color: rgba(255, 255, 255, 0)
+                          style:
+                            --f7-badge-size: 22px
+                            margin-left: -19px
+                            margin-top: 17px
+                          visible: '=(Number.parseFloat(@@props.maintenantItem) == "0") ? true : false'
+                        slots:
+                          default:
+                            - component: oh-icon
+                              config:
+                                color: white
+                                height: 22px
+                                icon: iconify:material-symbols:nest-eco-leaf
+              title:
+                - component: Label
+                  config:
+                    text: =props.maintenantTitle
+              after:
+                - component: Label
+                  config:
+                    text: =@props.maintenantItem
           - component: oh-label-item
             config:
-              icon: f7:bolt_fill
-              iconColor: '=(Number.parseFloat(items[props.aujourdhuiItem].state) == "1") ? "green" : (Number.parseFloat(items[props.aujourdhuiItem].state) == "2") ? "orange" : "red"'
-              item: =props.aujourdhuiItem
+              after: =@props.aujourdhuiItem
+              icon: '=(Number.parseFloat(@@props.aujourdhuiItem) == "0") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.aujourdhuiItem) == "1") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.aujourdhuiItem) == "2") ? "f7:exclamationmark_circle_fill" : "f7:bolt_fill"'
+              iconColor: '=(Number.parseFloat(@@props.aujourdhuiItem) == "0") ? "green" : (Number.parseFloat(@@props.aujourdhuiItem) == "1") ? "green" : (Number.parseFloat(@@props.aujourdhuiItem) == "2") ? "orange" : "red"'
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-                --f7-list-item-subtitle-font-size: 14px
-                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
               title: =props.aujourdhuiTitle
           - component: oh-label-item
             config:
-              icon: f7:bolt_fill
-              iconColor: '=(Number.parseFloat(items[props.DemainItem].state) == "1") ? "green" : (Number.parseFloat(items[props.DemainItem].state) == "2") ? "orange" : "red"'
-              item: =props.DemainItem
+              after: =@props.DemainItem
+              icon: '=(Number.parseFloat(@@props.DemainItem) == "0") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.DemainItem) == "1") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.DemainItem) == "2") ? "f7:exclamationmark_circle_fill" : "f7:bolt_fill"'
+              iconColor: '=(Number.parseFloat(@@props.DemainItem) == "0") ? "green" : (Number.parseFloat(@@props.DemainItem) == "1") ? "green" : (Number.parseFloat(@@props.DemainItem) == "2") ? "orange" : "red"'
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-                --f7-list-item-subtitle-font-size: 14px
-                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
               title: =props.DemainTitle
+          - component: oh-label-item
+            config:
+              after: =@props.ApresDemainItem
+              icon: '=(Number.parseFloat(@@props.ApresDemainItem) == "0") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.ApresDemainItem) == "1") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.ApresDemainItem) == "2") ? "f7:exclamationmark_circle_fill" : "f7:bolt_fill"'
+              iconColor: '=(Number.parseFloat(@@props.ApresDemainItem) == "0") ? "green" : (Number.parseFloat(@@props.ApresDemainItem) == "1") ? "green" : (Number.parseFloat(@@props.ApresDemainItem) == "2") ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.ApresDemainTitle
+          - component: oh-label-item
+            config:
+              after: =@props.troisjItem
+              icon: '=(Number.parseFloat(@@props.troisjItem) == "0") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.troisjItem) == "1") ? "f7:checkmark_alt_circle_fill" : (Number.parseFloat(@@props.troisjItem) == "2") ? "f7:exclamationmark_circle_fill" : "f7:bolt_fill"'
+              iconColor: '=(Number.parseFloat(@@props.troisjItem) == "0") ? "green" : (Number.parseFloat(@@props.troisjItem) == "1") ? "green" : (Number.parseFloat(@@props.troisjItem) == "2") ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.troisjTitle
+          - component: oh-list-item
+            config:
+              icon: iconify:mdi:link-variant
+              iconColor: gray
+              style:
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: "Website :"
+            slots:
+              after:
+                - component: oh-button
+                  config:
+                    popupOpen: .ecowatt-pop
+                    fill: false
+                    iconMaterial: open_in_new
+                    iconSize: 28px
+                    raised: false
+                    small: true
+  after:
+    - component: f7-icon
+      config:
+        class: '=(Number.parseFloat(@@props.maintenantItem) == "0") ? "ecowattgreen" : (Number.parseFloat(@@props.maintenantItem) == "1") ? "ecowattgreen" : (Number.parseFloat(@@props.maintenantItem) == "2") ? "animecowattorange" : "animecowattred"'
+        f7: '=(Number.parseFloat(@@props.maintenantItem) == "0") ? "checkmark_alt_circle_fill" : (Number.parseFloat(@@props.maintenantItem) == "1") ? "checkmark_alt_circle_fill" : (Number.parseFloat(@@props.maintenantItem) == "2") ? "exclamationmark_circle_fill" : "bolt_fill"'
+        size: 30
+        style:
+          margin-left: 0px
+          margin-top: 0px
+          width: 30px
+          height: 20px
+      slots:
+        default:
+          - component: f7-badge
+            config:
+              bg-color: rgba(255, 255, 255, 0)
+              style:
+                --f7-badge-size: 22px
+                margin-left: -19px
+                margin-top: 17px
+              visible: '=(Number.parseFloat(@@props.maintenantItem) == "0") ? true : false'
+            slots:
+              default:
+                - component: oh-icon
+                  config:
+                    color: white
+                    height: 22px
+                    icon: iconify:material-symbols:nest-eco-leaf
+          - component: f7-popup
+            config:
+              animate: true
+              class: ecowatt-pop
+              style:
+                background: "=themeOptions.dark === 'dark' ? 'rgb(0, 0, 0)' : 'rgb(239, 239, 244)'"
+            slots:
+              default:
+                - component: f7-page
+                  config:
+                    page-content: true
+                  slots:
+                    default:
+                      - component: f7-navbar
+                        config:
+                          transparent: true
+                        slots:
+                          right:
+                            - component: f7-link
+                              config:
+                                color: "=themeOptions.dark === 'dark' ? 'white' : 'black'"
+                                iconF7: xmark_circle_fill
+                                iconSize: 30px
+                                popupClose: true
+                                style:
+                                  position: absolute
+                                  right: 0
+                                  top: 0
+                      - component: f7-block
+                        config:
+                          style:
+                            margin-left: 0px
+                            margin-right: 0px
+                            margin-top: -44px
+                            margin-bottom: 0px
+                            padding: 0px
+                        slots:
+                          default:
+                            - component: oh-webframe
+                              config:
+                                src: https://www.monecowatt.fr/?preview=true
+                                height: 1600px
