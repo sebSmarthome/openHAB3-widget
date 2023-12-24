@@ -3,7 +3,9 @@
 **List Item** Widget for the Netatmo Wind module [Netatmo Binding](https://www.openhab.org/addons/bindings/netatmo/#weather-station-wind-module).
 
 Beaufort scale (Text and color icon)
+
 Use with unit "km/h"
+
 Only use with **List Card** with accordion and rich list items option set to true.
 
 Support to use a light and a dark background.
