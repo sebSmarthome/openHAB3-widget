@@ -1,0 +1,790 @@
+uid: frs_Netatmo_Wind_Module_list_item
+tags:
+  - Netatmo
+props:
+  parameters:
+    - default: Netatmo Wind module
+      description: Header Title
+      label: title
+      name: HeaderTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - default: oh:netatmovent
+      description: Netatmo wind module Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: NetatmoIcon
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Current average wind speed item
+      label: item
+      name: VentVitesseItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Maximum wind strength recorded item
+      label: item
+      name: ForceMaxVenttem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide gauge wind speed and direction
+      label: hide
+      name: Hidegauge
+      required: false
+      type: BOOLEAN
+      groupName: wind
+    - description: Hide graph wind speed
+      label: hide
+      name: Hidegraph
+      required: false
+      type: BOOLEAN
+      groupName: wind
+    - description: Hide Current average wind speed
+      label: hide
+      name: Hidecurrentspeed
+      required: false
+      type: BOOLEAN
+      groupName: wind
+    - default: Average speed
+      description: Current average wind speed Title
+      label: title
+      name: AveragespeedTitle
+      required: false
+      type: TEXT
+      groupName: wind
+    - description: Hide Maximum wind strength
+      label: hide
+      name: HideMaximumwindstrength
+      required: false
+      type: BOOLEAN
+      groupName: wind
+    - default: Max Wind Strength
+      description: Max Wind Strength Title
+      label: title
+      name: MaxWindStrengthTitle
+      required: false
+      type: TEXT
+      groupName: wind
+    - context: item
+      description: Moment when MaxWindStrength was recorded item
+      label: item
+      name: HorodatageForceMaxVentItem
+      required: false
+      type: TEXT
+      groupName: wind
+    - description: Hide Current average wind direction
+      label: hide
+      name: HideCurrentwinddirection
+      required: false
+      type: BOOLEAN
+      groupName: wind
+    - default: Average direction
+      description: Current average wind direction Title
+      label: title
+      name: CurrentdirectionTitle
+      required: false
+      type: TEXT
+      groupName: wind
+    - context: item
+      description: Current average wind direction item
+      label: item
+      name: DirectionVentItem
+      required: false
+      type: TEXT
+      groupName: wind
+    - description: Hide Highest gust wind speed
+      label: hide
+      name: Hidegustwindspeed
+      required: false
+      type: BOOLEAN
+      groupName: gust
+    - default: Gust speed
+      description: Highest gust wind speed Title
+      label: title
+      name: GustspeedTitle
+      required: false
+      type: TEXT
+      groupName: gust
+    - context: item
+      description: Highest gust wind speed item
+      label: item
+      name: ForceRafaleItem
+      required: false
+      type: TEXT
+      groupName: gust
+    - description: Hide Highest gust wind direction
+      label: hide
+      name: Hidegustwinddirection
+      required: false
+      type: BOOLEAN
+      groupName: gust
+    - default: Gust direction
+      description: Highest gust wind direction Title
+      label: title
+      name: GustdirectionTitle
+      required: false
+      type: TEXT
+      groupName: gust
+    - context: item
+      description: Highest gust wind direction item
+      label: item
+      name: DirectionRafaleItem
+      required: false
+      type: TEXT
+      groupName: gust
+    - default: Calm
+      description: Beaufort 0
+      label: Text
+      name: beaufort0
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Light air
+      description: Beaufort 1
+      label: Text
+      name: beaufort1
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Light breeze
+      description: Beaufort 2
+      label: Text
+      name: beaufort2
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Gentle breeze
+      description: Beaufort 3
+      label: Text
+      name: beaufort3
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Moderate breeze
+      description: Beaufort 4
+      label: Text
+      name: beaufort4
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Fresh breeze
+      description: Beaufort 5
+      label: Text
+      name: beaufort5
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Strong breeze
+      description: Beaufort 6
+      label: Text
+      name: beaufort6
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Moderate gale
+      description: Beaufort 7
+      label: Text
+      name: beaufort7
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Fresh gale
+      description: Beaufort 8
+      label: Text
+      name: beaufort8
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Strong gale
+      description: Beaufort 9
+      label: Text
+      name: beaufort9
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Storm
+      description: Beaufort 10
+      label: Text
+      name: beaufort10
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Violent storm
+      description: Beaufort 11
+      label: Text
+      name: beaufort11
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - default: Hurricane
+      description: Beaufort 12
+      label: Text
+      name: beaufort12
+      required: false
+      type: TEXT
+      groupName: beaufort
+    - description: Hide Battery item
+      label: hide
+      name: BatteryHide
+      required: false
+      type: BOOLEAN
+      groupName: battery
+    - default: Battery
+      description: Battery Title
+      label: Title
+      name: BatteryTitle
+      required: false
+      type: TEXT
+      groupName: battery
+    - context: item
+      description: Battery item
+      label: item
+      name: DeviceBatteryItem
+      required: false
+      type: TEXT
+      groupName: battery
+    - description: Hide signal item
+      label: hide
+      name: SignalHide
+      required: false
+      type: BOOLEAN
+      groupName: signal
+    - default: Signal
+      description: Signal Title
+      label: Title
+      name: SignalTitle
+      required: false
+      type: TEXT
+      groupName: signal
+    - context: item
+      description: Signal item
+      label: item
+      name: signalItem
+      required: false
+      type: TEXT
+      groupName: signal
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: wind
+      label: Current 5 minutes average wind
+    - name: gust
+      label: Last 5 minutes highest gust
+    - name: beaufort
+      label: String beaufort scale
+    - name: battery
+      label: Battery
+    - name: signal
+      label: Signal
+timestamp: Dec 24, 2023, 3:05:38 PM
+component: oh-list-item
+config:
+  accordionList: true
+  after: =@props.VentVitesseItem
+  icon: =props.NetatmoIcon
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: '=((Number.parseFloat(@@props.VentVitesseItem) < "2") ? props.beaufort0 : (Number.parseFloat(@@props.VentVitesseItem) < "5") ? props.beaufort1 : (Number.parseFloat(@@props.VentVitesseItem) < "11") ? props.beaufort2 : (Number.parseFloat(@@props.VentVitesseItem) < "19") ? props.beaufort3 : (Number.parseFloat(@@props.VentVitesseItem) < "28") ? props.beaufort4 : (Number.parseFloat(@@props.VentVitesseItem) < "38") ? props.beaufort5 : (Number.parseFloat(@@props.VentVitesseItem) < "49") ? props.beaufort6 : (Number.parseFloat(@@props.VentVitesseItem) < "61") ? props.beaufort7 : (Number.parseFloat(@@props.VentVitesseItem) < "74") ? props.beaufort8 : (Number.parseFloat(@@props.VentVitesseItem) < "88") ? props.beaufort9 : (Number.parseFloat(@@props.VentVitesseItem) < "102") ? props.beaufort10 : (Number.parseFloat(@@props.VentVitesseItem) < "117") ? props.beaufort11 : props.beaufort12) + " - Max: " + items[props.ForceMaxVenttem].state'
+  title: =props.HeaderTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        accordionList: true
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(240, 240, 240)'"
+      slots:
+        default:
+          - component: f7-row
+            config:
+              noGap: true
+              style:
+                text-align: center
+              visible: =!props.Hidegauge
+            slots:
+              default:
+                - component: f7-col
+                  config:
+                    style:
+                      width: 50%
+                  slots:
+                    default:
+                      - component: f7-block
+                        config:
+                          style:
+                            margin-bottom: 0px
+                            margin-left: 0px
+                            margin-right: 0px
+                            margin-top: 6px
+                            padding: 0px
+                            min-width: 180px
+                        slots:
+                          default:
+                            - component: oh-chart
+                              config:
+                                height: 140px
+                                sidebar: false
+                                options:
+                                  backgroundColor: transparent
+                              slots:
+                                series:
+                                  - component: oh-data-series
+                                    config:
+                                      axisLabel:
+                                        show: false
+                                      axisLine:
+                                        show: false
+                                      axisTick:
+                                        show: false
+                                      data:
+                                        - name: ""
+                                          value: =Number.parseFloat(@@props.ForceMaxVenttem)
+                                      detail:
+                                        show: false
+                                      endAngle: -40
+                                      max: 150
+                                      min: 0
+                                      pointer:
+                                        icon: path://M8.037 11.166L14.5 22.36c.825 1.43 2.175 1.43 3 0l6.463-11.195c.826-1.43.15-2.598-1.5-2.598H9.537c-1.65 0-2.326 1.17-1.5 2.6z
+                                        itemStyle:
+                                          color: "=themeOptions.dark === 'dark' ? 'rgb(247, 247, 247)' : 'rgb(35, 35, 35)'"
+                                        length: 12%
+                                        width: 8
+                                        offsetCenter:
+                                          - 0
+                                          - -99%
+                                      radius: 90%
+                                      splitLine:
+                                        show: false
+                                      splitNumber: 15
+                                      startAngle: 220
+                                      title:
+                                        show: false
+                                      type: gauge
+                                  - component: oh-data-series
+                                    config:
+                                      axisLabel:
+                                        show: true
+                                        distance: 6
+                                        fontSize: 7
+                                      axisLine:
+                                        lineStyle:
+                                          color:
+                                            - - =1/150
+                                              - white
+                                            - - =(1/150)*5
+                                              - "#AEF1F9"
+                                            - - =(1/150)*11
+                                              - "#96F7DC"
+                                            - - =(1/150)*19
+                                              - "#96F7B4"
+                                            - - =(1/150)*28
+                                              - "#6FF46F"
+                                            - - =(1/150)*38
+                                              - "#73ED12"
+                                            - - =(1/150)*49
+                                              - "#A4ED12"
+                                            - - =(1/150)*61
+                                              - "#DAED12"
+                                            - - =(1/150)*74
+                                              - "#EDC212"
+                                            - - =(1/150)*88
+                                              - "#ED8F12"
+                                            - - =(1/150)*102
+                                              - "#ED6312"
+                                            - - =(1/150)*117
+                                              - "#ED2912"
+                                            - - =(1/150)*150
+                                              - "#D5102D"
+                                          width: 3
+                                      axisTick:
+                                        show: true
+                                        distance: 0
+                                        length: 4
+                                        lineStyle:
+                                          width: 0.5
+                                      data:
+                                        - name: =@@props.VentVitesseItem
+                                          value: =Number.parseFloat(@props.VentVitesseItem)
+                                      title:
+                                        fontSize: 14
+                                        offsetCenter:
+                                          - 0
+                                          - -28%
+                                      detail:
+                                        show: false
+                                      endAngle: -40
+                                      max: 150
+                                      min: 0
+                                      pointer:
+                                        icon: path://M2090.36389,615.30999 L2090.36389,615.30999 C2091.48372,615.30999 2092.40383,616.194028 2092.44859,617.312956 L2096.90698,728.755929 C2097.05155,732.369577 2094.2393,735.416212 2090.62566,735.56078 C2090.53845,735.564269 2090.45117,735.566014 2090.36389,735.566014 L2090.36389,735.566014 C2086.74736,735.566014 2083.81557,732.63423 2083.81557,729.017692 C2083.81557,728.930412 2083.81732,728.84314 2083.82081,728.755929 L2088.2792,617.312956 C2088.32396,616.194028 2089.24407,615.30999 2090.36389,615.30999 Z
+                                        itemStyle:
+                                          color: "=themeOptions.dark === 'dark' ? 'rgb(247, 247, 247)' : 'rgb(35, 35, 35)'"
+                                        length: 100%
+                                        offsetCenter:
+                                          - 0
+                                          - 10%
+                                      radius: 90%
+                                      splitLine:
+                                        show: true
+                                        distance: 0
+                                        length: 6
+                                        lineStyle:
+                                          width: 1.5
+                                      splitNumber: 15
+                                      startAngle: 220
+                                      type: gauge
+                            - component: f7-row
+                              config:
+                                class:
+                                  - text-align-center
+                                style:
+                                  margin-bottom: 0px
+                                  margin-top: -48px
+                              slots:
+                                default:
+                                  - component: f7-col
+                                    config:
+                                      style:
+                                        background: rgba(233, 196, 106, 0)
+                                    slots:
+                                      default:
+                                        - component: oh-icon
+                                          config:
+                                            height: 40px
+                                            icon: '=(Number.parseFloat(@@props.VentVitesseItem) < "2") ? "iconify:wi:wind-beaufort-0" : (Number.parseFloat(@@props.VentVitesseItem) < "5") ? "iconify:wi:wind-beaufort-1" : (Number.parseFloat(@@props.VentVitesseItem) < "11") ? "iconify:wi:wind-beaufort-2" : (Number.parseFloat(@@props.VentVitesseItem) < "19") ? "iconify:wi:wind-beaufort-3" : (Number.parseFloat(@@props.VentVitesseItem) < "28") ? "iconify:wi:wind-beaufort-4" : (Number.parseFloat(@@props.VentVitesseItem) < "38") ? "iconify:wi:wind-beaufort-5" : (Number.parseFloat(@@props.VentVitesseItem) < "49") ? "iconify:wi:wind-beaufort-6" : (Number.parseFloat(@@props.VentVitesseItem) < "61") ? "iconify:wi:wind-beaufort-7" : (Number.parseFloat(@@props.VentVitesseItem) < "74") ? "iconify:wi:wind-beaufort-8" : (Number.parseFloat(@@props.VentVitesseItem) < "88") ? "iconify:wi:wind-beaufort-9" : (Number.parseFloat(@@props.VentVitesseItem) < "102") ? "iconify:wi:wind-beaufort-10" : (Number.parseFloat(@@props.VentVitesseItem) < "117") ? "iconify:wi:wind-beaufort-11" : "iconify:wi:wind-beaufort-12"'
+                                            color: '=(Number.parseFloat(@@props.VentVitesseItem) < "2") ? "white" : (Number.parseFloat(@@props.VentVitesseItem) < "5") ? "#AEF1F9" : (Number.parseFloat(@@props.VentVitesseItem) < "11") ? "#96F7DC" : (Number.parseFloat(@@props.VentVitesseItem) < "19") ? "#96F7B4" : (Number.parseFloat(@@props.VentVitesseItem) < "28") ? "#6FF46F" : (Number.parseFloat(@@props.VentVitesseItem) < "38") ? "#73ED12" : (Number.parseFloat(@@props.VentVitesseItem) < "49") ? "#A4ED12" : (Number.parseFloat(@@props.VentVitesseItem) < "61") ? "#DAED12" : (Number.parseFloat(@@props.VentVitesseItem) < "74") ? "#EDC212" : (Number.parseFloat(@@props.VentVitesseItem) < "88") ? "#ED8F12" : (Number.parseFloat(@@props.VentVitesseItem) < "102") ? "#ED6312" : (Number.parseFloat(@@props.VentVitesseItem) < "117") ? "#ED2912" : "#D5102D"'
+                - component: f7-col
+                  config:
+                    style:
+                      width: 50%
+                  slots:
+                    default:
+                      - component: f7-block
+                        config:
+                          style:
+                            margin-bottom: 0px
+                            margin-left: 0px
+                            margin-right: 0px
+                            margin-top: 0px
+                            padding: 0px
+                            min-width: 180px
+                        slots:
+                          default:
+                            - component: oh-chart
+                              config:
+                                height: 140px
+                                options:
+                                  backgroundColor: transparent
+                              slots:
+                                series:
+                                  - component: oh-data-series
+                                    config:
+                                      splitLine:
+                                        show: true
+                                        distance: -6
+                                        length: 16
+                                        lineStyle:
+                                          width: 3
+                                          color: "=themeOptions.dark === 'dark' ? 'rgb(247, 247, 247)' : 'rgb(35, 35, 35)'"
+                                      axisLabel:
+                                        show: false
+                                      axisLine:
+                                        lineStyle:
+                                          width: 0
+                                      axisTick:
+                                        show: true
+                                        distance: -2
+                                        length: 6
+                                        lineStyle:
+                                          width: 1
+                                          color: gray
+                                      data:
+                                        - name: ""
+                                          value: =180+Number.parseFloat(@@props.DirectionVentItem)
+                                      detail:
+                                        fontSize: 18
+                                        formatter: =@props.DirectionVentItem
+                                        offsetCenter:
+                                          - 0
+                                          - 0
+                                      max: 359
+                                      min: 0
+                                      pointer:
+                                        icon: path://M12.8,0.7l12,40.1H0.7L12.8,0.7z
+                                        itemStyle:
+                                          color: "#cddc39"
+                                        length: 50%
+                                        width: 14
+                                        offsetCenter:
+                                          - 0
+                                          - -40%
+                                      radius: 78%
+                                      splitNumber: 4
+                                      startAngle: 90
+                                      endAngle: -270
+                                      type: gauge
+          - component: f7-segmented
+            config:
+              strong: true
+              visible: =!props.Hidegraph
+            slots:
+              default:
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: D
+                    active: "=vars.controlGraph ? ((vars.controlGraph === 'D') ? true : false) : true"
+                    style:
+                      --f7-button-border-radius: 0px
+                      width: 100%
+                    text: D
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: W
+                    active: "=(vars.controlGraph === 'W') ? true : false"
+                    style:
+                      width: 100%
+                    text: W
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: 2W
+                    active: "=(vars.controlGraph === '2W') ? true : false"
+                    style:
+                      width: 100%
+                    text: 2W
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: M
+                    active: "=(vars.controlGraph === 'M') ? true : false"
+                    style:
+                      --f7-button-border-radius: 0px
+                      width: 100%
+                    text: M
+          - component: oh-chart
+            config:
+              options:
+                backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
+                color:
+                  - "#2196f3"
+                  - "#009688"
+              period: "=vars.controlGraph ? vars.controlGraph : 'D'"
+              stylesheet: >
+                .menu {
+                  display: none;
+                }
+              height: 260px
+              visible: =!props.Hidegraph
+            slots:
+              dataZoom:
+                - component: oh-chart-datazoom
+                  config:
+                    type: inside
+              grid:
+                - component: oh-chart-grid
+                  config:
+                    height: 160px
+                    show: false
+                    top: 40px
+                    bottom: 40px
+              legend:
+                - component: oh-chart-legend
+                  config:
+                    show: true
+                    top: 228
+              series:
+                - component: oh-time-series
+                  config:
+                    areaStyle:
+                      opacity: 0.2
+                    gridIndex: 0
+                    item: =props.VentVitesseItem
+                    lineStyle:
+                      width: 1
+                    name: =props.AveragespeedTitle
+                    smooth: true
+                    type: line
+                    xAxisIndex: 0
+                    yAxisIndex: 0
+                - component: oh-time-series
+                  config:
+                    gridIndex: 0
+                    item: =props.ForceRafaleItem
+                    lineStyle:
+                      width: 1
+                    name: =props.GustspeedTitle
+                    smooth: true
+                    type: line
+                    xAxisIndex: 0
+                    yAxisIndex: 0
+              tooltip:
+                - component: oh-chart-tooltip
+                  config:
+                    confine: true
+                    smartFormatter: true
+              xAxis:
+                - component: oh-time-axis
+                  config:
+                    gridIndex: 0
+                    show: true
+              yAxis:
+                - component: oh-value-axis
+                  config:
+                    gridIndex: 0
+                    name: km/h
+                    scale: false
+                    splitArea:
+                      show: true
+                    splitLine:
+                      show: false
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.VentVitesseItem
+              after: =@props.VentVitesseItem
+              icon: '=(Number.parseFloat(@@props.VentVitesseItem) < "2") ? "iconify:wi:wind-beaufort-0" : (Number.parseFloat(@@props.VentVitesseItem) < "5") ? "iconify:wi:wind-beaufort-1" : (Number.parseFloat(@@props.VentVitesseItem) < "11") ? "iconify:wi:wind-beaufort-2" : (Number.parseFloat(@@props.VentVitesseItem) < "19") ? "iconify:wi:wind-beaufort-3" : (Number.parseFloat(@@props.VentVitesseItem) < "28") ? "iconify:wi:wind-beaufort-4" : (Number.parseFloat(@@props.VentVitesseItem) < "38") ? "iconify:wi:wind-beaufort-5" : (Number.parseFloat(@@props.VentVitesseItem) < "49") ? "iconify:wi:wind-beaufort-6" : (Number.parseFloat(@@props.VentVitesseItem) < "61") ? "iconify:wi:wind-beaufort-7" : (Number.parseFloat(@@props.VentVitesseItem) < "74") ? "iconify:wi:wind-beaufort-8" : (Number.parseFloat(@@props.VentVitesseItem) < "88") ? "iconify:wi:wind-beaufort-9" : (Number.parseFloat(@@props.VentVitesseItem) < "102") ? "iconify:wi:wind-beaufort-10" : (Number.parseFloat(@@props.VentVitesseItem) < "117") ? "iconify:wi:wind-beaufort-11" : "iconify:wi:wind-beaufort-12"'
+              iconColor: '=(Number.parseFloat(@@props.VentVitesseItem) < "2") ? "white" : (Number.parseFloat(@@props.VentVitesseItem) < "5") ? "#AEF1F9" : (Number.parseFloat(@@props.VentVitesseItem) < "11") ? "#96F7DC" : (Number.parseFloat(@@props.VentVitesseItem) < "19") ? "#96F7B4" : (Number.parseFloat(@@props.VentVitesseItem) < "28") ? "#6FF46F" : (Number.parseFloat(@@props.VentVitesseItem) < "38") ? "#73ED12" : (Number.parseFloat(@@props.VentVitesseItem) < "49") ? "#A4ED12" : (Number.parseFloat(@@props.VentVitesseItem) < "61") ? "#DAED12" : (Number.parseFloat(@@props.VentVitesseItem) < "74") ? "#EDC212" : (Number.parseFloat(@@props.VentVitesseItem) < "88") ? "#ED8F12" : (Number.parseFloat(@@props.VentVitesseItem) < "102") ? "#ED6312" : (Number.parseFloat(@@props.VentVitesseItem) < "117") ? "#ED2912" : "#D5102D"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '=(Number.parseFloat(@@props.VentVitesseItem) < "2") ? props.beaufort0 : (Number.parseFloat(@@props.VentVitesseItem) < "5") ? props.beaufort1 : (Number.parseFloat(@@props.VentVitesseItem) < "11") ? props.beaufort2 : (Number.parseFloat(@@props.VentVitesseItem) < "19") ? props.beaufort3 : (Number.parseFloat(@@props.VentVitesseItem) < "28") ? props.beaufort4 : (Number.parseFloat(@@props.VentVitesseItem) < "38") ? props.beaufort5 : (Number.parseFloat(@@props.VentVitesseItem) < "49") ? props.beaufort6 : (Number.parseFloat(@@props.VentVitesseItem) < "61") ? props.beaufort7 : (Number.parseFloat(@@props.VentVitesseItem) < "74") ? props.beaufort8 : (Number.parseFloat(@@props.VentVitesseItem) < "88") ? props.beaufort9 : (Number.parseFloat(@@props.VentVitesseItem) < "102") ? props.beaufort10 : (Number.parseFloat(@@props.VentVitesseItem) < "117") ? props.beaufort11 : props.beaufort12'
+              title: =props.AveragespeedTitle
+              visible: =!props.Hidecurrentspeed
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.ForceMaxVenttem
+              after: =@props.ForceMaxVenttem
+              icon: '=(Number.parseFloat(@@props.ForceMaxVenttem) < "2") ? "iconify:wi:wind-beaufort-0" : (Number.parseFloat(@@props.ForceMaxVenttem) < "5") ? "iconify:wi:wind-beaufort-1" : (Number.parseFloat(@@props.ForceMaxVenttem) < "11") ? "iconify:wi:wind-beaufort-2" : (Number.parseFloat(@@props.ForceMaxVenttem) < "19") ? "iconify:wi:wind-beaufort-3" : (Number.parseFloat(@@props.ForceMaxVenttem) < "28") ? "iconify:wi:wind-beaufort-4" : (Number.parseFloat(@@props.ForceMaxVenttem) < "38") ? "iconify:wi:wind-beaufort-5" : (Number.parseFloat(@@props.ForceMaxVenttem) < "49") ? "iconify:wi:wind-beaufort-6" : (Number.parseFloat(@@props.ForceMaxVenttem) < "61") ? "iconify:wi:wind-beaufort-7" : (Number.parseFloat(@@props.ForceMaxVenttem) < "74") ? "iconify:wi:wind-beaufort-8" : (Number.parseFloat(@@props.ForceMaxVenttem) < "88") ? "iconify:wi:wind-beaufort-9" : (Number.parseFloat(@@props.ForceMaxVenttem) < "102") ? "iconify:wi:wind-beaufort-10" : (Number.parseFloat(@@props.ForceMaxVenttem) < "117") ? "iconify:wi:wind-beaufort-11" : "iconify:wi:wind-beaufort-12"'
+              iconColor: '=(Number.parseFloat(@@props.ForceMaxVenttem) < "2") ? "white" : (Number.parseFloat(@@props.ForceMaxVenttem) < "5") ? "#AEF1F9" : (Number.parseFloat(@@props.ForceMaxVenttem) < "11") ? "#96F7DC" : (Number.parseFloat(@@props.ForceMaxVenttem) < "19") ? "#96F7B4" : (Number.parseFloat(@@props.ForceMaxVenttem) < "28") ? "#6FF46F" : (Number.parseFloat(@@props.ForceMaxVenttem) < "38") ? "#73ED12" : (Number.parseFloat(@@props.ForceMaxVenttem) < "49") ? "#A4ED12" : (Number.parseFloat(@@props.ForceMaxVenttem) < "61") ? "#DAED12" : (Number.parseFloat(@@props.ForceMaxVenttem) < "74") ? "#EDC212" : (Number.parseFloat(@@props.ForceMaxVenttem) < "88") ? "#ED8F12" : (Number.parseFloat(@@props.ForceMaxVenttem) < "102") ? "#ED6312" : (Number.parseFloat(@@props.ForceMaxVenttem) < "117") ? "#ED2912" : "#D5102D"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.HorodatageForceMaxVentItem
+              title: =props.MaxWindStrengthTitle
+              visible: =!props.HideMaximumwindstrength
+          - component: f7-list-item
+            config:
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              visible: =!props.HideCurrentwinddirection
+            slots:
+              after:
+                - component: Label
+                  config:
+                    text: =@props.DirectionVentItem
+              media:
+                - component: f7-icon
+                  config:
+                    f7: location_north_fill
+                    color: gray
+                    style:
+                      font-size: 30px
+                      height: 30px
+                      transform: ="rotate(" + Number.parseFloat(@@props.DirectionVentItem) + "deg) scaleY(-1)"
+                      width: 30px
+              title:
+                - component: Label
+                  config:
+                    text: =props.CurrentdirectionTitle
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.ForceRafaleItem
+              after: =@props.ForceRafaleItem
+              icon: '=(Number.parseFloat(@@props.ForceRafaleItem) < "2") ? "iconify:wi:wind-beaufort-0" : (Number.parseFloat(@@props.ForceRafaleItem) < "5") ? "iconify:wi:wind-beaufort-1" : (Number.parseFloat(@@props.ForceRafaleItem) < "11") ? "iconify:wi:wind-beaufort-2" : (Number.parseFloat(@@props.ForceRafaleItem) < "19") ? "iconify:wi:wind-beaufort-3" : (Number.parseFloat(@@props.ForceRafaleItem) < "28") ? "iconify:wi:wind-beaufort-4" : (Number.parseFloat(@@props.ForceRafaleItem) < "38") ? "iconify:wi:wind-beaufort-5" : (Number.parseFloat(@@props.ForceRafaleItem) < "49") ? "iconify:wi:wind-beaufort-6" : (Number.parseFloat(@@props.ForceRafaleItem) < "61") ? "iconify:wi:wind-beaufort-7" : (Number.parseFloat(@@props.ForceRafaleItem) < "74") ? "iconify:wi:wind-beaufort-8" : (Number.parseFloat(@@props.ForceRafaleItem) < "88") ? "iconify:wi:wind-beaufort-9" : (Number.parseFloat(@@props.ForceRafaleItem) < "102") ? "iconify:wi:wind-beaufort-10" : (Number.parseFloat(@@props.ForceRafaleItem) < "117") ? "iconify:wi:wind-beaufort-11" : "iconify:wi:wind-beaufort-12"'
+              iconColor: '=(Number.parseFloat(@@props.ForceRafaleItem) < "2") ? "white" : (Number.parseFloat(@@props.ForceRafaleItem) < "5") ? "#AEF1F9" : (Number.parseFloat(@@props.ForceRafaleItem) < "11") ? "#96F7DC" : (Number.parseFloat(@@props.ForceRafaleItem) < "19") ? "#96F7B4" : (Number.parseFloat(@@props.ForceRafaleItem) < "28") ? "#6FF46F" : (Number.parseFloat(@@props.ForceRafaleItem) < "38") ? "#73ED12" : (Number.parseFloat(@@props.ForceRafaleItem) < "49") ? "#A4ED12" : (Number.parseFloat(@@props.ForceRafaleItem) < "61") ? "#DAED12" : (Number.parseFloat(@@props.ForceRafaleItem) < "74") ? "#EDC212" : (Number.parseFloat(@@props.ForceRafaleItem) < "88") ? "#ED8F12" : (Number.parseFloat(@@props.ForceRafaleItem) < "102") ? "#ED6312" : (Number.parseFloat(@@props.ForceRafaleItem) < "117") ? "#ED2912" : "#D5102D"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.GustspeedTitle
+              visible: =!props.Hidegustwindspeed
+          - component: f7-list-item
+            config:
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              visible: =!props.Hidegustwinddirection
+            slots:
+              after:
+                - component: Label
+                  config:
+                    text: =@props.DirectionRafaleItem
+              media:
+                - component: f7-icon
+                  config:
+                    f7: location_north_fill
+                    color: gray
+                    style:
+                      font-size: 30px
+                      height: 30px
+                      transform: ="rotate(" + Number.parseFloat(@@props.DirectionRafaleItem) + "deg) scaleY(-1)"
+                      width: 30px
+              title:
+                - component: Label
+                  config:
+                    text: =props.GustdirectionTitle
+          - component: oh-label-item
+            config:
+              after: =@props.DeviceBatteryItem
+              icon: '=(Number.parseInt(@@props.DeviceBatteryItem) >= 90) ? "iconify:fluent:battery-10-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 80) ? "iconify:fluent:battery-9-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 70) ? "iconify:fluent:battery-8-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 60) ? "iconify:fluent:battery-7-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 50) ? "iconify:fluent:battery-6-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 40) ? "iconify:fluent:battery-5-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 30) ? "iconify:fluent:battery-4-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 20) ? "iconify:fluent:battery-3-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 10) ? "iconify:fluent:battery-2-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 5) ? "iconify:fluent:battery-1-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 0) ? "fluent:battery-warning-24-regular" : "fluent:battery-warning-24-regular"'
+              iconColor: '=(Number.parseInt(@@props.DeviceBatteryItem) >= 80) ? "#4cd964" : (Number.parseInt(@@props.DeviceBatteryItem) >= 60) ? "#ffcc00" : (Number.parseInt(@@props.DeviceBatteryItem) >= 40) ? "#ff9500" : (Number.parseInt(@@props.DeviceBatteryItem) >= 20) ? "#ff6b22" : "#ff3b30"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.BatteryTitle
+              visible: =!props.BatteryHide
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.signalItem
+              after: =@props.signalItem
+              icon: '=(Number.parseInt(@@props.signalItem) == 5) ? "iconify:bx:signal-5" : (Number.parseInt(@@props.signalItem) == 4) ? "iconify:bx:signal-4" : (Number.parseInt(@@props.signalItem) == 3) ? "iconify:bx:signal-3" : (Number.parseInt(@@props.signalItem) == 2) ? "iconify:bx:signal-2" : (Number.parseInt(@@props.signalItem) == 1) ? "iconify:bx:signal-1" : "iconify:bx:no-signal"'
+              iconColor: '=(Number.parseInt(@@props.signalItem) == 5) ? "#4cd964" : (Number.parseInt(@@props.signalItem) == 4) ? "#ffcc00" : (Number.parseInt(@@props.signalItem) == 3) ? "#ff9500" : (Number.parseInt(@@props.signalItem) == 2) ? "#ff6b22" : (Number.parseInt(@@props.signalItem) == 1) ? "#ff3b30" : "#ff3b30"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.SignalTitle
+              visible: =!props.SignalHide
