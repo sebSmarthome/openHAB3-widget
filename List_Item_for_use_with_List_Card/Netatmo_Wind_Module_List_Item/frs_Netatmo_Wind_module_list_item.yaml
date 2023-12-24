@@ -518,7 +518,7 @@ slots:
                                       max: 359
                                       min: 0
                                       pointer:
-                                        icon: path://M12.8,0.7l12,40.1H0.7L12.8,0.7z
+                                        icon: path://M12 2L4.5 20.29l.71.71L12 18l6.79 3l.71-.71z
                                         itemStyle:
                                           color: "#cddc39"
                                         length: 50%
