@@ -597,15 +597,15 @@ slots:
               grid:
                 - component: oh-chart-grid
                   config:
-                    height: 160px
-                    show: false
-                    top: 40px
-                    bottom: 40px
+                    top: 30px
+                    bottom: 55px
+                    left: 50px
+                    right: 26px
               legend:
                 - component: oh-chart-legend
                   config:
                     show: true
-                    top: 228
+                    top: 234
               series:
                 - component: oh-time-series
                   config:
@@ -645,6 +645,8 @@ slots:
                 - component: oh-value-axis
                   config:
                     gridIndex: 0
+                    nameGap: 25
+                    nameLocation: center
                     name: km/h
                     scale: false
                     splitArea:
@@ -779,7 +781,7 @@ slots:
               actionAnalyzerItems: =props.signalItem
               after: =@props.signalItem
               icon: '=(Number.parseInt(@@props.signalItem) == 5) ? "iconify:bx:signal-5" : (Number.parseInt(@@props.signalItem) == 4) ? "iconify:bx:signal-4" : (Number.parseInt(@@props.signalItem) == 3) ? "iconify:bx:signal-3" : (Number.parseInt(@@props.signalItem) == 2) ? "iconify:bx:signal-2" : (Number.parseInt(@@props.signalItem) == 1) ? "iconify:bx:signal-1" : "iconify:bx:no-signal"'
-              iconColor: '=(Number.parseInt(@@props.signalItem) == 5) ? "#4cd964" : (Number.parseInt(@@props.signalItem) == 4) ? "#ffcc00" : (Number.parseInt(@@props.signalItem) == 3) ? "#ff9500" : (Number.parseInt(@@props.signalItem) == 2) ? "#ff6b22" : (Number.parseInt(@@props.signalItem) == 1) ? "#ff3b30" : "#ff3b30"'
+              iconColor: '=(Number.parseInt(@@props.signalItem) == 5) ? "#007aff" : (Number.parseInt(@@props.signalItem) == 4) ? "#5ac8fa" : (Number.parseInt(@@props.signalItem) == 3) ? "#ffcc00" : (Number.parseInt(@@props.signalItem) == 2) ? "#ff9500" : (Number.parseInt(@@props.signalItem) == 1) ? "#ff3b30" : "#ff3b30"'
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"

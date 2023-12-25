@@ -285,8 +285,10 @@ slots:
               grid:
                 - component: oh-chart-grid
                   config:
-                    top: 40px
-                    bottom: 40px
+                    top: 26px
+                    bottom: 36px
+                    left: 50px
+                    right: 26px
               series:
                 - component: oh-time-series
                   config:
@@ -368,8 +370,10 @@ slots:
                           grid:
                             - component: oh-chart-grid
                               config:
-                                top: 40px
-                                bottom: 40px
+                                top: 26px
+                                bottom: 36px
+                                left: 50px
+                                right: 26px
                           xAxis:
                             - component: oh-category-axis
                               config:
@@ -377,8 +381,7 @@ slots:
                                 categoryType: day
                                 monthFormat: short
                                 weekdayFormat: short
-                                nameLocation: end
-                                name: " "
+                                nameGap: 50
                           yAxis:
                             - component: oh-value-axis
                               config:
@@ -439,8 +442,10 @@ slots:
                           grid:
                             - component: oh-chart-grid
                               config:
-                                top: 40px
-                                bottom: 40px
+                                top: 26px
+                                bottom: 36px
+                                left: 50px
+                                right: 26px
                           xAxis:
                             - component: oh-category-axis
                               config:
@@ -448,6 +453,7 @@ slots:
                                 categoryType: week
                                 monthFormat: short
                                 weekdayFormat: short
+                                nameGap: 50
                           yAxis:
                             - component: oh-value-axis
                               config:
@@ -508,8 +514,10 @@ slots:
                           grid:
                             - component: oh-chart-grid
                               config:
-                                top: 40px
-                                bottom: 40px
+                                top: 26px
+                                bottom: 36px
+                                left: 50px
+                                right: 26px
                           xAxis:
                             - component: oh-category-axis
                               config:
@@ -517,8 +525,7 @@ slots:
                                 categoryType: month
                                 monthFormat: short
                                 weekdayFormat: short
-                                nameLocation: end
-                                name: " "
+                                nameGap: 50
                           yAxis:
                             - component: oh-value-axis
                               config:
@@ -563,7 +570,7 @@ slots:
               actionAnalyzerItems: =props.signalItem
               after: =@props.signalItem
               icon: '=(Number.parseInt(@@props.signalItem) == 5) ? "iconify:bx:signal-5" : (Number.parseInt(@@props.signalItem) == 4) ? "iconify:bx:signal-4" : (Number.parseInt(@@props.signalItem) == 3) ? "iconify:bx:signal-3" : (Number.parseInt(@@props.signalItem) == 2) ? "iconify:bx:signal-2" : (Number.parseInt(@@props.signalItem) == 1) ? "iconify:bx:signal-1" : "iconify:bx:no-signal"'
-              iconColor: '=(Number.parseInt(@@props.signalItem) == 5) ? "#4cd964" : (Number.parseInt(@@props.signalItem) == 4) ? "#ffcc00" : (Number.parseInt(@@props.signalItem) == 3) ? "#ff9500" : (Number.parseInt(@@props.signalItem) == 2) ? "#ff6b22" : (Number.parseInt(@@props.signalItem) == 1) ? "#ff3b30" : "#ff3b30"'
+              iconColor: '=(Number.parseInt(@@props.signalItem) == 5) ? "#007aff" : (Number.parseInt(@@props.signalItem) == 4) ? "#5ac8fa" : (Number.parseInt(@@props.signalItem) == 3) ? "#ffcc00" : (Number.parseInt(@@props.signalItem) == 2) ? "#ff9500" : (Number.parseInt(@@props.signalItem) == 1) ? "#ff3b30" : "#ff3b30"'
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
