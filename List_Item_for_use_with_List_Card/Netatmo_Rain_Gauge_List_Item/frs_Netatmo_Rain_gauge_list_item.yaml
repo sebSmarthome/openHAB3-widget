@@ -268,7 +268,7 @@ slots:
                     text: M
           - component: oh-chart
             config:
-              label: Mesures
+              height: 260px
               options:
                 backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
               period: "=vars.controlGraph ? vars.controlGraph : 'D'"
@@ -356,6 +356,7 @@ slots:
                     default:
                       - component: oh-chart
                         config:
+                          height: 260px
                           options:
                             backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
                           stylesheet: >
@@ -426,6 +427,7 @@ slots:
                     default:
                       - component: oh-chart
                         config:
+                          height: 260px
                           options:
                             backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
                           stylesheet: >
@@ -494,6 +496,7 @@ slots:
                     default:
                       - component: oh-chart
                         config:
+                          height: 260px
                           options:
                             backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
                           stylesheet: >
