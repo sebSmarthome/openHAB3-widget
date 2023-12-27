@@ -508,7 +508,7 @@ slots:
                                           color: gray
                                       data:
                                         - name: ""
-                                          value: =180+Number.parseFloat(@@props.DirectionVentItem)
+                                          value: =Number.parseFloat(@@props.DirectionVentItem)
                                       detail:
                                         fontSize: 18
                                         formatter: =@props.DirectionVentItem
@@ -528,8 +528,8 @@ slots:
                                           - -40%
                                       radius: 78%
                                       splitNumber: 4
-                                      startAngle: 90
-                                      endAngle: -270
+                                      startAngle: -90
+                                      endAngle: 270
                                       type: gauge
           - component: f7-segmented
             config:
