@@ -30,6 +30,10 @@ Support to use a light and a dark background.
 
 ## Changelog
 
+### Version 0.2
+
+* Fix graph current day, current week, current month
+
 ### Version 0.1
 
 * initial release

@@ -1,0 +1,621 @@
+uid: frs_Netatmo_Outdoor_Module_list_item
+tags:
+  - list
+props:
+  parameters:
+    - default: Netatmo outdoor station
+      description: Header Title
+      label: title
+      name: HeaderTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - default: oh:netatmoext
+      description: Netatmo station Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: NetatmoIcon
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Temperature item
+      label: item
+      name: TemperatureItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Tendance Temperature item
+      label: item
+      name: TemperatureTendanceItem
+      required: false
+      type: TEXT
+      groupName: header
+    - context: item
+      description: Humidity item
+      label: item
+      name: HumidityItem
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Temperature list item
+      label: hide
+      name: TemperatureHide
+      required: false
+      type: BOOLEAN
+      groupName: temperature
+    - default: Temperature
+      description: Temperature Title
+      label: Title
+      name: TemperatureTitle
+      required: false
+      type: TEXT
+      groupName: temperature
+    - context: item
+      description: Temperature minimum item
+      label: item
+      name: TemperatureMinItem
+      required: false
+      type: TEXT
+      groupName: temperature
+    - context: item
+      description: Temperature maximum item
+      label: item
+      name: TemperatureMaxItem
+      required: false
+      type: TEXT
+      groupName: temperature
+    - description: Hide Heat Index list item
+      label: hide
+      name: heatindexHide
+      required: false
+      type: BOOLEAN
+      groupName: heatindex
+    - default: Heat Index
+      description: Heat Index Title
+      label: Title
+      name: heatindexTitle
+      required: false
+      type: TEXT
+      groupName: heatindex
+    - context: item
+      description: heat index item
+      label: item
+      name: TemperatureResItem
+      required: false
+      type: TEXT
+      groupName: heatindex
+    - description: Hide Humidity list item
+      label: hide
+      name: HumidityHide
+      required: false
+      type: BOOLEAN
+      groupName: humidity
+    - default: Humidity
+      description: Humidity Title
+      label: Title
+      name: HumidityTitle
+      required: false
+      type: TEXT
+      groupName: humidity
+    - context: item
+      description: Humidity minimum item
+      label: item
+      name: HumidityMinItem
+      required: false
+      type: TEXT
+      groupName: humidity
+    - context: item
+      description: Humidity maximum item
+      label: item
+      name: HumidityMaxItem
+      required: false
+      type: TEXT
+      groupName: humidity
+    - description: Hide Humidex list item
+      label: hide
+      name: HumidexHide
+      required: false
+      type: BOOLEAN
+      groupName: humidex
+    - default: Humidex
+      description: Humidex Title
+      label: Title
+      name: HumidexTitle
+      required: false
+      type: TEXT
+      groupName: humidex
+    - context: item
+      description: Computed Humidex index item
+      label: item
+      name: HumidexItem
+      required: false
+      type: TEXT
+      groupName: humidex
+    - context: item
+      description: Humidex index appreciation item
+      label: item
+      name: HumidexAppreciationItem
+      required: false
+      type: TEXT
+      groupName: humidex
+    - description: Hide dewpoint list item
+      label: hide
+      name: dewpointHide
+      required: false
+      type: BOOLEAN
+      groupName: dewpoint
+    - default: Dewpoint
+      description: Dewpoint Title
+      label: Title
+      name: DewpointTitle
+      required: false
+      type: TEXT
+      groupName: dewpoint
+    - context: item
+      description: Computed dewpoint temperature item
+      label: item
+      name: PointRoseeItem
+      required: false
+      type: TEXT
+      groupName: dewpoint
+    - context: item
+      description: Computed dewpoint depression item
+      label: item
+      name: DepressionPointRoseeItem
+      required: false
+      type: TEXT
+      groupName: dewpoint
+    - description: Hide Battery item
+      label: hide
+      name: BatteryHide
+      required: false
+      type: BOOLEAN
+      groupName: battery
+    - default: Battery
+      description: Battery Title
+      label: Title
+      name: BatteryTitle
+      required: false
+      type: TEXT
+      groupName: battery
+    - context: item
+      description: Battery level item
+      label: item
+      name: DeviceBatteryItem
+      required: false
+      type: TEXT
+      groupName: battery
+    - description: Hide signal item
+      label: hide
+      name: SignalHide
+      required: false
+      type: BOOLEAN
+      groupName: signal
+    - default: Signal
+      description: Signal Title
+      label: Title
+      name: SignalTitle
+      required: false
+      type: TEXT
+      groupName: signal
+    - context: item
+      description: Signal item
+      label: item
+      name: signalItem
+      required: false
+      type: TEXT
+      groupName: signal
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: temperature
+      label: Temperature list item
+    - name: heatindex
+      label: Heat index list item
+    - name: humidity
+      label: Humidity list item
+    - name: humidex
+      label: Humidex list item
+    - name: dewpoint
+      label: Dewpoint list item
+    - name: battery
+      label: Battery list item
+    - name: signal
+      label: Signal list item
+timestamp: Dec 25, 2023, 9:04:03 PM
+component: oh-list-item
+config:
+  accordionList: true
+  after: '=((items[props.TemperatureTendanceItem].state == "UP") ? "⏶ " : (items[props.TemperatureTendanceItem].state == "DOWN") ? "⏷ " : (items[props.TemperatureTendanceItem].state == "STABLE") ? "⏵ " : "!") + items[props.TemperatureItem].state'
+  icon: =props.NetatmoIcon
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: =items[props.HumidityItem].state
+  title: =props.HeaderTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        accordionList: true
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(240, 240, 240)'"
+      slots:
+        default:
+          - component: f7-segmented
+            config:
+              strong: true
+            slots:
+              default:
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: D
+                    active: "=vars.controlGraph ? ((vars.controlGraph === 'D') ? true : false) : true"
+                    style:
+                      --f7-button-border-radius: 0px
+                      width: 100%
+                    text: D
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: W
+                    active: "=(vars.controlGraph === 'W') ? true : false"
+                    style:
+                      width: 100%
+                    text: W
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: 2W
+                    active: "=(vars.controlGraph === '2W') ? true : false"
+                    style:
+                      width: 100%
+                    text: 2W
+                - component: oh-button
+                  config:
+                    action: variable
+                    actionVariable: controlGraph
+                    actionVariableValue: M
+                    active: "=(vars.controlGraph === 'M') ? true : false"
+                    style:
+                      --f7-button-border-radius: 0px
+                      width: 100%
+                    text: M
+          - component: oh-chart
+            config:
+              height: 260px
+              options:
+                backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
+                color:
+                  - "#ffcc00"
+                  - "#ff9500"
+                  - "#2196f3"
+              period: "=vars.controlGraph ? vars.controlGraph : 'D'"
+              stylesheet: >
+                .menu {
+                  display: none;
+                }
+            slots:
+              dataZoom:
+                - component: oh-chart-datazoom
+                  config:
+                    type: inside
+              grid:
+                - component: oh-chart-grid
+                  config:
+                    top: 30px
+                    bottom: 55px
+                    left: 50px
+                    right: 56px
+              legend:
+                - component: oh-chart-legend
+                  config:
+                    bottom: 3
+                    type: scroll
+              series:
+                - component: oh-time-series
+                  config:
+                    areaStyle:
+                      opacity: 0.2
+                    gridIndex: 0
+                    item: =props.TemperatureItem
+                    lineStyle:
+                      width: 1
+                    name: =props.TemperatureTitle
+                    type: line
+                    xAxisIndex: 0
+                    yAxisIndex: 0
+                - component: oh-time-series
+                  config:
+                    gridIndex: 0
+                    item: =props.TemperatureResItem
+                    lineStyle:
+                      width: 1
+                    name: =props.heatindexTitle
+                    type: line
+                    xAxisIndex: 0
+                    yAxisIndex: 0
+                - component: oh-time-series
+                  config:
+                    gridIndex: 0
+                    item: =props.HumidityItem
+                    lineStyle:
+                      width: 1
+                    name: =props.HumidityTitle
+                    type: line
+                    xAxisIndex: 0
+                    yAxisIndex: 1
+              tooltip:
+                - component: oh-chart-tooltip
+                  config:
+                    confine: true
+                    smartFormatter: true
+              xAxis:
+                - component: oh-time-axis
+                  config:
+                    gridIndex: 0
+              yAxis:
+                - component: oh-value-axis
+                  config:
+                    gridIndex: 0
+                    scale: false
+                    splitArea:
+                      show: true
+                    splitLine:
+                      show: false
+                    axisLabel:
+                      formatter: "{value}°C"
+                - component: oh-value-axis
+                  config:
+                    gridIndex: 0
+                    scale: false
+                    splitLine:
+                      show: false
+                    axisLabel:
+                      formatter: "{value}%"
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.TemperatureItem
+              after: '=((items[props.TemperatureTendanceItem].state == "UP") ? "⏶ " : (items[props.TemperatureTendanceItem].state == "DOWN") ? "⏷ " : (items[props.TemperatureTendanceItem].state == "STABLE") ? "⏵ " : "!") + items[props.TemperatureItem].state'
+              icon: f7:thermometer
+              iconColor: '=(Number.parseFloat(items[props.TemperatureItem].state) > 25) ? "red" : (Number.parseFloat(items[props.TemperatureItem].state) > 22) ? "orange" : (Number.parseFloat(items[props.TemperatureItem].state) > 19) ? "yellow" : (Number.parseFloat(items[props.TemperatureItem].state) > 19) ? "lightblue" : "blue"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="⭳ " + items[props.TemperatureMinItem].state + " - ⭱ " + items[props.TemperatureMaxItem].state'
+              title: =props.TemperatureTitle
+              visible: =!props.TemperatureHide
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.TemperatureResItem
+              after: =items[props.TemperatureResItem].state
+              icon: iconify:carbon:temperature-feels-like
+              iconColor: '=(Number.parseFloat(items[props.TemperatureResItem].state) > 25) ? "#ff3b30" : (Number.parseFloat(items[props.TemperatureResItem].state) > 22) ? "#ff9500" : (Number.parseFloat(items[props.TemperatureResItem].state) > 19) ? "#ffcc00" : (Number.parseFloat(items[props.TemperatureResItem].state) > 19) ? "#5ac8fa" : "#2196f3"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.heatindexTitle
+              visible: =!props.heatindexHide
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.HumidityItem
+              after: =items[props.HumidityItem].state
+              icon: f7:drop
+              iconColor: '=(Number.parseInt(items[props.HumidityItem].state) > 60) ? "blue" : (Number.parseInt(items[props.HumidityItem].state) > 40) ? "white" : "blue"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.HumidityTitle
+              subtitle: '="⭳ " + items[props.HumidityMinItem].state + " - ⭱ " + items[props.HumidityMaxItem].state'
+              visible: =!props.HumidityHide
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.HumidexItem
+              after: =items[props.HumidexItem].displayState
+              icon: iconify:mdi:water-temperature
+              iconColor: '=(Number.parseInt(items[props.HumidexAppreciationItem].state) >= 30) ? "#ffcc00" : (Number.parseInt(items[props.HumidexAppreciationItem].state) >= 40) ? "#ff9500" : (Number.parseInt(items[props.HumidexAppreciationItem].state) >= 45) ? "#ff3b30" : (Number.parseInt(items[props.HumidexAppreciationItem].state) >= 54) ? "#673ab7" : "#4cd964"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =items[props.HumidexAppreciationItem].displayState
+              title: =props.HumidexTitle
+              visible: =!props.HumidexHide
+          - component: oh-list-item
+            config:
+              after: =items[props.PointRoseeItem].state
+              icon: iconify:material-symbols:dew-point
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: '="Depression: " + items[props.DepressionPointRoseeItem].state'
+              title: =props.DewpointTitle
+              visible: =!props.dewpointHide
+            slots:
+              accordion:
+                - component: f7-list
+                  config:
+                    accordionList: true
+                    style:
+                      background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(240, 240, 240)'"
+                  slots:
+                    default:
+                      - component: f7-segmented
+                        config:
+                          strong: true
+                        slots:
+                          default:
+                            - component: oh-button
+                              config:
+                                action: variable
+                                actionVariable: controlPointRosee
+                                actionVariableValue: D
+                                active: "=vars.controlPointRosee ? ((vars.controlPointRosee === 'D') ? true : false) : true"
+                                style:
+                                  --f7-button-border-radius: 0px
+                                  width: 100%
+                                text: D
+                            - component: oh-button
+                              config:
+                                action: variable
+                                actionVariable: controlPointRosee
+                                actionVariableValue: W
+                                active: "=(vars.controlPointRosee === 'W') ? true : false"
+                                style:
+                                  width: 100%
+                                text: W
+                            - component: oh-button
+                              config:
+                                action: variable
+                                actionVariable: controlPointRosee
+                                actionVariableValue: 2W
+                                active: "=(vars.controlPointRosee === '2W') ? true : false"
+                                style:
+                                  width: 100%
+                                text: 2W
+                            - component: oh-button
+                              config:
+                                action: variable
+                                actionVariable: controlPointRosee
+                                actionVariableValue: M
+                                active: "=(vars.controlPointRosee === 'M') ? true : false"
+                                style:
+                                  --f7-button-border-radius: 0px
+                                  width: 100%
+                                text: M
+                      - component: oh-chart
+                        config:
+                          height: 260px
+                          options:
+                            backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
+                            color:
+                              - "#5ac8fa"
+                              - "#007aff"
+                          period: "=vars.controlPointRosee ? vars.controlPointRosee : 'D'"
+                          stylesheet: >
+                            .menu {
+                              display: none;
+                            }
+                        slots:
+                          dataZoom:
+                            - component: oh-chart-datazoom
+                              config:
+                                type: inside
+                          grid:
+                            - component: oh-chart-grid
+                              config:
+                                top: 30px
+                                bottom: 55px
+                                left: 50px
+                                right: 26px
+                          legend:
+                            - component: oh-chart-legend
+                              config:
+                                bottom: 3
+                                type: scroll
+                          series:
+                            - component: oh-time-series
+                              config:
+                                areaStyle:
+                                  opacity: 0.2
+                                gridIndex: 0
+                                item: =props.PointRoseeItem
+                                lineStyle:
+                                  width: 1
+                                name: =props.DewpointTitle
+                                type: line
+                                xAxisIndex: 0
+                                yAxisIndex: 0
+                            - component: oh-time-series
+                              config:
+                                gridIndex: 0
+                                item: =props.DepressionPointRoseeItem
+                                lineStyle:
+                                  width: 1
+                                name: Depression
+                                type: line
+                                xAxisIndex: 0
+                                yAxisIndex: 0
+                          tooltip:
+                            - component: oh-chart-tooltip
+                              config:
+                                confine: true
+                                smartFormatter: true
+                          xAxis:
+                            - component: oh-time-axis
+                              config:
+                                gridIndex: 0
+                          yAxis:
+                            - component: oh-value-axis
+                              config:
+                                gridIndex: 0
+                                axisLabel:
+                                  formatter: "{value}°C"
+                                scale: false
+                                splitArea:
+                                  show: true
+                                splitLine:
+                                  show: false
+          - component: oh-label-item
+            config:
+              after: =@props.DeviceBatteryItem
+              icon: '=(Number.parseInt(@@props.DeviceBatteryItem) >= 90) ? "iconify:fluent:battery-10-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 80) ? "iconify:fluent:battery-9-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 70) ? "iconify:fluent:battery-8-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 60) ? "iconify:fluent:battery-7-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 50) ? "iconify:fluent:battery-6-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 40) ? "iconify:fluent:battery-5-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 30) ? "iconify:fluent:battery-4-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 20) ? "iconify:fluent:battery-3-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 10) ? "iconify:fluent:battery-2-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 5) ? "iconify:fluent:battery-1-24-regular" : (Number.parseInt(@@props.DeviceBatteryItem) >= 0) ? "fluent:battery-warning-24-regular" : "fluent:battery-warning-24-regular"'
+              iconColor: '=(Number.parseInt(@@props.DeviceBatteryItem) >= 80) ? "#4cd964" : (Number.parseInt(@@props.DeviceBatteryItem) >= 60) ? "#ffcc00" : (Number.parseInt(@@props.DeviceBatteryItem) >= 40) ? "#ff9500" : (Number.parseInt(@@props.DeviceBatteryItem) >= 20) ? "#ff6b22" : "#ff3b30"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.BatteryTitle
+              visible: =!props.BatteryHide
+          - component: oh-list-item
+            config:
+              action: analyzer
+              actionAnalyzerCoordSystem: time
+              actionAnalyzerItems: =props.signalItem
+              after: =@props.signalItem
+              icon: '=(Number.parseInt(@@props.signalItem) == 5) ? "iconify:bx:signal-5" : (Number.parseInt(@@props.signalItem) == 4) ? "iconify:bx:signal-4" : (Number.parseInt(@@props.signalItem) == 3) ? "iconify:bx:signal-3" : (Number.parseInt(@@props.signalItem) == 2) ? "iconify:bx:signal-2" : (Number.parseInt(@@props.signalItem) == 1) ? "iconify:bx:signal-1" : "iconify:bx:no-signal"'
+              iconColor: '=(Number.parseInt(@@props.signalItem) == 5) ? "#007aff" : (Number.parseInt(@@props.signalItem) == 4) ? "#5ac8fa" : (Number.parseInt(@@props.signalItem) == 3) ? "#ffcc00" : (Number.parseInt(@@props.signalItem) == 2) ? "#ff9500" : (Number.parseInt(@@props.signalItem) == 1) ? "#ff3b30" : "#ff3b30"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.SignalTitle
+              visible: =!props.SignalHide

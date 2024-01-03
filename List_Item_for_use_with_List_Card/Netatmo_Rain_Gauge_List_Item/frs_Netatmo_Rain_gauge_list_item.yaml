@@ -285,10 +285,10 @@ slots:
               grid:
                 - component: oh-chart-grid
                   config:
-                    top: 26px
                     bottom: 36px
                     left: 50px
                     right: 26px
+                    top: 26px
               series:
                 - component: oh-time-series
                   config:
@@ -298,6 +298,7 @@ slots:
                     item: =props.precipitationintensityItem
                     lineStyle:
                       width: 1
+                    service: jdbc
                     type: line
                     xAxisIndex: 0
                     yAxisIndex: 0
@@ -314,6 +315,8 @@ slots:
                   config:
                     gridIndex: 0
                     name: mm/h
+                    nameGap: 25
+                    nameLocation: center
                     scale: false
                     splitArea:
                       show: true
@@ -358,6 +361,7 @@ slots:
                     default:
                       - component: oh-chart
                         config:
+                          chartType: day
                           height: 260px
                           options:
                             backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
@@ -365,47 +369,49 @@ slots:
                             .menu {
                               display: none;
                             }
-                          chartType: day
                         slots:
                           grid:
                             - component: oh-chart-grid
                               config:
-                                top: 26px
                                 bottom: 36px
                                 left: 50px
                                 right: 26px
+                                top: 26px
+                          series:
+                            - component: oh-aggregate-series
+                              config:
+                                aggregationFunction: last
+                                dimension1: hour
+                                gridIndex: 0
+                                item: =props.lasthourItem
+                                type: bar
+                                xAxisIndex: 0
+                                yAxisIndex: 0
+                          tooltip:
+                            - component: oh-chart-tooltip
+                              config:
+                                confine: true
                           xAxis:
                             - component: oh-category-axis
                               config:
-                                gridIndex: 0
                                 categoryType: day
+                                gridIndex: 0
                                 monthFormat: short
-                                weekdayFormat: short
                                 nameGap: 50
+                                nameLocation: end
+                                weekdayFormat: short
                           yAxis:
                             - component: oh-value-axis
                               config:
                                 gridIndex: 0
                                 name: mm
+                                nameGap: 25
+                                nameLocation: center
                                 scale: false
                                 splitArea:
                                   show: true
                                 splitLine:
                                   show: false
-                          series:
-                            - component: oh-aggregate-series
-                              config:
-                                item: =props.precipitationintensityItem
-                                gridIndex: 0
-                                xAxisIndex: 0
-                                yAxisIndex: 0
-                                type: bar
-                                dimension1: hour
-                                aggregationFunction: sum
-                          tooltip:
-                            - component: oh-chart-tooltip
-                              config:
-                                confine: true
           - component: oh-list-item
             config:
               after: =@props.currentweekItem
@@ -430,6 +436,7 @@ slots:
                     default:
                       - component: oh-chart
                         config:
+                          chartType: isoWeek
                           height: 260px
                           options:
                             backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
@@ -437,47 +444,48 @@ slots:
                             .menu {
                               display: none;
                             }
-                          chartType: isoWeek
                         slots:
                           grid:
                             - component: oh-chart-grid
                               config:
-                                top: 26px
                                 bottom: 36px
                                 left: 50px
                                 right: 26px
+                                top: 26px
+                          series:
+                            - component: oh-aggregate-series
+                              config:
+                                aggregationFunction: last
+                                dimension1: date
+                                gridIndex: 0
+                                item: =props.currentdayItem
+                                type: bar
+                                xAxisIndex: 0
+                                yAxisIndex: 0
+                          tooltip:
+                            - component: oh-chart-tooltip
+                              config:
+                                confine: true
                           xAxis:
                             - component: oh-category-axis
                               config:
-                                gridIndex: 0
                                 categoryType: week
+                                gridIndex: 0
                                 monthFormat: short
-                                weekdayFormat: short
                                 nameGap: 50
+                                weekdayFormat: short
                           yAxis:
                             - component: oh-value-axis
                               config:
                                 gridIndex: 0
                                 name: mm
+                                nameGap: 25
+                                nameLocation: center
                                 scale: false
                                 splitArea:
                                   show: true
                                 splitLine:
                                   show: false
-                          series:
-                            - component: oh-aggregate-series
-                              config:
-                                item: =props.precipitationintensityItem
-                                gridIndex: 0
-                                xAxisIndex: 0
-                                yAxisIndex: 0
-                                type: bar
-                                dimension1: isoWeekday
-                                aggregationFunction: sum
-                          tooltip:
-                            - component: oh-chart-tooltip
-                              config:
-                                confine: true
           - component: oh-list-item
             config:
               after: =@props.currentmonthItem
@@ -502,6 +510,7 @@ slots:
                     default:
                       - component: oh-chart
                         config:
+                          chartType: month
                           height: 260px
                           options:
                             backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
@@ -509,47 +518,118 @@ slots:
                             .menu {
                               display: none;
                             }
-                          chartType: month
                         slots:
                           grid:
                             - component: oh-chart-grid
                               config:
-                                top: 26px
                                 bottom: 36px
                                 left: 50px
                                 right: 26px
+                                top: 26px
+                          series:
+                            - component: oh-aggregate-series
+                              config:
+                                aggregationFunction: last
+                                dimension1: date
+                                gridIndex: 0
+                                item: =props.currentdayItem
+                                type: bar
+                                xAxisIndex: 0
+                                yAxisIndex: 0
+                          tooltip:
+                            - component: oh-chart-tooltip
+                              config:
+                                confine: true
                           xAxis:
                             - component: oh-category-axis
                               config:
-                                gridIndex: 0
                                 categoryType: month
-                                monthFormat: short
-                                weekdayFormat: short
+                                gridIndex: 0
                                 nameGap: 50
                           yAxis:
                             - component: oh-value-axis
                               config:
                                 gridIndex: 0
                                 name: mm
+                                nameGap: 25
+                                nameLocation: center
                                 scale: false
                                 splitArea:
                                   show: true
                                 splitLine:
                                   show: false
+          - component: oh-list-item
+            config:
+              after: =@props.currentyearItem
+              icon: =props.currentyearIcon
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: =props.currentyearTitle
+              visible: =!props.Hidecurrentyear
+            slots:
+              accordion:
+                - component: f7-list
+                  config:
+                    accordionList: true
+                    style:
+                      background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(240, 240, 240)'"
+                  slots:
+                    default:
+                      - component: oh-chart
+                        config:
+                          chartType: year
+                          height: 260px
+                          options:
+                            backgroundColor: "=themeOptions.dark === 'dark' ? 'rgb(25, 25, 25)' : 'rgb(250, 250, 250)'"
+                          stylesheet: >
+                            .menu {
+                              display: none;
+                            }
+                        slots:
+                          grid:
+                            - component: oh-chart-grid
+                              config:
+                                bottom: 36px
+                                left: 50px
+                                right: 26px
+                                top: 26px
                           series:
                             - component: oh-aggregate-series
                               config:
-                                item: =props.precipitationintensityItem
+                                aggregationFunction: last
+                                dimension1: month
                                 gridIndex: 0
+                                item: =props.currentmonthItem
+                                type: bar
                                 xAxisIndex: 0
                                 yAxisIndex: 0
-                                type: bar
-                                dimension1: date
-                                aggregationFunction: sum
                           tooltip:
                             - component: oh-chart-tooltip
                               config:
                                 confine: true
+                          xAxis:
+                            - component: oh-category-axis
+                              config:
+                                categoryType: year
+                                gridIndex: 0
+                                nameGap: 50
+                          yAxis:
+                            - component: oh-value-axis
+                              config:
+                                gridIndex: 0
+                                name: mm
+                                nameGap: 25
+                                nameLocation: center
+                                scale: false
+                                splitArea:
+                                  show: true
+                                splitLine:
+                                  show: false
           - component: oh-label-item
             config:
               after: =@props.DeviceBatteryItem
@@ -558,8 +638,8 @@ slots:
               style:
                 --f7-list-item-after-font-size: 15px
                 --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
-                --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
               title: =props.BatteryTitle
               visible: =!props.BatteryHide

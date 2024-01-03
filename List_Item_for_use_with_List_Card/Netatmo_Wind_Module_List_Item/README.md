@@ -35,6 +35,10 @@ Support to use a light and a dark background.
 
 ## Changelog
 
+### Version 0.2
+
+* Fix bug gauge wind direction
+  
 ### Version 0.1
 
 * initial release
