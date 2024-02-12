@@ -1,0 +1,274 @@
+uid: frs_RadioBrowser_Chromecast_list_item
+tags:
+  - multimedia
+props:
+  parameters:
+    - default: Web Radio Chromecast
+      description: Header Title
+      label: Title
+      name: WebRadioTitle
+      required: false
+      type: TEXT
+    - default: iconify:material-symbols-light:radio
+      description: Header Icon - Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon
+      name: WebRadioIcon
+      required: false
+      type: TEXT
+    - context: item
+      default: RadioBrowser
+      description: Select the Radio Browser you wish to use at an equipment item level
+      label: item
+      name: radioBrowser
+      required: true
+      type: TEXT
+      groupName: radiobrowser
+    - context: item
+      default: Chromecast_Bureau_Play_URI
+      description: Select the Chromecast PlayURI item to send the radio URL.
+      label: item
+      name: playURI
+      required: true
+      type: TEXT
+      groupName: chromecast
+    - context: item
+      default: Chromecast_Bureau_Controle_Media
+      description: Select the Chromecast Player Control Item
+      label: item
+      name: playerControlItem
+      required: true
+      type: TEXT
+      groupName: chromecast
+    - context: item
+      default: Chromecast_Bureau_Current_Time
+      description: Select the Chromecast Current time Item
+      label: item
+      name: currentTimeItem
+      required: true
+      type: TEXT
+      groupName: chromecast
+    - context: item
+      default: Chromecast_Bureau_Volume
+      description: Select the Chromecast Volume Control Item
+      label: item
+      name: volumeControlItem
+      required: true
+      type: TEXT
+      groupName: chromecast
+  parameterGroups:
+    - name: radiobrowser
+      label: Radio Browser binding
+    - name: chromecast
+      label: Chromecast binding
+timestamp: Feb 12, 2024, 2:48:04 PM
+component: oh-list-card
+config:
+  accordionList: true
+  colorTheme: gray
+slots:
+  default:
+    - component: oh-list-item
+      config:
+        accordionItemOpened: false
+        accordionList: true
+        icon: =props.WebRadioIcon
+        mediaList: false
+        title: =props.WebRadioTitle
+      slots:
+        accordion:
+          - component: f7-list
+            config:
+              style:
+                background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+            slots:
+              default:
+                - component: f7-row
+                  config:
+                    class:
+                      - display-flex
+                      - justify-content-center
+                    style:
+                      margin-left: 6px
+                      margin-right: 6px
+                      padding-top: 10px
+                  slots:
+                    default:
+                      - component: oh-button
+                        config:
+                          action: options
+                          actionItem: =props.radioBrowser+'_Country'
+                          iconF7: globe
+                          iconSize: 22
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                          text: =items[props.radioBrowser+'_Country'].state
+                      - component: oh-button
+                        config:
+                          action: options
+                          actionItem: =props.radioBrowser+'_State'
+                          iconF7: globe
+                          iconSize: 22
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                          text: =items[props.radioBrowser+'_State'].state
+                      - component: oh-button
+                        config:
+                          action: options
+                          actionItem: =props.radioBrowser+'_Language'
+                          iconF7: chat_bubble_text
+                          iconSize: 22
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                          text: =items[props.radioBrowser+'_Language'].state
+                      - component: oh-button
+                        config:
+                          action: options
+                          actionItem: =props.radioBrowser+'_Genre'
+                          iconF7: music_note_list
+                          iconSize: 22
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                          text: =items[props.radioBrowser+'_Genre'].state
+                - component: f7-row
+                  config:
+                    class:
+                      - align-items-center
+                      - display-flex
+                      - justify-content-space-evenly
+                    style:
+                      margin-bottom: 10px
+                      margin-left: 18px
+                      margin-right: 18px
+                      margin-top: 10px
+                      flex-wrap: nowrap
+                  slots:
+                    default:
+                      - component: oh-image
+                        config:
+                          item: =props.radioBrowser+'_Icon'
+                          style:
+                            height: 40px
+                            border-radius: 6px
+                            margin-right: 8px
+                      - component: oh-button
+                        config:
+                          action: options
+                          actionItem: =props.radioBrowser+'_Station'
+                          outline: false
+                          raised: true
+                          round: false
+                          large: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                          text: =items[props.radioBrowser+'_Name'].state
+                      - component: oh-link
+                        config:
+                          action: command
+                          actionCommand: =items[props.radioBrowser+'_Stream'].state
+                          actionItem: =props.playURI
+                          iconF7: plus_circle_fill
+                          style:
+                            margin-left: 8px
+                - component: f7-row
+                  config:
+                    class:
+                      - display-flex
+                      - justify-content-space-around
+                    style:
+                      padding-bottom: 10px
+                      margin-left: 18px
+                      margin-right: 18px
+                      margin-top: 0px
+                  slots:
+                    default:
+                      - component: f7-block
+                        config:
+                          style:
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            flex-direction: row
+                            top: 0px
+                            width: 100%
+                            padding: 0
+                            margin: 0
+                        slots:
+                          default:
+                            - component: oh-link
+                              config:
+                                action: variable
+                                actionVariable: showVolume
+                                actionVariableValue: =!(vars.showVolume === true)
+                                color: "=(vars.showVolume) ? 'blue' : 'gray'"
+                                iconF7: '=(Number.parseInt(items[props.volumeControlItem].state) >= 75) ? "speaker_3_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 50) ? "speaker_2_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 10) ? "speaker_1_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 0) ? "speaker_fill" : (Number.parseInt(items[props.volumeControlItem].state) == 0) ? "speaker_slash_fill" :"speaker_slash_fill"'
+                                iconSize: 36
+                                round: true
+                                style:
+                                  position: absolute
+                                  left: 0px
+                            - component: f7-block
+                              config:
+                                style:
+                                  padding: 0
+                                  display: flex
+                                  flex-direction: column
+                                  width: 100%
+                                  margin-left: 40px
+                                  margin-right: 40px
+                              slots:
+                                default:
+                                  - component: oh-player-controls
+                                    config:
+                                      showRewindFFward: false
+                                      item: =props.playerControlItem
+                                      visible: =!vars.showVolume
+                                  - component: oh-slider
+                                    config:
+                                      color: blue
+                                      item: =props.volumeControlItem
+                                      style:
+                                        margin-top: 14px
+                                        margin-bottom: 10px
+                                        width: 70%
+                                      visible: =vars.showVolume === true
+                            - component: Label
+                              config:
+                                style:
+                                  color: gray
+                                  font-size: 20px
+                                  font-weight: 500
+                                  position: absolute
+                                  right: 0px
+                                text: "=items[props.currentTimeItem].state == 'UNDEF' ? '00:00' : dayjs().startOf('day').add(items[props.currentTimeItem].state.split(' ')[0], 'seconds').format(items[props.currentTimeItem].state.split(' ')[0] < 3600 ? 'mm:ss' : 'H:mm:ss')"
