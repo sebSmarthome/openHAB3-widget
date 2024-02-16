@@ -24,7 +24,6 @@ props:
       type: TEXT
       groupName: radiobrowser
     - context: item
-      default: Chromecast_Bureau_Play_URI
       description: Select the Chromecast PlayURI item to send the radio URL.
       label: item
       name: playURI
@@ -32,7 +31,6 @@ props:
       type: TEXT
       groupName: chromecast
     - context: item
-      default: Chromecast_Bureau_Controle_Media
       description: Select the Chromecast Player Control Item
       label: item
       name: playerControlItem
@@ -40,7 +38,6 @@ props:
       type: TEXT
       groupName: chromecast
     - context: item
-      default: Chromecast_Bureau_Current_Time
       description: Select the Chromecast Current time Item
       label: item
       name: currentTimeItem
@@ -48,19 +45,62 @@ props:
       type: TEXT
       groupName: chromecast
     - context: item
-      default: Chromecast_Bureau_Volume
       description: Select the Chromecast Volume Control Item
       label: item
       name: volumeControlItem
       required: true
       type: TEXT
       groupName: chromecast
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide Country button
+      name: HideCountryButton
+      required: false
+      type: BOOLEAN
+      groupName: display
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide State button
+      name: HideStateButton
+      required: false
+      type: BOOLEAN
+      groupName: display
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide Language button
+      name: HideLanguageButton
+      required: false
+      type: BOOLEAN
+      groupName: display
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide Genre button
+      name: HideGenreButton
+      required: false
+      type: BOOLEAN
+      groupName: display
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide Recent button
+      name: HideRecentButton
+      required: false
+      type: BOOLEAN
+      groupName: display
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide Refreh button
+      name: HideRefrehButton
+      required: false
+      type: BOOLEAN
+      groupName: display
+    - description: Enabled/Invisible Disabled/Visible
+      label: Hide Search button
+      name: HideSearchButton
+      required: false
+      type: BOOLEAN
+      groupName: display
   parameterGroups:
     - name: radiobrowser
       label: Radio Browser binding
     - name: chromecast
       label: Chromecast binding
-timestamp: Feb 12, 2024, 2:48:04 PM
+    - name: display
+      label: Display
+timestamp: Feb 16, 2024, 7:07:25 PM
 component: oh-list-card
 config:
   accordionList: true
@@ -90,11 +130,12 @@ slots:
                     style:
                       margin-left: 6px
                       margin-right: 6px
-                      padding-top: 10px
+                      padding-top: 14px
                   slots:
                     default:
                       - component: oh-button
                         config:
+                          visible: =!props.HideCountryButton
                           action: options
                           actionItem: =props.radioBrowser+'_Country'
                           iconF7: globe
@@ -112,9 +153,10 @@ slots:
                           text: =items[props.radioBrowser+'_Country'].state
                       - component: oh-button
                         config:
+                          visible: =!props.HideStateButton
                           action: options
                           actionItem: =props.radioBrowser+'_State'
-                          iconF7: globe
+                          iconF7: rectangle_3_offgrid
                           iconSize: 22
                           outline: false
                           raised: true
@@ -129,6 +171,7 @@ slots:
                           text: =items[props.radioBrowser+'_State'].state
                       - component: oh-button
                         config:
+                          visible: =!props.HideLanguageButton
                           action: options
                           actionItem: =props.radioBrowser+'_Language'
                           iconF7: chat_bubble_text
@@ -146,6 +189,7 @@ slots:
                           text: =items[props.radioBrowser+'_Language'].state
                       - component: oh-button
                         config:
+                          visible: =!props.HideGenreButton
                           action: options
                           actionItem: =props.radioBrowser+'_Genre'
                           iconF7: music_note_list
@@ -164,14 +208,99 @@ slots:
                 - component: f7-row
                   config:
                     class:
+                      - display-flex
+                      - justify-content-center
+                    style:
+                      margin-left: 6px
+                      margin-right: 6px
+                      margin-bottom: -6px
+                      padding-top: 3px
+                  slots:
+                    default:
+                      - component: oh-button
+                        config:
+                          visible: =!props.HideRecentButton
+                          action: options
+                          actionItem: =props.radioBrowser+'_Recent'
+                          iconF7: music_albums
+                          iconSize: 22
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                      - component: oh-button
+                        config:
+                          visible: =!props.HideRefrehButton
+                          action: command
+                          actionCommand: REFRESH
+                          actionItem: =props.radioBrowser+'_Station'
+                          iconF7: arrow_2_circlepath
+                          iconSize: 22
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                      - component: oh-button
+                        config:
+                          visible: =!props.HideSearchButton
+                          action: variable
+                          actionVariable: showSearch
+                          actionVariableValue: =!(vars.showSearch === true)
+                          iconF7: search
+                          iconSize: 22
+                          iconColor: "=(vars.showSearch) ? 'blue' : 'gray'"
+                          outline: false
+                          raised: true
+                          round: false
+                          small: true
+                          style:
+                            --f7-button-bg-color: "=themeOptions.dark === 'dark' ? 'rgba(55, 55, 55, 0.6)' : 'rgba(215, 215, 215, 0.6)'"
+                            height: 28px
+                            margin-bottom: 6px
+                            margin-left: 3px
+                            margin-right: 3px
+                - component: f7-block
+                  config:
+                    style:
+                      margin-left: 0px
+                      margin-right: 0px
+                      margin-top: 14px
+                  slots:
+                    default:
+                      - component: oh-input
+                        config:
+                          visible: =vars.showSearch === true
+                          outline: true
+                          clearButton: true
+                          sendButton: true
+                          inputmode: text
+                          item: =props.radioBrowser+'_Station'
+                          placeholder: =items[props.radioBrowser+'_Station'].state
+                          type: text
+                          style:
+                            --f7-cols-per-row: 1.16
+                - component: f7-row
+                  config:
+                    class:
                       - align-items-center
                       - display-flex
-                      - justify-content-space-evenly
+                      - justify-content-space-between
                     style:
-                      margin-bottom: 10px
+                      margin-top: 14px
                       margin-left: 18px
                       margin-right: 18px
-                      margin-top: 10px
                       flex-wrap: nowrap
                   slots:
                     default:
@@ -179,9 +308,8 @@ slots:
                         config:
                           item: =props.radioBrowser+'_Icon'
                           style:
-                            height: 40px
+                            height: 44px
                             border-radius: 6px
-                            margin-right: 8px
                       - component: oh-button
                         config:
                           action: options
@@ -200,75 +328,49 @@ slots:
                           actionItem: =props.playURI
                           iconF7: plus_circle_fill
                           style:
-                            margin-left: 8px
+                            width: 44px
+                            justify-content: flex-end
                 - component: f7-row
                   config:
                     class:
+                      - align-items-center
                       - display-flex
-                      - justify-content-space-around
+                      - justify-content-space-between
                     style:
-                      padding-bottom: 10px
+                      padding-bottom: 14px
                       margin-left: 18px
                       margin-right: 18px
-                      margin-top: 0px
+                      margin-top: 14px
+                      flex-wrap: nowrap
                   slots:
                     default:
-                      - component: f7-block
+                      - component: oh-link
+                        config:
+                          action: variable
+                          actionVariable: showVolume
+                          actionVariableValue: =!(vars.showVolume === true)
+                          color: "=(vars.showVolume) ? 'blue' : 'gray'"
+                          iconF7: '=(Number.parseInt(items[props.volumeControlItem].state) >= 75) ? "speaker_3_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 50) ? "speaker_2_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 10) ? "speaker_1_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 0) ? "speaker_fill" : (Number.parseInt(items[props.volumeControlItem].state) == 0) ? "speaker_slash_fill" :"speaker_slash_fill"'
+                          iconSize: 36
+                          round: true
+                      - component: oh-player-controls
+                        config:
+                          showRewindFFward: false
+                          item: =props.playerControlItem
+                          visible: =!vars.showVolume
+                      - component: oh-slider
+                        config:
+                          color: blue
+                          item: =props.volumeControlItem
+                          style:
+                            margin-top: 14px
+                            margin-bottom: 10px
+                            width: 62%
+                          visible: =vars.showVolume === true
+                      - component: Label
                         config:
                           style:
-                            display: flex
-                            justify-content: space-between
-                            align-items: center
-                            flex-direction: row
-                            top: 0px
-                            width: 100%
-                            padding: 0
-                            margin: 0
-                        slots:
-                          default:
-                            - component: oh-link
-                              config:
-                                action: variable
-                                actionVariable: showVolume
-                                actionVariableValue: =!(vars.showVolume === true)
-                                color: "=(vars.showVolume) ? 'blue' : 'gray'"
-                                iconF7: '=(Number.parseInt(items[props.volumeControlItem].state) >= 75) ? "speaker_3_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 50) ? "speaker_2_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 10) ? "speaker_1_fill" : (Number.parseInt(items[props.volumeControlItem].state) > 0) ? "speaker_fill" : (Number.parseInt(items[props.volumeControlItem].state) == 0) ? "speaker_slash_fill" :"speaker_slash_fill"'
-                                iconSize: 36
-                                round: true
-                                style:
-                                  position: absolute
-                                  left: 0px
-                            - component: f7-block
-                              config:
-                                style:
-                                  padding: 0
-                                  display: flex
-                                  flex-direction: column
-                                  width: 100%
-                                  margin-left: 40px
-                                  margin-right: 40px
-                              slots:
-                                default:
-                                  - component: oh-player-controls
-                                    config:
-                                      showRewindFFward: false
-                                      item: =props.playerControlItem
-                                      visible: =!vars.showVolume
-                                  - component: oh-slider
-                                    config:
-                                      color: blue
-                                      item: =props.volumeControlItem
-                                      style:
-                                        margin-top: 14px
-                                        margin-bottom: 10px
-                                        width: 70%
-                                      visible: =vars.showVolume === true
-                            - component: Label
-                              config:
-                                style:
-                                  color: gray
-                                  font-size: 20px
-                                  font-weight: 500
-                                  position: absolute
-                                  right: 0px
-                                text: "=items[props.currentTimeItem].state == 'UNDEF' ? '00:00' : dayjs().startOf('day').add(items[props.currentTimeItem].state.split(' ')[0], 'seconds').format(items[props.currentTimeItem].state.split(' ')[0] < 3600 ? 'mm:ss' : 'H:mm:ss')"
+                            color: gray
+                            font-size: 20px
+                            font-weight: 500
+                          text: "=items[props.currentTimeItem].state == 'UNDEF' ? '00:00' : dayjs().startOf('day').add(items[props.currentTimeItem].state.split(' ')[0], 'seconds').format(items[props.currentTimeItem].state.split(' ')[0] < 3600 ? 'mm:ss' : 'H:mm:ss')"

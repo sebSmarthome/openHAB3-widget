@@ -20,6 +20,7 @@ Support to use a light and a dark background.
 ## Screenshots
 
 ![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/RadioBrowser_Chromecast_List_Item/screenshots/RadioBrower.gif)
+![Screen3](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/RadioBrowser_Chromecast_List_Item/screenshots/RadioBrower2.jpg)
 
 ## Changelog
 
