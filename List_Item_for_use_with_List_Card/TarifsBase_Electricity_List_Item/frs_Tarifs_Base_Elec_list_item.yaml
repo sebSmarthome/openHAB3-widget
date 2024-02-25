@@ -10,36 +10,42 @@ props:
       required: false
       type: TEXT
     - context: item
+      default: Tarifs_Base_PART_FIXE_HT
       description: Tarif PART FIXE HT
       label: Item
       name: PART_FIXE_HT_item
       required: false
       type: TEXT
     - context: item
+      default: Tarifs_Base_PART_FIXE_TTC
       description: Tarif PART FIXE TTC
       label: Item
       name: PART_FIXE_TTC_item
       required: false
       type: TEXT
     - context: item
+      default: Tarifs_Base_PART_VARIABLE_HT
       description: Tarif consommation HT
       label: Item
       name: Conso_HT_item
       required: false
       type: TEXT
     - context: item
+      default: Tarifs_Base_PART_VARIABLE_TTC
       description: Tarif consommation TTC
       label: Item
       name: Conso_TTC_item
       required: false
       type: TEXT
     - context: item
+      default: Tarifs_Base_Date
       description: Date debut
       label: Item
       name: Date_item
       required: false
       type: TEXT
     - context: item
+      default: Tarifs_Base_Puissance_souscrite
       description: Puissance Souscrite
       label: Item
       name: Puissance_Souscrite_item
