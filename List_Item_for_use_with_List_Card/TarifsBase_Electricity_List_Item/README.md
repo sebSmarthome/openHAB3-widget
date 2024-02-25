@@ -1,7 +1,7 @@
 ![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/TarifsBase_Electricity_List_Item/screenshots/tarifsbase.jpg)
 
 This is an UI **List Item** Widget to view the French regulated tarif "option: Base"
-[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9l%C3%A9ctricit%C3%A9-option-Heures-Creuses)
+[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9lectricit%C3%A9-option-Base)
 
 Only use with **List Card** with accordion and rich list items option set to true.
 
