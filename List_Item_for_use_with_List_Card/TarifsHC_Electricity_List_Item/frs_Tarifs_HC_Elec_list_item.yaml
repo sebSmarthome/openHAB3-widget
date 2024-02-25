@@ -1,0 +1,155 @@
+uid: frs_Tarifs_HC_Elec_list_item
+tags:
+  - list
+props:
+  parameters:
+    - default: Tarif Réglementé
+      description: Header Title
+      label: Title
+      name: HeaderTitle
+      required: false
+      type: TEXT
+    - context: item
+      description: Tarif PART FIXE HT
+      label: Item
+      name: PART_FIXE_HT_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Tarif PART FIXE TTC
+      label: Item
+      name: PART_FIXE_TTC_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Tarif Heures creuses HT
+      label: Item
+      name: HC_HT_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Tarif Heures creuses TTC
+      label: Item
+      name: HC_TTC_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Tarif Heures pleines HT
+      label: Item
+      name: HP_HT_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Tarif Heures pleines TTC
+      label: Item
+      name: HP_TTC_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Date debut
+      label: Item
+      name: Date_item
+      required: false
+      type: TEXT
+    - context: item
+      description: Puissance Souscrite
+      label: Item
+      name: Puissance_Souscrite_item
+      required: false
+      type: TEXT
+  parameterGroups: []
+timestamp: Feb 24, 2024, 11:18:30 AM
+component: oh-list-item
+config:
+  after: =@props.Puissance_Souscrite_item
+  icon: f7:money_euro
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+      'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  subtitle: ="Option Heures Creuses"
+  title: =props.HeaderTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247,
+            247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              after: =@props.PART_FIXE_TTC_item
+              mediaList: true
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.PART_FIXE_HT_item + " HT"
+              title: ="Abonnement"
+          - component: oh-label-item
+            config:
+              after: =@props.HC_TTC_item
+              mediaList: true
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.HC_HT_item + " HT"
+              title: ="Consommation heures creuses"
+          - component: oh-label-item
+            config:
+              after: =@props.HP_TTC_item
+              mediaList: true
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: =@props.HP_HT_item + " HT"
+              title: ="Consommation heures pleines"
+          - component: oh-label-item
+            config:
+              action: options
+              actionItem: =props.Puissance_Souscrite_item
+              item: =props.Puissance_Souscrite_item
+              mediaList: false
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: ="Puissance souscrite"
+          - component: oh-label-item
+            config:
+              after: =@props.Date_item
+              mediaList: false
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: ="Tarifs en vigueur depuis le:"

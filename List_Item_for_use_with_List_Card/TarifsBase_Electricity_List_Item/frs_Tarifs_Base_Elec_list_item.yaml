@@ -1,4 +1,4 @@
-uid: frs_TarifsHC_Elec_list_item
+uid: frs_Tarifs_Base_Elec_list_item
 tags:
   - list
 props:
@@ -22,27 +22,15 @@ props:
       required: false
       type: TEXT
     - context: item
-      description: Tarif Heures creuses HT
+      description: Tarif consommation HT
       label: Item
-      name: HC_HT_item
+      name: Conso_HT_item
       required: false
       type: TEXT
     - context: item
-      description: Tarif Heures creuses TTC
+      description: Tarif consommation TTC
       label: Item
-      name: HC_TTC_item
-      required: false
-      type: TEXT
-    - context: item
-      description: Tarif Heures pleines HT
-      label: Item
-      name: HP_HT_item
-      required: false
-      type: TEXT
-    - context: item
-      description: Tarif Heures pleines TTC
-      label: Item
-      name: HP_TTC_item
+      name: Conso_TTC_item
       required: false
       type: TEXT
     - context: item
@@ -58,7 +46,7 @@ props:
       required: false
       type: TEXT
   parameterGroups: []
-timestamp: Feb 24, 2024, 11:18:30 AM
+timestamp: Feb 25, 2024, 11:16:10 AM
 component: oh-list-item
 config:
   after: =@props.Puissance_Souscrite_item
@@ -67,7 +55,7 @@ config:
     --f7-list-item-after-font-size: 16px
     --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
       'rgb(180,180,180)' : 'rgb(80,80,80)'"
-  subtitle: ="30A - mono"
+  subtitle: ="Option Base"
   title: =props.HeaderTitle
 slots:
   accordion:
@@ -97,7 +85,7 @@ slots:
               title: ="Abonnement"
           - component: oh-label-item
             config:
-              after: =@props.HC_TTC_item
+              after: =@props.Conso_TTC_item
               mediaList: true
               style:
                 --f7-list-item-after-font-size: 15px
@@ -109,24 +97,8 @@ slots:
                 --f7-list-item-title-font-size: 15px
                 --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
                   'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: =@props.HC_HT_item + " HT"
-              title: ="Conso heures creuses"
-          - component: oh-label-item
-            config:
-              after: =@props.HP_TTC_item
-              mediaList: true
-              style:
-                --f7-list-item-after-font-size: 15px
-                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
-                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
-                --f7-list-item-subtitle-font-size: 14px
-                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ?
-                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
-                --f7-list-item-title-font-size: 15px
-                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
-                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
-              subtitle: =@props.HP_HT_item + " HT"
-              title: ="Conso heures pleines"
+              subtitle: =@props.Conso_HT_item + " HT"
+              title: ="Consommation"
           - component: oh-label-item
             config:
               action: options
