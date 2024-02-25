@@ -1169,15 +1169,15 @@
     {
         "id": "e34e734bacc49f32",
         "type": "openhab2-controller2",
-        "name": "openhab3",
+        "name": "",
         "protocol": "http",
-        "host": "192.168.1.98",
+        "host": "",
         "port": "8080",
         "path": "",
-        "username": "michto",
-        "password": "frs76521",
+        "username": "",
+        "password": "",
         "ohversion": "v3",
-        "token": "oh.nodered2024.QoJvbHq77YBqdc6nNqB7Da50U6pv9SomMq1aPrOamVYGiERTn9U6ozJuR9VjJtEOjVtmjCQZVoEWvliWcbDmqw"
+        "token": ""
     },
     {
         "id": "49e2d5c72b801c1b",
