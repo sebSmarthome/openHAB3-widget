@@ -9,8 +9,8 @@ Support to use a light and a dark background.
 
 **items**
 
-* PART FIXE TTC - Prix de l'abonnement annuel, en euros toutes taxes comprises
-* PART FIXE HT - Prix de l'abonnement annuel, en euros hors taxes
+* PART FIXE TTC - Prix de l'abonnement mensuel, en euros toutes taxes comprises
+* PART FIXE HT - Prix de l'abonnement mensuel, en euros hors taxes
 * PART VARIABLE HC TTC - Prix du kWh consommé en heures creuses, en euros toutes taxes comprises
 * PART VARIABLE HC HT - Prix du kWh consommé en heures creuses, en euros hors taxes
 * PART VARIABLE HP TTC - Prix du kWh consommé en heures pleines, en euros toutes taxes comprises
