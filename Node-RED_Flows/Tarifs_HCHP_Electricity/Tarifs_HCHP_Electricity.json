@@ -1,0 +1,1175 @@
+[
+    {
+        "id": "e9e79312e070d9ae",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a326dc600314b6b6",
+        "type": "http request",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.data.gouv.fr/fr/datasets/r/f7303b3a-93c7-4242-813d-84919034c416",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "2001024eab5e102b"
+            ]
+        ]
+    },
+    {
+        "id": "cfbef1c7719d97f1",
+        "type": "inject",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "a326dc600314b6b6"
+            ]
+        ]
+    },
+    {
+        "id": "2001024eab5e102b",
+        "type": "csv",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "sep": ";",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 450,
+        "y": 280,
+        "wires": [
+            [
+                "dd97c7f4b946f712"
+            ]
+        ]
+    },
+    {
+        "id": "dd97c7f4b946f712",
+        "type": "sort",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "order": "ascending",
+        "as_num": true,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "aee9a2d615db54b7",
+                "098c2e9e5a7cf2a3",
+                "2b2127719404b00f",
+                "ad500e163db972f8",
+                "d552414a8be37068",
+                "a5f3eccdf0a96468",
+                "461a6bfa5e7edc21",
+                "447fb9ccd1d482c0",
+                "20d063689976f211"
+            ]
+        ]
+    },
+    {
+        "id": "aee9a2d615db54b7",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "Date",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].DATE_DEBUT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            [
+                "ad050a034eae31ee"
+            ]
+        ]
+    },
+    {
+        "id": "511191a8d6b7a5e0",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "PART_FIXE_HT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_FIXE_HT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 340,
+        "wires": [
+            [
+                "acc9fc25a423034f"
+            ]
+        ]
+    },
+    {
+        "id": "1549c9475f38feb1",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "PART_FIXE_TTC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_FIXE_TTC",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1270,
+        "y": 400,
+        "wires": [
+            [
+                "95b15ab231d9e625"
+            ]
+        ]
+    },
+    {
+        "id": "af5e4acbcdc0cade",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "PART_VARIABLE_HC_HT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_VARIABLE_HC_HT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 460,
+        "wires": [
+            [
+                "33b7e123d7405a9d"
+            ]
+        ]
+    },
+    {
+        "id": "833e8b10189dd866",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "PART_VARIABLE_HC_TTC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_VARIABLE_HC_TTC",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 520,
+        "wires": [
+            [
+                "d8a767ffb3dadc5d"
+            ]
+        ]
+    },
+    {
+        "id": "cb88350b5014c862",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "PART_VARIABLE_HP_HT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_VARIABLE_HP_HT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 580,
+        "wires": [
+            [
+                "70e4fe44fd1ee3c2"
+            ]
+        ]
+    },
+    {
+        "id": "1bba39502caca964",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "PART_VARIABLE_HP_TTC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_VARIABLE_HP_TTC",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 640,
+        "wires": [
+            [
+                "348a241154e791bc"
+            ]
+        ]
+    },
+    {
+        "id": "c3ab3f93c102b3f8",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1840,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad050a034eae31ee",
+        "type": "moment",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Europe/Paris",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "fr-FR",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Paris",
+        "x": 1540,
+        "y": 280,
+        "wires": [
+            [
+                "c3ab3f93c102b3f8"
+            ]
+        ]
+    },
+    {
+        "id": "fa9d2fdc2b853f90",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1870,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a97fe926bae24cf",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1880,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b4b00183cd576ac",
+        "type": "function",
+        "z": "e9e79312e070d9ae",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(2);\nvar moisValue = Number(floatValue)/12\n//set and return payload\nmsg.payload = moisValue.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 340,
+        "wires": [
+            [
+                "fa9d2fdc2b853f90"
+            ]
+        ]
+    },
+    {
+        "id": "b2802cd3243db0b0",
+        "type": "function",
+        "z": "e9e79312e070d9ae",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(2);\nvar moisValue = Number(floatValue) / 12;\n//set and return payload\nmsg.payload = moisValue.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 400,
+        "wires": [
+            [
+                "2a97fe926bae24cf"
+            ]
+        ]
+    },
+    {
+        "id": "95b15ab231d9e625",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 400,
+        "wires": [
+            [
+                "b2802cd3243db0b0"
+            ]
+        ]
+    },
+    {
+        "id": "acc9fc25a423034f",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 340,
+        "wires": [
+            [
+                "4b4b00183cd576ac"
+            ]
+        ]
+    },
+    {
+        "id": "33b7e123d7405a9d",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 460,
+        "wires": [
+            [
+                "9e19dd48800e3e41"
+            ]
+        ]
+    },
+    {
+        "id": "d8a767ffb3dadc5d",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 520,
+        "wires": [
+            [
+                "040f941b990e89af"
+            ]
+        ]
+    },
+    {
+        "id": "70e4fe44fd1ee3c2",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 580,
+        "wires": [
+            [
+                "6d9c21b231b85e60"
+            ]
+        ]
+    },
+    {
+        "id": "348a241154e791bc",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 640,
+        "wires": [
+            [
+                "53594a45af60af3e"
+            ]
+        ]
+    },
+    {
+        "id": "9e19dd48800e3e41",
+        "type": "function",
+        "z": "e9e79312e070d9ae",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(4);\n\n//set and return payload\nmsg.payload = floatValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 460,
+        "wires": [
+            [
+                "d66a7b7e64ecf277"
+            ]
+        ]
+    },
+    {
+        "id": "040f941b990e89af",
+        "type": "function",
+        "z": "e9e79312e070d9ae",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(4);\n\n//set and return payload\nmsg.payload = floatValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 520,
+        "wires": [
+            [
+                "2e0b86a2c003bd2d"
+            ]
+        ]
+    },
+    {
+        "id": "6d9c21b231b85e60",
+        "type": "function",
+        "z": "e9e79312e070d9ae",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(4);\n\n//set and return payload\nmsg.payload = floatValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 580,
+        "wires": [
+            [
+                "839c4b4090e10a83"
+            ]
+        ]
+    },
+    {
+        "id": "53594a45af60af3e",
+        "type": "function",
+        "z": "e9e79312e070d9ae",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(4);\n\n//set and return payload\nmsg.payload = floatValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 640,
+        "wires": [
+            [
+                "be85a8773c4a60cc"
+            ]
+        ]
+    },
+    {
+        "id": "d66a7b7e64ecf277",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "TarifsElectricite_PART_VARIABLE_HC_HT",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1910,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e0b86a2c003bd2d",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1910,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "839c4b4090e10a83",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1910,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be85a8773c4a60cc",
+        "type": "openhab2-out2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1910,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "175b5c83e73c2658",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "36kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 760,
+        "wires": [
+            [
+                "511191a8d6b7a5e0",
+                "1549c9475f38feb1",
+                "af5e4acbcdc0cade",
+                "833e8b10189dd866",
+                "cb88350b5014c862",
+                "1bba39502caca964"
+            ]
+        ]
+    },
+    {
+        "id": "51b0363a2cde4766",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "30kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[1]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 700,
+        "wires": [
+            [
+                "511191a8d6b7a5e0",
+                "1549c9475f38feb1",
+                "af5e4acbcdc0cade",
+                "833e8b10189dd866",
+                "cb88350b5014c862",
+                "1bba39502caca964"
+            ]
+        ]
+    },
+    {
+        "id": "2bc5f593b94d20e8",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "24kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[2]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 640,
+        "wires": [
+            [
+                "511191a8d6b7a5e0",
+                "1549c9475f38feb1",
+                "af5e4acbcdc0cade",
+                "833e8b10189dd866",
+                "cb88350b5014c862",
+                "1bba39502caca964"
+            ]
+        ]
+    },
+    {
+        "id": "85d4587bfb726a0e",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "18kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[3]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 580,
+        "wires": [
+            [
+                "511191a8d6b7a5e0",
+                "1549c9475f38feb1",
+                "af5e4acbcdc0cade",
+                "833e8b10189dd866",
+                "cb88350b5014c862",
+                "1bba39502caca964"
+            ]
+        ]
+    },
+    {
+        "id": "0b4fadf7ef58cc81",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "15kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[4]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 520,
+        "wires": [
+            [
+                "1bba39502caca964",
+                "cb88350b5014c862",
+                "833e8b10189dd866",
+                "af5e4acbcdc0cade",
+                "1549c9475f38feb1",
+                "511191a8d6b7a5e0"
+            ]
+        ]
+    },
+    {
+        "id": "c37bf64dc4c6257e",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "12kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[5]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 460,
+        "wires": [
+            [
+                "1bba39502caca964",
+                "cb88350b5014c862",
+                "833e8b10189dd866",
+                "af5e4acbcdc0cade",
+                "1549c9475f38feb1",
+                "511191a8d6b7a5e0"
+            ]
+        ]
+    },
+    {
+        "id": "4c23054fe6e42dc0",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "9kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[6]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 400,
+        "wires": [
+            [
+                "1bba39502caca964",
+                "cb88350b5014c862",
+                "833e8b10189dd866",
+                "af5e4acbcdc0cade",
+                "1549c9475f38feb1",
+                "511191a8d6b7a5e0"
+            ]
+        ]
+    },
+    {
+        "id": "ba07132fe01c0852",
+        "type": "change",
+        "z": "e9e79312e070d9ae",
+        "name": "6kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[7]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 340,
+        "wires": [
+            [
+                "511191a8d6b7a5e0",
+                "1549c9475f38feb1",
+                "af5e4acbcdc0cade",
+                "833e8b10189dd866",
+                "cb88350b5014c862",
+                "1bba39502caca964"
+            ]
+        ]
+    },
+    {
+        "id": "afdb08d2fc0f5a9a",
+        "type": "openhab2-in2",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "",
+        "initialstate": true,
+        "whenupdated": false,
+        "whencommand": true,
+        "whenchanged": false,
+        "changedfrom": "",
+        "changedto": "",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "a326dc600314b6b6",
+                "954c134a21adc48f"
+            ]
+        ]
+    },
+    {
+        "id": "954c134a21adc48f",
+        "type": "iGlass-logic-variable-set",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "x": 520,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "2b2127719404b00f",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "6",
+        "conditionValueType": "num",
+        "x": 820,
+        "y": 340,
+        "wires": [
+            [
+                "ba07132fe01c0852"
+            ]
+        ]
+    },
+    {
+        "id": "ad500e163db972f8",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "9",
+        "conditionValueType": "num",
+        "x": 820,
+        "y": 400,
+        "wires": [
+            [
+                "4c23054fe6e42dc0"
+            ]
+        ]
+    },
+    {
+        "id": "d552414a8be37068",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "12",
+        "conditionValueType": "num",
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "c37bf64dc4c6257e"
+            ]
+        ]
+    },
+    {
+        "id": "a5f3eccdf0a96468",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "15",
+        "conditionValueType": "num",
+        "x": 830,
+        "y": 520,
+        "wires": [
+            [
+                "0b4fadf7ef58cc81"
+            ]
+        ]
+    },
+    {
+        "id": "461a6bfa5e7edc21",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "18",
+        "conditionValueType": "num",
+        "x": 830,
+        "y": 580,
+        "wires": [
+            [
+                "85d4587bfb726a0e"
+            ]
+        ]
+    },
+    {
+        "id": "447fb9ccd1d482c0",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "24",
+        "conditionValueType": "num",
+        "x": 830,
+        "y": 640,
+        "wires": [
+            [
+                "2bc5f593b94d20e8"
+            ]
+        ]
+    },
+    {
+        "id": "20d063689976f211",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "30",
+        "conditionValueType": "num",
+        "x": 830,
+        "y": 700,
+        "wires": [
+            [
+                "51b0363a2cde4766"
+            ]
+        ]
+    },
+    {
+        "id": "098c2e9e5a7cf2a3",
+        "type": "iGlass-logic-variable-condition",
+        "z": "e9e79312e070d9ae",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "36",
+        "conditionValueType": "num",
+        "x": 830,
+        "y": 760,
+        "wires": [
+            [
+                "175b5c83e73c2658"
+            ]
+        ]
+    },
+    {
+        "id": "49e2d5c72b801c1b",
+        "type": "iGlass-logic-variable-config",
+        "name": "puissance",
+        "description": "puissance"
+    }
+]

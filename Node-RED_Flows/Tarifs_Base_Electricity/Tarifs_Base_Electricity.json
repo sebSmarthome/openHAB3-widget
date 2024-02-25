@@ -1,0 +1,828 @@
+[
+    {
+        "id": "65d93545f66aa955",
+        "type": "tab",
+        "label": "Flux 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "585521c9af7a9783",
+        "type": "http request",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.data.gouv.fr/fr/datasets/r/c13d05e5-9e55-4d03-bf7e-042a2ade7e49",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "3f0781c0773240ab"
+            ]
+        ]
+    },
+    {
+        "id": "c12bfe6f57e6a4bc",
+        "type": "inject",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 340,
+        "wires": [
+            [
+                "585521c9af7a9783"
+            ]
+        ]
+    },
+    {
+        "id": "3f0781c0773240ab",
+        "type": "csv",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "sep": ";",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 550,
+        "y": 340,
+        "wires": [
+            [
+                "a8b118df25123028"
+            ]
+        ]
+    },
+    {
+        "id": "a8b118df25123028",
+        "type": "sort",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "order": "ascending",
+        "as_num": true,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 670,
+        "y": 340,
+        "wires": [
+            [
+                "818462ada38cbe53",
+                "6163f14ca1eb8e06",
+                "df7f7868f1938898",
+                "a48bf383d1811dc6",
+                "9677e6b163b659fe",
+                "b6b087bc9b32d459"
+            ]
+        ]
+    },
+    {
+        "id": "818462ada38cbe53",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "Date",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].DATE_DEBUT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 340,
+        "wires": [
+            [
+                "60f4d471737a9aba"
+            ]
+        ]
+    },
+    {
+        "id": "214fc2e846b3f688",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "PART_FIXE_HT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_FIXE_HT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 400,
+        "wires": [
+            [
+                "2909021664278dfc"
+            ]
+        ]
+    },
+    {
+        "id": "915ec2754b190dd2",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "PART_FIXE_TTC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_FIXE_TTC",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1370,
+        "y": 460,
+        "wires": [
+            [
+                "2dafe3a124fe2b5f"
+            ]
+        ]
+    },
+    {
+        "id": "9a58ea467cfc35c7",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "PART_VARIABLE_HT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_VARIABLE_HT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1380,
+        "y": 520,
+        "wires": [
+            [
+                "d9cdd88e2a7c8dcf"
+            ]
+        ]
+    },
+    {
+        "id": "66391378c87f4181",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "PART_VARIABLE_TTC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PART_VARIABLE_TTC",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 580,
+        "wires": [
+            [
+                "c2d10b1bd76ecbad"
+            ]
+        ]
+    },
+    {
+        "id": "c9702a71e67f68ec",
+        "type": "openhab2-out2",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1920,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60f4d471737a9aba",
+        "type": "moment",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Europe/Paris",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "fr-FR",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Paris",
+        "x": 1640,
+        "y": 340,
+        "wires": [
+            [
+                "c9702a71e67f68ec"
+            ]
+        ]
+    },
+    {
+        "id": "3ac3312cf5431f3d",
+        "type": "openhab2-out2",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1960,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c5c63ed1e90c680",
+        "type": "openhab2-out2",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1960,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49855ebfa30fc6cc",
+        "type": "function",
+        "z": "65d93545f66aa955",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(2);\nvar moisValue = Number(floatValue)/12\n//set and return payload\nmsg.payload = moisValue.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1740,
+        "y": 400,
+        "wires": [
+            [
+                "3ac3312cf5431f3d"
+            ]
+        ]
+    },
+    {
+        "id": "9eb647b686d2f5fb",
+        "type": "function",
+        "z": "65d93545f66aa955",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(2);\nvar moisValue = Number(floatValue) / 12;\n//set and return payload\nmsg.payload = moisValue.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1740,
+        "y": 460,
+        "wires": [
+            [
+                "8c5c63ed1e90c680"
+            ]
+        ]
+    },
+    {
+        "id": "2dafe3a124fe2b5f",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1590,
+        "y": 460,
+        "wires": [
+            [
+                "9eb647b686d2f5fb"
+            ]
+        ]
+    },
+    {
+        "id": "2909021664278dfc",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1590,
+        "y": 400,
+        "wires": [
+            [
+                "49855ebfa30fc6cc"
+            ]
+        ]
+    },
+    {
+        "id": "d9cdd88e2a7c8dcf",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1590,
+        "y": 520,
+        "wires": [
+            [
+                "bd92243fb5260461"
+            ]
+        ]
+    },
+    {
+        "id": "c2d10b1bd76ecbad",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": ", to .",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ",",
+                "fromt": "str",
+                "to": ".",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1590,
+        "y": 580,
+        "wires": [
+            [
+                "35c2ea7a0630f743"
+            ]
+        ]
+    },
+    {
+        "id": "bd92243fb5260461",
+        "type": "function",
+        "z": "65d93545f66aa955",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(4);\n\n//set and return payload\nmsg.payload = floatValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1740,
+        "y": 520,
+        "wires": [
+            [
+                "30d2c142bf25dccf"
+            ]
+        ]
+    },
+    {
+        "id": "35c2ea7a0630f743",
+        "type": "function",
+        "z": "65d93545f66aa955",
+        "name": "string to number",
+        "func": "//read payload\nvar stringValue = msg.payload;\n\n//convert string to float to 2 decimal places\nvar floatValue = parseFloat(stringValue).toFixed(4);\n\n//set and return payload\nmsg.payload = floatValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1740,
+        "y": 580,
+        "wires": [
+            [
+                "76b9e00437d49688"
+            ]
+        ]
+    },
+    {
+        "id": "30d2c142bf25dccf",
+        "type": "openhab2-out2",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1980,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76b9e00437d49688",
+        "type": "openhab2-out2",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 1980,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc367f41149b0cb4",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "3kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[4]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 380,
+        "wires": [
+            [
+                "214fc2e846b3f688",
+                "915ec2754b190dd2",
+                "9a58ea467cfc35c7",
+                "66391378c87f4181"
+            ]
+        ]
+    },
+    {
+        "id": "9ee1a1f1434ee0ef",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "15kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 620,
+        "wires": [
+            [
+                "66391378c87f4181",
+                "9a58ea467cfc35c7",
+                "915ec2754b190dd2",
+                "214fc2e846b3f688"
+            ]
+        ]
+    },
+    {
+        "id": "7778ea0f5b7c2a58",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "12kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[1]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 560,
+        "wires": [
+            [
+                "66391378c87f4181",
+                "9a58ea467cfc35c7",
+                "915ec2754b190dd2",
+                "214fc2e846b3f688"
+            ]
+        ]
+    },
+    {
+        "id": "93aa89ccccf8e4df",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "9kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[2]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 500,
+        "wires": [
+            [
+                "66391378c87f4181",
+                "9a58ea467cfc35c7",
+                "915ec2754b190dd2",
+                "214fc2e846b3f688"
+            ]
+        ]
+    },
+    {
+        "id": "0ddf7d15b83058d8",
+        "type": "change",
+        "z": "65d93545f66aa955",
+        "name": "6kVA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[3]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 440,
+        "wires": [
+            [
+                "214fc2e846b3f688",
+                "915ec2754b190dd2",
+                "9a58ea467cfc35c7",
+                "66391378c87f4181"
+            ]
+        ]
+    },
+    {
+        "id": "127fd905929cc6c1",
+        "type": "openhab2-in2",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "controller": "",
+        "itemname": "",
+        "topic": "",
+        "initialstate": true,
+        "whenupdated": false,
+        "whencommand": true,
+        "whenchanged": false,
+        "changedfrom": "",
+        "changedto": "",
+        "x": 270,
+        "y": 600,
+        "wires": [
+            [
+                "585521c9af7a9783",
+                "3ba7205cb22a8114"
+            ]
+        ]
+    },
+    {
+        "id": "3ba7205cb22a8114",
+        "type": "iGlass-logic-variable-set",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "x": 620,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "6163f14ca1eb8e06",
+        "type": "iGlass-logic-variable-condition",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "6",
+        "conditionValueType": "num",
+        "x": 920,
+        "y": 440,
+        "wires": [
+            [
+                "0ddf7d15b83058d8"
+            ]
+        ]
+    },
+    {
+        "id": "df7f7868f1938898",
+        "type": "iGlass-logic-variable-condition",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "9",
+        "conditionValueType": "num",
+        "x": 920,
+        "y": 500,
+        "wires": [
+            [
+                "93aa89ccccf8e4df"
+            ]
+        ]
+    },
+    {
+        "id": "a48bf383d1811dc6",
+        "type": "iGlass-logic-variable-condition",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "12",
+        "conditionValueType": "num",
+        "x": 930,
+        "y": 560,
+        "wires": [
+            [
+                "7778ea0f5b7c2a58"
+            ]
+        ]
+    },
+    {
+        "id": "9677e6b163b659fe",
+        "type": "iGlass-logic-variable-condition",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "15",
+        "conditionValueType": "num",
+        "x": 930,
+        "y": 620,
+        "wires": [
+            [
+                "9ee1a1f1434ee0ef"
+            ]
+        ]
+    },
+    {
+        "id": "b6b087bc9b32d459",
+        "type": "iGlass-logic-variable-condition",
+        "z": "65d93545f66aa955",
+        "name": "",
+        "variableConfig": "49e2d5c72b801c1b",
+        "variableName": "puissance",
+        "conditionOperator": "eq",
+        "conditionValue": "3",
+        "conditionValueType": "num",
+        "x": 920,
+        "y": 380,
+        "wires": [
+            [
+                "bc367f41149b0cb4"
+            ]
+        ]
+    },
+    {
+        "id": "49e2d5c72b801c1b",
+        "type": "iGlass-logic-variable-config",
+        "name": "puissance",
+        "description": "puissance"
+    }
+]
