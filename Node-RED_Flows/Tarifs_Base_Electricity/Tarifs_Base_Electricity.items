@@ -1,0 +1,7 @@
+Group Electricite_Tarifs_Base
+Number:Currency Tarifs_Base_PART_FIXE_HT "Abonnement HT" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.2f €"]}
+Number:Currency Tarifs_Base_PART_FIXE_TTC "Abonnement TTC" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.2f €"]}
+Number:Currency Tarifs_Base_PART_VARIABLE_HT "Consommation HT" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
+Number:Currency Tarifs_Base_PART_VARIABLE_TTC "Consommation TTC" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
+DateTime Tarifs_Base_Date "Début validité tarif" <f7:calendar_today> (Electricite_Tarifs_Base) {stateDescription=""[pattern="%1$te %1$tB %1$tY"]}
+Number Tarifs_Base_Puissance_souscrite "Puissance souscrite" <f7:bolt_fill> (Electricite_Tarifs_Base) {stateDescription=""[options="3=3kVA,6=6kVA,9=9kVA,12=12kVA,15=15kVA"], commandDescription=""[options="3=3kVA,6=6kVA,9=9kVA,12=12kVA,15=15kVA"]}
