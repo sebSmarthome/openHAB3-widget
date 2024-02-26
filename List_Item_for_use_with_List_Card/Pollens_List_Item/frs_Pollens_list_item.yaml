@@ -1,0 +1,863 @@
+uid: frs_Pollens_list_item
+tags:
+  - list
+  - pollens
+props:
+  parameters:
+    - default: Risque allergies pollens
+      description: Header Title
+      label: title
+      name: HeaderTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - description: Hide Gauge
+      label: hide gauge
+      name: HideGauges
+      required: false
+      type: BOOLEAN
+      groupName: pollens
+    - context: item
+      default: Pollens_Indice
+      description: Item indice pollens
+      label: Item indice pollens
+      name: ItemIndicePollens
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Ambroisies
+      description: Item Ambroisies pollens
+      label: Item Ambroisies pollens
+      name: ItemAmbroisies
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Armoise
+      description: Item Armoise pollens
+      label: Item Armoise pollens
+      name: ItemArmoise
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Aulne
+      description: Item Aulne pollens
+      label: Item Aulne pollens
+      name: ItemAulne
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Bouleau
+      description: Item Bouleau pollens
+      label: Item Bouleau pollens
+      name: ItemBouleau
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Charme
+      description: Item Charme pollens
+      label: Item Charme pollens
+      name: ItemCharme
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Chataignier
+      description: Item Chataignier pollens
+      label: Item Chataignier pollens
+      name: ItemChataignier
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Chene
+      description: Item Chene pollens
+      label: Item Chene pollens
+      name: ItemChene
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Cupressacees
+      description: Item Cupressacees pollens
+      label: Item Cupressacees pollens
+      name: ItemCupressacees
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Frene
+      description: Item Frene pollens
+      label: Item Frene pollens
+      name: ItemFrene
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Graminees
+      description: Item Graminees pollens
+      label: Item Graminees pollens
+      name: ItemGraminees
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Noisetier
+      description: Item Noisetier pollens
+      label: Item Noisetier pollens
+      name: ItemNoisetier
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Olivier
+      description: Item Olivier pollens
+      label: Item Olivier pollens
+      name: ItemOlivier
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Oseille
+      description: Item Oseille pollens
+      label: Item Oseille pollens
+      name: ItemOseille
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Peuplier
+      description: Item Peuplier pollens
+      label: Item Peuplier pollens
+      name: ItemPeuplier
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Plantain
+      description: Item Plantain pollens
+      label: Item Plantain pollens
+      name: ItemPlantain
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Platane
+      description: Item Platane pollens
+      label: Item Platane pollens
+      name: ItemPlatane
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Saule
+      description: Item Saule pollens
+      label: Item Saule pollens
+      name: ItemSaule
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Tilleul
+      description: Item Tilleul pollens
+      label: Item Tilleul pollens
+      name: ItemTilleul
+      required: false
+      type: TEXT
+      groupName: pollens
+    - context: item
+      default: Pollens_Urticacees
+      description: Item Urticacees pollens
+      label: Item Urticacees pollens
+      name: ItemUrticacees
+      required: false
+      type: TEXT
+      groupName: pollens
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: pollens
+      label: Risques pollens
+timestamp: Feb 26, 2024, 6:41:09 PM
+component: oh-list-item
+config:
+  accordionList: true
+  after: =@props.ItemIndicePollens
+  icon: pollen
+  iconUseState: true
+  item: =props.ItemIndicePollens
+  mediaList: true
+  style:
+    --f7-list-item-after-font-size: 16px
+    --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+  title: =props.HeaderTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247,
+            247, 247)'"
+      slots:
+        default:
+          - component: f7-block
+            config:
+              style:
+                margin-bottom: 0px
+                margin-left: 0px
+                margin-right: 0px
+                margin-top: -150px
+                padding: 6px
+              visible: =!props.HideGauges
+            slots:
+              default:
+                - component: oh-chart
+                  config:
+                    options:
+                      backgroundColor: transparent
+                  slots:
+                    series:
+                      - component: oh-data-series
+                        config:
+                          axisLabel:
+                            show: false
+                          axisLine:
+                            lineStyle:
+                              color:
+                                - - 0.3333
+                                  - "#4cd964"
+                                - - 0.6666
+                                  - "#ffcc00"
+                                - - 1
+                                  - "#ff3b30"
+                              width: 20
+                          axisTick:
+                            show: false
+                          center:
+                            - 50%
+                            - 96%
+                          data:
+                            - value: "=Number.parseFloat(items[props.ItemIndicePollens].state) == '0' ? '0' :
+                                Number.parseFloat(items[props.ItemIndicePollens\
+                                ].state) == '1' ? '0.5' :
+                                Number.parseFloat(items[props.ItemIndicePollens\
+                                ].state) == '2' ? '1.5' : '2.5'"
+                          detail:
+                            fontSize: 22
+                            formatter: =@props.ItemIndicePollens
+                            offsetCenter:
+                              - 0
+                              - 0
+                            valueAnimation: true
+                          endAngle: 0
+                          itemStyle:
+                            borderCap: round
+                            borderJoin: miter
+                          max: 3
+                          min: 0
+                          pointer:
+                            icon: path://M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2
+                            itemStyle:
+                              color: "=themeOptions.dark === 'dark' ? 'white' : 'black'"
+                              shadowBlur: 6
+                              shadowColor: "=themeOptions.dark === 'dark' ? 'black' : 'white'"
+                            length: 18%
+                            offsetCenter:
+                              - 0
+                              - -83%
+                            width: 22px
+                          radius: 82%
+                          splitLine:
+                            show: false
+                          splitNumber: 3
+                          startAngle: 180
+                          type: gauge
+                - component: f7-row
+                  config:
+                    class:
+                      - text-align-center
+                  slots:
+                    default:
+                      - component: f7-col
+                        config:
+                          style:
+                            background: transparent
+                            margin-top: -100px
+                            padding: 0px
+                        slots:
+                          default:
+                            - component: oh-icon
+                              config:
+                                height: 50px
+                                icon: pollen
+                                state: =@@props.ItemIndicePollens
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemAmbroisies].state) == '0'  ?
+                'false' : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Ambroisies
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemAmbroisies].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemAmbroisies].state) ==
+                      '1' ? 'green' :
+                      Number.parseFloat(items[props.ItemAmbroisies].state) ==
+                      '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemAmbroisies].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemArmoise].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Armoise
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemArmoise].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemArmoise].state) == '1' ?
+                      'green' :
+                      Number.parseFloat(items[props.ItemArmoise].state) == '2' ?
+                      'yellow' : 'red'"
+                    progress: =Number(items[props.ItemArmoise].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemAulne].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Aulne
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemAulne].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemAulne].state) == '1' ?
+                      'green' : Number.parseFloat(items[props.ItemAulne].state)
+                      == '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemAulne].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemBouleau].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Bouleau
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemBouleau].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemBouleau].state) == '1' ?
+                      'green' :
+                      Number.parseFloat(items[props.ItemBouleau].state) == '2' ?
+                      'yellow' : 'red'"
+                    progress: =Number(items[props.ItemBouleau].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemCharme].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Charme
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemCharme].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemCharme].state) == '1' ?
+                      'green' : Number.parseFloat(items[props.ItemCharme].state)
+                      == '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemCharme].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemChataignier].state) == '0'  ?
+                'false' : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Châtaignier
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemChataignier].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemChataignier].state) ==
+                      '1' ? 'green' :
+                      Number.parseFloat(items[props.ItemChataignier].state) ==
+                      '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemChataignier].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemChene].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Chêne
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemChene].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemChene].state) == '1' ?
+                      'green' : Number.parseFloat(items[props.ItemChene].state)
+                      == '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemChene].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemCupressacees].state) == '0'  ?
+                'false' : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Cupressacées
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemCupressacees].state) == '0' ? 'gray'
+                      : Number.parseFloat(items[props.ItemCupressacees].state)
+                      == '1' ? 'green' :
+                      Number.parseFloat(items[props.ItemCupressacees].state) ==
+                      '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemCupressacees].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemFrene].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Frêne
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemFrene].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemFrene].state) == '1' ?
+                      'green' : Number.parseFloat(items[props.ItemFrene].state)
+                      == '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemFrene].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemGraminees].state) == '0'  ? 'false'
+                : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Graminées
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemGraminees].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemGraminees].state) == '1'
+                      ? 'green' :
+                      Number.parseFloat(items[props.ItemGraminees].state) == '2'
+                      ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemGraminees].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemNoisetier].state) == '0'  ? 'false'
+                : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Noisetier
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemNoisetier].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemNoisetier].state) == '1'
+                      ? 'green' :
+                      Number.parseFloat(items[props.ItemNoisetier].state) == '2'
+                      ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemNoisetier].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemOlivier].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Olivier
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemOlivier].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemOlivier].state) == '1' ?
+                      'green' :
+                      Number.parseFloat(items[props.ItemOlivier].state) == '2' ?
+                      'yellow' : 'red'"
+                    progress: =Number(items[props.ItemOlivier].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemOseille].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Oseille
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemOseille].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemOseille].state) == '1' ?
+                      'green' :
+                      Number.parseFloat(items[props.ItemOseille].state) == '2' ?
+                      'yellow' : 'red'"
+                    progress: =Number(items[props.ItemOseille].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemPeuplier].state) == '0'  ? 'false'
+                : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Peuplier
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemPeuplier].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemPeuplier].state) == '1'
+                      ? 'green' :
+                      Number.parseFloat(items[props.ItemPeuplier].state) == '2'
+                      ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemPeuplier].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemPlantain].state) == '0'  ? 'false'
+                : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Plantain
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemPlantain].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemPlantain].state) == '1'
+                      ? 'green' :
+                      Number.parseFloat(items[props.ItemPlantain].state) == '2'
+                      ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemPlantain].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemPlatane].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Platane
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemPlatane].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemPlatane].state) == '1' ?
+                      'green' :
+                      Number.parseFloat(items[props.ItemPlatane].state) == '2' ?
+                      'yellow' : 'red'"
+                    progress: =Number(items[props.ItemPlatane].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemSaule].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Saule
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemSaule].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemSaule].state) == '1' ?
+                      'green' : Number.parseFloat(items[props.ItemSaule].state)
+                      == '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemSaule].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemTilleul].state) == '0'  ? 'false' :
+                'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Tilleul
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemTilleul].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemTilleul].state) == '1' ?
+                      'green' :
+                      Number.parseFloat(items[props.ItemTilleul].state) == '2' ?
+                      'yellow' : 'red'"
+                    progress: =Number(items[props.ItemTilleul].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)
+          - component: f7-list-item
+            config:
+              visible: "=Number.parseFloat(items[props.ItemUrticacees].state) == '0'  ?
+                'false' : 'true'"
+            slots:
+              content:
+                - component: f7-block
+                  config:
+                    style:
+                      left: 0px
+                      position: absolute
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          text: Urticacées
+                - component: f7-progressbar
+                  config:
+                    color: "=Number.parseFloat(items[props.ItemUrticacees].state) == '0' ? 'gray' :
+                      Number.parseFloat(items[props.ItemUrticacees].state) ==
+                      '1' ? 'green' :
+                      Number.parseFloat(items[props.ItemUrticacees].state) ==
+                      '2' ? 'yellow' : 'red'"
+                    progress: =Number(items[props.ItemUrticacees].state) * 33.3333
+                    style:
+                      --f7-progressbar-border-radius: 10px
+                      --f7-progressbar-height: 16px
+                      left: 160px
+                      position: absolute
+                      width: calc(100% - 180px)

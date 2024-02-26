@@ -1,0 +1,21 @@
+Group Pollens "Pollens" <pollen> ["WebService"]
+Number Pollens_Indice "Indice Pollens" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Indice", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Ambroisies "Indice Ambroisies" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Ambroisies", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Armoise "Indice Armoise" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Armoise", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Aulne "Indice Aulne" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Aulne", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Bouleau "Indice Bouleau" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Bouleau", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Charme "Indice Charme" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Charme", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Chataignier "Indice Châtaignier" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Chataignier", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Cupressacees "Indice Cupressacées" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Cupressacees", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Chene "Indice Chêne" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Chene", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Frene "Indice Frêne" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Frene", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Graminees "Indice Graminées" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Graminees", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Noisetier "Indice Noisetier" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Noisetier", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Olivier "Indice Olivier" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Olivier", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Oseille "Indice Oseille" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Oseille", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Peuplier "Indice Peuplier" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Peuplier", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Plantain "Indice Plantain" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Plantain", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Platane "Indice Platane" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Platane", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Saule "Indice Saule" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Saule", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Tilleul "Indice Tilleul" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Tilleul", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}
+Number Pollens_Urticacees "Indice Urticacées" <pollen> (Pollens) ["Point"] {channel="http:url:Indice_Pollens:Pollen_Urticacees", stateDescription=""[options="0=Nul,1=Faible,2=Moyen,3=Elevé"]}

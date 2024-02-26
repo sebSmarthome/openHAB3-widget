@@ -1,0 +1,123 @@
+UID: http:url:Indice_Pollens
+label: HTTP Indice pollens
+thingTypeUID: http:url
+configuration:
+  authMode: BASIC
+  ignoreSSLErrors: false
+  baseURL: https://www.pollens.fr/risks/thea/counties/<numéro département>
+  delay: 0
+  stateMethod: GET
+  refresh: 86400
+  commandMethod: GET
+  contentType: application/json
+  timeout: 3000
+  bufferSize: 2048
+channels:
+  - id: last-failure
+    channelTypeUID: http:request-date-time
+    label: Last Failure
+    configuration: {}
+  - id: last-success
+    channelTypeUID: http:request-date-time
+    label: Last Success
+    configuration: {}
+  - id: Indice
+    channelTypeUID: http:number
+    label: Indice Pollen
+    configuration:
+      stateTransformation: JSONPATH:$.riskLevel
+  - id: Urticacees
+    channelTypeUID: http:number
+    label: Urticacées
+    configuration:
+      stateTransformation: JSONPATH:$.risks[0].level
+  - id: Tilleul
+    channelTypeUID: http:number
+    label: Tilleul
+    configuration:
+      stateTransformation: JSONPATH:$.risks[1].level
+  - id: Saule
+    channelTypeUID: http:number
+    label: Saule
+    configuration:
+      stateTransformation: JSONPATH:$.risks[2].level
+  - id: Platane
+    channelTypeUID: http:number
+    label: Platane
+    configuration:
+      stateTransformation: JSONPATH:$.risks[3].level
+  - id: Plantain
+    channelTypeUID: http:number
+    label: Plantain
+    configuration:
+      stateTransformation: JSONPATH:$.risks[4].level
+  - id: Peuplier
+    channelTypeUID: http:number
+    label: Peuplier
+    configuration:
+      stateTransformation: JSONPATH:$.risks[5].level
+  - id: Oseille
+    channelTypeUID: http:number
+    label: Oseille
+    configuration:
+      stateTransformation: JSONPATH:$.risks[6].level
+  - id: Olivier
+    channelTypeUID: http:number
+    label: Olivier
+    configuration:
+      stateTransformation: JSONPATH:$.risks[7].level
+  - id: Noisetier
+    channelTypeUID: http:number
+    label: Noisetier
+    configuration:
+      stateTransformation: JSONPATH:$.risks[8].level
+  - id: Graminees
+    channelTypeUID: http:number
+    label: Graminées
+    configuration:
+      stateTransformation: JSONPATH:$.risks[9].level
+  - id: Frene
+    channelTypeUID: http:number
+    label: Frêne
+    configuration:
+      stateTransformation: JSONPATH:$.risks[10].level
+  - id: Cupressacees
+    channelTypeUID: http:number
+    label: Cupressacées
+    configuration:
+      stateTransformation: JSONPATH:$.risks[11].level
+  - id: Chene
+    channelTypeUID: http:number
+    label: Chêne
+    configuration:
+      stateTransformation: JSONPATH:$.risks[12].level
+  - id: Chataignier
+    channelTypeUID: http:number
+    label: Châtaignier
+    configuration:
+      stateTransformation: JSONPATH:$.risks[13].level
+  - id: Charme
+    channelTypeUID: http:number
+    label: Charme
+    configuration:
+      stateTransformation: JSONPATH:$.risks[14].level
+  - id: Bouleau
+    channelTypeUID: http:number
+    label: Bouleau
+    configuration:
+      stateTransformation: JSONPATH:$.risks[15].level
+  - id: Aulne
+    channelTypeUID: http:number
+    label: Aulne
+    configuration:
+      stateTransformation: JSONPATH:$.risks[16].level
+  - id: Armoise
+    channelTypeUID: http:number
+    label: Armoise
+    configuration:
+      stateTransformation: JSONPATH:$.risks[17].level
+  - id: Ambroisies
+    channelTypeUID: http:number
+    label: Ambroisies
+    configuration:
+      stateTransformation: JSONPATH:$.risks[18].level
