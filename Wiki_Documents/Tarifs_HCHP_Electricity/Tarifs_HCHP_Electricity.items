@@ -1,9 +1,9 @@
-Group Electricite_Tarifs_HCHP
-Number:Currency Tarifs_HCHP_PART_FIXE_HT "Abonnement HT" <f7:money_euro> (Electricite_Tarifs_HCHP) {unit="EUR", stateDescription=""[pattern="%.2f €"]}
-Number:Currency Tarifs_HCHP_PART_FIXE_TTC "Abonnement TTC" <f7:money_euro> (Electricite_Tarifs_HCHP) {unit="EUR", stateDescription=""[pattern="%.2f €"]}
-Number:Currency Tarifs_HCHP_PART_VARIABLE_HC_HT "Consommation Heures creuses HT" <f7:money_euro> (Electricite_Tarifs_HCHP) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
-Number:Currency Tarifs_HCHP_PART_VARIABLE_HC_TTC "Consommation Heures creuses TTC" <f7:money_euro> (Electricite_Tarifs_HCHP) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
+Group Electricite_Tarifs_HCHP "Electricité tarifs HCHP" <f7:money-euro-circle-fill> ["WebService"]
+Number:Currency Tarifs_HCHP_PART_FIXE_HT "Abonnement HT" <f7:money_euro> (Electricite_Tarifs_HCHP) ["Point"] {unit="EUR", stateDescription=""[pattern="%.2f €"]}
+Number:Currency Tarifs_HCHP_PART_FIXE_TTC "Abonnement TTC" <f7:money_euro> (Electricite_Tarifs_HCHP) ["Point"] {unit="EUR", stateDescription=""[pattern="%.2f €"]}
+Number:Currency Tarifs_HCHP_PART_VARIABLE_HC_HT "Consommation Heures creuses HT" <f7:money_euro> (Electricite_Tarifs_HCHP) ["Point"] {unit="EUR", stateDescription=""[pattern="%.4f €"]}
+Number:Currency Tarifs_HCHP_PART_VARIABLE_HC_TTC "Consommation Heures creuses TTC" <f7:money_euro> (Electricite_Tarifs_HCHP) ["Point"] {unit="EUR", stateDescription=""[pattern="%.4f €"]}
 Number:Currency Tarifs_HCHP_PART_VARIABLE_HP_HT "Consommation Heures pleines HT" <f7:money_euro> (Electricite_Tarifs_HCHP) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
-Number:Currency Tarifs_HCHP_PART_VARIABLE_HP_TTC "Consommation Heures pleines TTC" <f7:money_euro> (Electricite_Tarifs_HCHP) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
-DateTime Tarifs_HCHP_Date "Début validité tarif" <f7:calendar_today> (Electricite_Tarifs_HCHP) {stateDescription=""[pattern="%1$te %1$tB %1$tY"]}
-Number Tarifs_HCHP_Puissance_souscrite "Puissance souscrite" <f7:bolt_fill> (Electricite_Tarifs_HCHP) {stateDescription=""[options="3=3kVA,6=6kVA,9=9kVA,12=12kVA,15=15kVA"], commandDescription=""[options="3=3kVA,6=6kVA,9=9kVA,12=12kVA,15=15kVA"]}
+Number:Currency Tarifs_HCHP_PART_VARIABLE_HP_TTC "Consommation Heures pleines TTC" <f7:money_euro> (Electricite_Tarifs_HCHP) ["Point"] {unit="EUR", stateDescription=""[pattern="%.4f €"]}
+DateTime Tarifs_HCHP_Date "Début validité tarif" <f7:calendar_today> (Electricite_Tarifs_HCHP) ["Point"] {stateDescription=""[pattern="%1$te %1$tB %1$tY"]}
+Number Tarifs_HCHP_Puissance_souscrite "Puissance souscrite" <f7:bolt_fill> (Electricite_Tarifs_HCHP) ["Point"] {stateDescription=""[options="3=3kVA,6=6kVA,9=9kVA,12=12kVA,15=15kVA"], commandDescription=""[options="3=3kVA,6=6kVA,9=9kVA,12=12kVA,15=15kVA"]}
