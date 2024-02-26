@@ -33,8 +33,8 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pi_hole_List_Item/screenshots/Pollens2.jpg)
-![Screen3](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pi_hole_List_Item/screenshots/Pollens3.jpg)
+![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/screenshots/Pollens2.jpg)
+![Screen3](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/screenshots/Pollens3.jpg)
 
 ## Changelog
 
