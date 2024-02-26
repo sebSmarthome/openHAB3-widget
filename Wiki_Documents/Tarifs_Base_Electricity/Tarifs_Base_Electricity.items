@@ -1,4 +1,4 @@
-Group Electricite_Tarifs_Base
+Group Electricite_Tarifs_Base "Abonnement HT" <f7:money_euro>
 Number:Currency Tarifs_Base_PART_FIXE_HT "Abonnement HT" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.2f €"]}
 Number:Currency Tarifs_Base_PART_FIXE_TTC "Abonnement TTC" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.2f €"]}
 Number:Currency Tarifs_Base_PART_VARIABLE_HT "Consommation HT" <f7:money_euro> (Electricite_Tarifs_Base) {unit="EUR", stateDescription=""[pattern="%.4f €"]}
