@@ -13,6 +13,7 @@ Widgets
 * [Astro Moon List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item)
 * [Astro Sun List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Astro_Sun_List_Item)
 * [Ecowatt List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Ecowatt_List_Item)
+* [Ecogaz List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Ecogaz_List_Item)
 * [Freebox Phone List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item)
 * [Freebox Server List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Freebox_Server_List_Item)
 * [Freebox Player remote](https://github.com/sebSmarthome/openHAB3-widget/tree/main/Cards/Freebox_Player_remote)

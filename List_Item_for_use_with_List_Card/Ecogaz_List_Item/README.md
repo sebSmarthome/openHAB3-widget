@@ -1,6 +1,7 @@
 ![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Ecogaz_List_Item/screenshots/Ecogaz.jpg)
 
 UI **List Item** Widget to view the Ecogaz information with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
+
 [Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/)
 
 Only use with **List Card** with accordion and rich list items option set to true.
