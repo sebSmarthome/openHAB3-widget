@@ -1,7 +1,7 @@
 
 # openHAB 4 Configuration exemples, tutorials & widgets code
 
-Tutoriels et exemples configuration openHAB 4
+Configuration exemples & tutorials
 
 * [Tarifs réglementés électricité option Base](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9lectricit%C3%A9-option-Base)
 * [Tarifs réglementés électricité option Heures Creuses](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9lectricit%C3%A9-option-Heures-Creuses)
