@@ -1,7 +1,7 @@
 ![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/screenshots/Pollens.jpg)
 
 This is an UI **List Item** Widget to display the French Pollens status with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
-[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/)
+[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/Risque-d'Allergie-aux-Pollens)
 
 Only use with **List Card** with accordion and rich list items option set to true.
 
