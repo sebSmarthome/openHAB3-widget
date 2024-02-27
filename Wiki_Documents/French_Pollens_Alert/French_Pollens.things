@@ -1,0 +1,23 @@
+Thing http:url:Indice_Pollens "HTTP Indice pollens" [ baseURL="https://www.pollens.fr/risks/thea/counties/25", refresh=86400, delay=0 ] {
+    Channels:
+        Type number : Indice "Indice Pollen" [ stateTransformation="JSONPATH:$.riskLevel" ]
+        Type number : Urticacees "Indice Urticacées" [ stateTransformation="JSONPATH:$.risks[0].level" ]
+        Type number : Tilleul "Indice Tilleul" [ stateTransformation="JSONPATH:$.risks[1].level" ]
+        Type number : Saule "Indice Saule" [ stateTransformation="JSONPATH:$.risks[2].level" ]
+        Type number : Platane "Indice Platane" [ stateTransformation="JSONPATH:$.risks[3].level" ]
+        Type number : Plantain "Indice Plantain" [ stateTransformation="JSONPATH:$.risks[4].level" ]
+        Type number : Peuplier "Indice Peuplier" [ stateTransformation="JSONPATH:$.risks[5].level" ]
+        Type number : Oseille "Indice Oseille" [ stateTransformation="JSONPATH:$.risks[6].level" ]
+        Type number : Olivier "Indice Olivier" [ stateTransformation="JSONPATH:$.risks[7].level" ]
+        Type number : Noisetier "Indice Noisetier" [ stateTransformation="JSONPATH:$.risks[8].level" ]
+        Type number : Graminees "Indice Graminées" [ stateTransformation="JSONPATH:$.risks[9].level" ]
+        Type number : Frene "Indice Frêne" [ stateTransformation="JSONPATH:$.risks[10].level" ]
+        Type number : Cupressacees "Indice Cupressacées" [ stateTransformation="JSONPATH:$.risks[11].level" ]
+        Type number : Chene "Indice Chêne" [ stateTransformation="JSONPATH:$.risks[12].level" ]
+        Type number : Chataignier "Indice Châtaignier" [ stateTransformation="JSONPATH:$.risks[13].level" ]
+        Type number : Charme "Indice Charme" [ stateTransformation="JSONPATH:$.risks[14].level" ]
+        Type number : Bouleau "Indice Bouleau" [ stateTransformation="JSONPATH:$.risks[15].level" ]
+        Type number : Aulne "Indice Aulne" [ stateTransformation="JSONPATH:$.risks[16].level" ]
+        Type number : Armoise "Indice Armoise" [ stateTransformation="JSONPATH:$.risks[17].level" ]
+        Type number : Ambroisies "Indice Ambroisies" [ stateTransformation="JSONPATH:$.risks[18].level" ]
+    }
