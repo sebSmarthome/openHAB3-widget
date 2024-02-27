@@ -4,12 +4,11 @@ thingTypeUID: http:url
 configuration:
   authMode: BASIC
   ignoreSSLErrors: false
-  baseURL: https://www.pollens.fr/risks/thea/counties/<numéro département>
+  baseURL: https://www.pollens.fr/risks/thea/counties/25
   delay: 0
   stateMethod: GET
   refresh: 86400
   commandMethod: GET
-  contentType: application/json
   timeout: 3000
   bufferSize: 2048
 channels:
@@ -25,99 +24,119 @@ channels:
     channelTypeUID: http:number
     label: Indice Pollen
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.riskLevel
   - id: Urticacees
     channelTypeUID: http:number
-    label: Urticacées
+    label: Indice Urticacées
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[0].level
   - id: Tilleul
     channelTypeUID: http:number
-    label: Tilleul
+    label: Indice Tilleul
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[1].level
   - id: Saule
     channelTypeUID: http:number
-    label: Saule
+    label: Indice Saule
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[2].level
   - id: Platane
     channelTypeUID: http:number
-    label: Platane
+    label: Indice Platane
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[3].level
   - id: Plantain
     channelTypeUID: http:number
-    label: Plantain
+    label: Indice Plantain
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[4].level
   - id: Peuplier
     channelTypeUID: http:number
-    label: Peuplier
+    label: Indice Peuplier
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[5].level
   - id: Oseille
     channelTypeUID: http:number
-    label: Oseille
+    label: Indice Oseille
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[6].level
   - id: Olivier
     channelTypeUID: http:number
-    label: Olivier
+    label: Indice Olivier
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[7].level
   - id: Noisetier
     channelTypeUID: http:number
-    label: Noisetier
+    label: Indice Noisetier
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[8].level
   - id: Graminees
     channelTypeUID: http:number
-    label: Graminées
+    label: Indice Graminées
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[9].level
   - id: Frene
     channelTypeUID: http:number
-    label: Frêne
+    label: Indice Frêne
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[10].level
   - id: Cupressacees
     channelTypeUID: http:number
-    label: Cupressacées
+    label: Indice Cupressacées
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[11].level
   - id: Chene
     channelTypeUID: http:number
-    label: Chêne
+    label: Indice Chêne
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[12].level
   - id: Chataignier
     channelTypeUID: http:number
-    label: Châtaignier
+    label: Indice Châtaignier
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[13].level
   - id: Charme
     channelTypeUID: http:number
-    label: Charme
+    label: Indice Charme
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[14].level
   - id: Bouleau
     channelTypeUID: http:number
-    label: Bouleau
+    label: Indice Bouleau
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[15].level
   - id: Aulne
     channelTypeUID: http:number
-    label: Aulne
+    label: Indice Aulne
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[16].level
   - id: Armoise
     channelTypeUID: http:number
-    label: Armoise
+    label: Indice Armoise
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[17].level
   - id: Ambroisies
     channelTypeUID: http:number
-    label: Ambroisies
+    label: Indice Ambroisies
     configuration:
+      mode: READWRITE
       stateTransformation: JSONPATH:$.risks[18].level
