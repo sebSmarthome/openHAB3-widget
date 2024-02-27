@@ -33,11 +33,11 @@ Support to use a light and a dark background.
 
 ## Icons
 
-![Screen8](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen.svg)
-![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-0.svg)
-![Screen5](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-1.svg)
-![Screen6](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-2.svg)
-![Screen7](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-3.svg)
+![pollen.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen.svg)[pollen.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen.svg)
+![pollen-0.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-0.svg)[pollen-0.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-0.svg)
+![pollen-1.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-1.svg)[pollen-1.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-1.svg)
+![pollen-2.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-2.svg)[pollen-2.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-2.svg)
+![pollen-3.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-3.svg)[pollen-3.svg](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Pollens_List_Item/icons/pollen-3.svg)
 
 ## Screenshots
 
