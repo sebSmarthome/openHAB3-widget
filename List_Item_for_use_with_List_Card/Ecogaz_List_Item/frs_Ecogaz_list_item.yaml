@@ -1,0 +1,248 @@
+uid: frs_Ecogaz_list_item
+tags:
+  - list
+props:
+  parameters:
+    - default: Ecogaz
+      description: Header Title
+      label: Title
+      name: EcogazTitle
+      required: false
+      type: TEXT
+      groupName: header
+    - default: ecogaz
+      description: Icon - OH icons
+      label: Icon
+      name: iconimage
+      required: false
+      type: TEXT
+      groupName: header
+    - default: Aujourd'hui
+      description: Today Signal Title
+      label: Title
+      name: aujourdhuiTitle
+      required: false
+      type: TEXT
+      groupName: aujourdhui
+    - context: item
+      default: EcoGaz_Aujourdhui
+      description: The signal relating to the forecast consumption level for today Item
+      label: Item
+      name: aujourdhuiItem
+      required: false
+      type: TEXT
+      groupName: aujourdhui
+    - default: Demain
+      description: Tomorrow Signal Title
+      label: Title
+      name: DemainTitle
+      required: false
+      type: TEXT
+      groupName: demain
+    - context: item
+      default: EcoGaz_Demain
+      description: The signal relating to the forecast consumption level for tomorrow Item
+      label: Item
+      name: DemainItem
+      required: false
+      type: TEXT
+      groupName: demain
+    - default: Après demain
+      description: In Two Days Signal Title
+      label: Title
+      name: ApresDemainTitle
+      required: false
+      type: TEXT
+      groupName: apresdemain
+    - context: item
+      default: EcoGaz_ApresDemain
+      description: The signal relating to the forecast consumption level in two days
+        signal Item
+      label: Item
+      name: ApresDemainItem
+      required: false
+      type: TEXT
+      groupName: apresdemain
+    - default: Dans 3 jours
+      description: In Three Days Signal Title
+      label: Title
+      name: troisjTitle
+      required: false
+      type: TEXT
+      groupName: dans3j
+    - context: item
+      default: EcoGaz_Jour3
+      description: The signal relating to the forecast consumption level in three days
+        signal Item
+      label: Item
+      name: troisjItem
+      required: false
+      type: TEXT
+      groupName: dans3j
+    - default: Dans 4 jours
+      description: In Four Days Signal Title
+      label: Title
+      name: quatrejTitle
+      required: false
+      type: TEXT
+      groupName: dans4j
+    - context: item
+      default: EcoGaz_Jour4
+      description: The signal relating to the forecast consumption level in four days
+        signal Item
+      label: Item
+      name: quatrejItem
+      required: false
+      type: TEXT
+      groupName: dans4j
+    - default: Dans 5 jours
+      description: In Five Days Signal Title
+      label: Title
+      name: cinqjTitle
+      required: false
+      type: TEXT
+      groupName: dans5j
+    - context: item
+      default: EcoGaz_Jour5
+      description: The signal relating to the forecast consumption level in five days
+        signal Item
+      label: Item
+      name: cinqjItem
+      required: false
+      type: TEXT
+      groupName: dans5j
+  parameterGroups:
+    - name: header
+      label: Header
+    - name: aujourdhui
+      label: Today
+    - name: demain
+      label: Tomorrow
+    - name: apresdemain
+      label: In Two Days
+    - name: dans3j
+      label: In Three Days
+    - name: dans4j
+      label: In Four Days
+    - name: dans5j
+      label: In Five Days
+timestamp: Feb 27, 2024, 5:09:57 PM
+component: oh-list-item
+config:
+  accordionList: true
+  icon: =props.iconimage
+  mediaList: true
+  stylesheet: |
+    .animecogazred {
+      animation: flashingbgecogazred 1s linear 0s infinite;
+    } @keyframes flashingbgecogazred {
+      0%   {color: #ff3b30; opacity: 0}
+      25%  {color: #ff3b30; opacity: 1}
+      50%  {color: #ff3b30; opacity: 1}
+      75%  {color: #ff3b30; opacity: 0}
+      100% {color: #ff3b30; opacity: 0}
+    } .animecogazorange {
+      animation: flashingbgecogazorange 1s linear 0s infinite;
+    } @keyframes flashingbgecogazorange {
+      0%   {color: #ff9500; opacity: 0.6}
+      25%  {color: #ff9500; opacity: 1}
+      50%  {color: #ff9500; opacity: 1}
+      75%  {color: #ff9500; opacity: 0.6}
+      100% {color: #ff9500; opacity: 0.6}
+    } .ecogazgreen {
+      color: #4cd964;
+      opacity: 1
+    }
+    .ecogazyellow {
+      color: yellow;
+      opacity: 1
+    }
+  subtitle: =@props.aujourdhuiItem
+  title: =props.EcogazTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247,
+            247, 247)'"
+      slots:
+        default:
+          - component: oh-label-item
+            config:
+              after: =@props.aujourdhuiItem
+              icon: '=(@@props.aujourdhuiItem) == "Vert" ? "f7:checkmark_alt_circle_fill" : (@@props.aujourdhuiItem) == "Jaune" ? "f7:slash_circle_fill" : (@@props.aujourdhuiItem) == "Orange" ? "f7:exclamationmark_circle_fill" : "f7:multiply_circle_fill"'
+              iconColor: '=(@@props.aujourdhuiItem) == "Vert" ? "green" : (@@props.aujourdhuiItem) == "Jaune" ? "yellow" : (@@props.aujourdhuiItem) == "Orange" ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+              title: =props.aujourdhuiTitle
+          - component: oh-label-item
+            config:
+              after: =@props.DemainItem
+              icon: '=(@@props.DemainItem) == "Vert" ? "f7:checkmark_alt_circle_fill" : (@@props.DemainItem) == "Jaune" ? "f7:slash_circle_fill" : (@@props.DemainItem) == "Orange" ? "f7:exclamationmark_circle_fill" : "f7:multiply_circle_fill"'
+              iconColor: '=(@@props.DemainItem) == "Vert" ? "green" : (@@props.DemainItem) == "Jaune" ? "yellow" : (@@props.DemainItem) == "Orange" ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+              title: =props.DemainTitle
+          - component: oh-label-item
+            config:
+              after: =@props.ApresDemainItem
+              icon: '=(@@props.ApresDemainItem) == "Vert" ? "f7:checkmark_alt_circle_fill" : (@@props.ApresDemainItem) == "Jaune" ? "f7:slash_circle_fill" : (@@props.ApresDemainItem) == "Orange" ? "f7:exclamationmark_circle_fill" : "f7:multiply_circle_fill"'
+              iconColor: '=(@@props.ApresDemainItem) == "Vert" ? "green" : (@@props.ApresDemainItem) == "Jaune" ? "yellow" : (@@props.ApresDemainItem) == "Orange" ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+              title: =props.ApresDemainTitle
+          - component: oh-label-item
+            config:
+              after: =@props.troisjItem
+              icon: '=(@@props.troisjItem) == "Vert" ? "f7:checkmark_alt_circle_fill" : (@@props.troisjItem) == "Jaune" ? "f7:slash_circle_fill" : (@@props.troisjItem) == "Orange" ? "f7:exclamationmark_circle_fill" : "f7:multiply_circle_fill"'
+              iconColor: '=(@@props.troisjItem) == "Vert" ? "green" : (@@props.troisjItem) == "Jaune" ? "yellow" : (@@props.troisjItem) == "Orange" ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+              title: =props.troisjTitle
+          - component: oh-label-item
+            config:
+              after: =@props.quatrejItem
+              icon: '=(@@props.quatrejItem) == "Vert" ? "f7:checkmark_alt_circle_fill" : (@@props.quatrejItem) == "Jaune" ? "f7:slash_circle_fill" : (@@props.quatrejItem) == "Orange" ? "f7:exclamationmark_circle_fill" : "f7:multiply_circle_fill"'
+              iconColor: '=(@@props.quatrejItem) == "Vert" ? "green" : (@@props.quatrejItem) == "Jaune" ? "yellow" : (@@props.quatrejItem) == "Orange" ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+              title: =props.quatrejTitle
+          - component: oh-label-item
+            config:
+              after: =@props.cinqjItem
+              icon: '=(@@props.cinqjItem) == "Vert" ? "f7:checkmark_alt_circle_fill" : (@@props.cinqjItem) == "Jaune" ? "f7:slash_circle_fill" : (@@props.cinqjItem) == "Orange" ? "f7:exclamationmark_circle_fill" : "f7:multiply_circle_fill"'
+              iconColor: '=(@@props.cinqjItem) == "Vert" ? "green" : (@@props.cinqjItem) == "Jaune" ? "yellow" : (@@props.cinqjItem) == "Orange" ? "orange" : "red"'
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+              title: =props.cinqjTitle
+  after:
+    - component: f7-icon
+      config:
+        class: '=(@@props.aujourdhuiItem) == "Vert" ? "ecogazgreen" : (@@props.aujourdhuiItem) == "Jaune" ? "ecogazyellow" : (@@props.aujourdhuiItem) == "Orange" ? "animecogazorange" : "animecogazred"'
+        f7: '=(@@props.aujourdhuiItem) == "Vert" ? "checkmark_alt_circle_fill" : (@@props.aujourdhuiItem) == "Jaune" ? "slash_circle_fill" : (@@props.aujourdhuiItem) == "Orange" ? "exclamationmark_circle_fill" : "multiply_circle_fill"'
+        size: 30
+        style:
+          height: 20px
+          margin-left: 0px
+          margin-top: 0px
+          width: 30px

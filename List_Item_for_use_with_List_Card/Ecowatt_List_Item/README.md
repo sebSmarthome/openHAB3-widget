@@ -19,6 +19,10 @@ Support to use a light and a dark background.
 * In Two Days Signal item
 * In Three Days Signal item
 
+## Icons
+
+![ecowatt.png](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Ecowatt_List_Item/icons/ecowatt.png)[ecowatt.png](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Ecowatt_List_Item/icons/ecowatt.png)
+
 ## Screenshots
 
 ![Screen2|379x76](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Ecowatt_List_Item/screenshots/Ecowattnormal.jpg)

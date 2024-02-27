@@ -1,0 +1,9 @@
+Thing http:url:EcoGaz "HTTP Indice EcoGaz" [ baseURL="https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/signal-ecogaz/records?order_by=gas_day DESC&limit=6", refresh=30000, delay=0 ] {
+    Channels:
+        Type string : Aujoudhui "Aujourd'hui" [ escapedUrl=true, stateTransformation="JSONPATH:$.results[5].couleur_du_signal_fr" ]
+        Type string : Demain "Demain" [ escapedUrl=true, stateTransformation="JSONPATH:$.results[4].couleur_du_signal_fr" ]
+        Type string : ApresDemain "Après demain" [ escapedUrl=true, stateTransformation="JSONPATH:$.results[3].couleur_du_signal_fr" ]
+        Type string : Jour3 "3ème jour" [ escapedUrl=true, stateTransformation="JSONPATH:$.results[2].couleur_du_signal_fr" ]
+        Type string : Jour4 "4ème jour" [ escapedUrl=true, stateTransformation="JSONPATH:$.results[1].couleur_du_signal_fr" ]
+        Type string : Jour5 "5ème jour" [ escapedUrl=true, stateTransformation="JSONPATH:$.results[0].couleur_du_signal_fr" ]
+    }

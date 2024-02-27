@@ -11,7 +11,7 @@ props:
       type: TEXT
       groupName: header
     - default: ecowatt
-      description: icon name without ".png", located in static/icons/ folder
+      description: Icon - OH icons
       label: Icon
       name: iconimage
       required: false

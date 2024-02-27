@@ -1,0 +1,7 @@
+Group EcoGaz "EcoGaz" <f7:money-euro-circle-fill> ["WebService"]
+String EcoGaz_Aujourdhui "Aujourd'hui" <f7:money_euro> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Aujoudhui", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
+String EcoGaz_Demain "Demain" <f7:money_euro> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Demain", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
+String EcoGaz_ApresDemain "Après demain" <f7:money_euro> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:ApresDemain", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
+String EcoGaz_Jour3 "3ème jour" <f7:money_euro> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Jour3", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
+String EcoGaz_Jour4 "4ème jour" <f7:money_euro> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Jour4", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
+String EcoGaz_Jour5 "5ème jour" <f7:money_euro> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Jour5", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
