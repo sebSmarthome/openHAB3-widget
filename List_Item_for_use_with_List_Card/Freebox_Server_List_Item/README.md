@@ -1,4 +1,4 @@
-![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Server_List_Item/screenshots/FreeboxServerListItemScreenShot.PNG)
+![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Server_List_Item/screenshots/FreeboxServerListItemScreenShot.jpg)
 
 This is an UI **List Item** Widget to view the Freebox server information with the [FreeboxOS Binding](https://www.openhab.org/addons/bindings/freeboxos/).
 
@@ -39,7 +39,7 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Server_List_Item/screenshots/FreeboxServerListItemScreenShot.PNG)
+![Screen4](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Freebox_Server_List_Item/screenshots/FreeboxServerListItemScreenShot.jpg)
 
 ## Changelog
   
