@@ -1,4 +1,7 @@
-This is an UI **List Item** Widget
+**Only use with “List Card” with accordion and rich list items option set to true.
+Do not use it as a “default list item widget”**
+
+Support to use a light and a dark background.
 
 * [Air Quality List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item)
 * [Astro Moon List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item)
@@ -21,10 +24,6 @@ This is an UI **List Item** Widget
 * [Tarifs HC Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsHC_Electricity_List_Item)
 * [UV List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/UV_List_Item)
 
-Only use with **List Card** with accordion and rich list items option set to true.
-
-Support to use a light and a dark background.
-
 ## Screenshots
 
 **Standard Library List Card**
@@ -34,4 +33,3 @@ Support to use a light and a dark background.
 **Configure List**
 
 ![Screen3](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item/screenshots/AstroMoonListItemScreenShot2.PNG)
-

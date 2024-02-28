@@ -1,0 +1,15 @@
+Thing http:url:Pluie_Dans_LHeure "HTTP Pluie dans l'heure" [ baseURL="https://rpcache-aa.meteofrance.com/internet2018client/2.0/nowcast/rain?lat=<latitude>&lon=<longitude>&token=__Wj7dVSTjV9YGu1guveLyDq0g7S7TfTjaHBTPTpO0kj8__", refresh=300, delay=0 ] {
+    Channels:
+        Type datetime : Mise_A_Jour "Mise à jour" [ stateTransformation="JSONPATH:$.update_time" ]
+        Type datetime : Heure_5mins "5 minutes (heure)" [ stateTransformation="JSONPATH:$.properties.forecast[0].time" ]
+        Type number : Indice_5mins "5 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[0].rain_intensity" ]
+        Type number : Indice_10mins "10 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[1].rain_intensity" ]
+        Type number : Indice_15mins "15 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[2].rain_intensity" ]
+        Type number : Indice_20mins "20 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[3].rain_intensity" ]
+        Type number : Indice_25mins "25 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[4].rain_intensity" ]
+        Type number : Indice_30mins "30 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[5].rain_intensity" ]
+        Type number : Indice_40mins "40 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[6].rain_intensity" ]
+        Type number : Indice_50mins "50 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[7].rain_intensity" ]
+        Type datetime : Heure_60mins "60 minutes (heure)" [ stateTransformation="JSONPATH:$.properties.forecast[8].time" ]
+        Type number : Indice_60mins "60 minutes (indice)" [ stateTransformation="JSONPATH:$.properties.forecast[8].rain_intensity" ]
+    }

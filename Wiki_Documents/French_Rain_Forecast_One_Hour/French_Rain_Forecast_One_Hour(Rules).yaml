@@ -1,0 +1,729 @@
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_5mins
+    type: core.ItemStateChangeTrigger
+  - id: "2"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_10mins
+    type: core.ItemStateChangeTrigger
+  - id: "3"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_15mins
+    type: core.ItemStateChangeTrigger
+  - id: "4"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_20mins
+    type: core.ItemStateChangeTrigger
+  - id: "5"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_25mins
+    type: core.ItemStateChangeTrigger
+  - id: "6"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_30mins
+    type: core.ItemStateChangeTrigger
+  - id: "7"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_40mins
+    type: core.ItemStateChangeTrigger
+  - id: "8"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_50mins
+    type: core.ItemStateChangeTrigger
+  - id: "9"
+    configuration:
+      itemName: Pluie_dans_lheure_Indice_60mins
+    type: core.ItemStateChangeTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "10"
+    configuration:
+      blockSource: <xml
+        xmlns="https://developers.google.com/blockly/xml"><variables><variable
+        id="tu*hW=of._h05%*:Ztnf">Indices</variable><variable
+        id="C`;^v7|VCaJIw:]b]o)@">Text</variable></variables><block
+        type="variables_set" id="Bd_m*MHmQ9gR|y@M:RCa" x="1272" y="-1921"><field
+        name="VAR" id="tu*hW=of._h05%*:Ztnf">Indices</field><value
+        name="VALUE"><block type="lists_create_with"
+        id="doRSMyzphO(q#J3KHPKh"><mutation items="9"></mutation><value
+        name="ADD0"><block type="oh_toNumber" id="D)vHJtf;RG?pLiND!oCh"><value
+        name="valueAsText"><shadow type="text" id="nB^Bd7=iZ!Bts:v#l-yz"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="=PODt9dFm_yZ-.`D1{lI"><value name="itemName"><shadow type="oh_item"
+        id="LsFh%0:s#|fvq@AV*m.e"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="T[WKj,xBF^KVfVslgf*$"><mutation
+        itemName="Pluie_dans_lheure_5_minutes" itemLabel="5
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_5_minutes</field></block></value></block></value></block></value><value
+        name="ADD1"><block type="oh_toNumber" id="TG{v5Xci/KPKp~8C81=Q"><value
+        name="valueAsText"><shadow type="text" id="l[7!i!KnGzECg}@z_{@_"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="kZdu25br?U[xYz[CX,Vi"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="?|9x(%;.CH2:m}O(:M*,"><mutation
+        itemName="Pluie_dans_lheure_10_minutes" itemLabel="10
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_10_minutes</field></block></value></block></value></block></value><value
+        name="ADD2"><block type="oh_toNumber" id="2LH}zi9C1Z:?l;HGA33i"><value
+        name="valueAsText"><shadow type="text" id="2-!2|{6/g0vpL]~Y_Qob"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="bz[eQ2(3gFXts8~p5^du"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="y.k3?Cp6^mfB!Hwtn*[P"><mutation
+        itemName="Pluie_dans_lheure_15_minutes" itemLabel="15
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_15_minutes</field></block></value></block></value></block></value><value
+        name="ADD3"><block type="oh_toNumber" id="DtP/^^zlOTZS}6hcy~B:"><value
+        name="valueAsText"><shadow type="text" id="4d/dI%9o0VAvo8I6Him]"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="RED}i`EK3e$FfnRpG499"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="=p:T3rv,;of*L*eR/-SL"><mutation
+        itemName="Pluie_dans_lheure_20_minutes" itemLabel="20
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_20_minutes</field></block></value></block></value></block></value><value
+        name="ADD4"><block type="oh_toNumber" id="sFcsD-`DC!XDjN]#kEyF"><value
+        name="valueAsText"><shadow type="text" id="onidWslfJJQiI(txL-=n"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="tRp+Q3C/W#vJZ]xH8~_y"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="3vnJPh%i$h0Z)[(3`oSp"><mutation
+        itemName="Pluie_dans_lheure_25_minutes" itemLabel="25
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_25_minutes</field></block></value></block></value></block></value><value
+        name="ADD5"><block type="oh_toNumber" id="=c@L8LQbx.O}xaM$_A,0"><value
+        name="valueAsText"><shadow type="text" id="o89BHSS1Urb%D4I;(n~+"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="FHq{]F)i#@u[EZn3y[Jo"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="j;tLVq:E(G_3dH6*/4ae"><mutation
+        itemName="Pluie_dans_lheure_30_minutes" itemLabel="30
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_30_minutes</field></block></value></block></value></block></value><value
+        name="ADD6"><block type="oh_toNumber" id="Sa,!!_k5TDJ+[A=8DQOQ"><value
+        name="valueAsText"><shadow type="text" id="I[FHZ9x/n)(+y6_X1#`%"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="_#U|e;eWdUhWg0xDs335"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="f-Md|L/KgNE}|ej~7%:/"><mutation
+        itemName="Pluie_dans_lheure_40_minutes" itemLabel="40
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_40_minutes</field></block></value></block></value></block></value><value
+        name="ADD7"><block type="oh_toNumber" id="m;(LE_Q=mdwO1S=,Y[VH"><value
+        name="valueAsText"><shadow type="text" id="-KX.I!h_`HieAVuKsxpA"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="y[9Bi=)@ltp+IO#3~]s."><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id=";hhI$06!;NlXHFGPs-2)"><mutation
+        itemName="Pluie_dans_lheure_50_minutes" itemLabel="50
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_50_minutes</field></block></value></block></value></block></value><value
+        name="ADD8"><block type="oh_toNumber" id="V!xBMJRDq*5+[$OO`q{8"><value
+        name="valueAsText"><shadow type="text" id="OmBNzqUf-9}Cl8o09|aL"><field
+        name="TEXT">123</field></shadow><block type="oh_getitem_state"
+        id="QOfva@-nu#D6X[LF*T1g"><value name="itemName"><shadow type="oh_item"
+        id="W1SKi$%hQ!In9r1Y*j(n"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="]}!qATU)Mmzp||{KMJb^"><mutation
+        itemName="Pluie_dans_lheure_60_minutes" itemLabel="60
+        minutes"></mutation><field
+        name="itemName">Pluie_dans_lheure_60_minutes</field></block></value></block></value></block></value></block></value><next><block
+        type="controls_if" id="2~F.Nmn|#J7L3AK=Rt:G"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="Osny.o[BaBFL8f3R[d!C"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="AHzq9zbU=*:(XaEhVHFo"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="z~Z1+}d?t,DK^.i(%Z01"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="M9+?0]NRMPY)%^x`X%Rs"><field
+        name="NUM">9</field></block></value></block></value><value
+        name="B"><block type="text" id="R)nXrd%4r#Id|]2niL!I"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="Q%8)cxAC=]DsDy-B;!k8"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="Y%_yMIsLeu=b}BI@4Kex"><field
+        name="TEXT">Pluie faible dans 50
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="ucQiaqthG$_e#(f],.{d"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="c*un_#6*xw_:E0%!DI5c"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="uX2]$K)k_fB$WlQU3Q?{"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="6`ZXqkknolMC(QE2it,+"><field
+        name="NUM">9</field></block></value></block></value><value
+        name="B"><block type="text" id="|6gB=4A5G$cB}vI3--Y."><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="ol]qb#.DwL%F1?Ta3eI8"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="BVJCjR(Fg@!5:Rf(]@*Q"><field
+        name="TEXT">Pluie modérée dans 50
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="KohfHCVX0*/?f^!cwbC,"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="E([$MYrXoQ49zsvZ~u7R"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="}9}Hm4c7]!OpBMIhUqk,"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="aWE[llerHS|=A2BORVXJ"><field
+        name="NUM">9</field></block></value></block></value><value
+        name="B"><block type="text" id="As!YnJ}o+IPSEfRq!~;;"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="]mK_fcphh)`QDtmxGVm]"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="..e;YA-4,,*DRJ,7(}c("><field
+        name="TEXT">Pluie forte dans 50
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id="gysD{yT{A`(@(9Mw7B3L"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="p;}p8cE[1_0zarXNHPPg"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="sFVI}(KLIQ~n2V[}!mNZ"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="QOTc5_oi#*1F[dy|AxEI"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="7~A=BD,VO!5;S`f.94-E"><field
+        name="NUM">8</field></block></value></block></value><value
+        name="B"><block type="text" id="BmA~)mc.AFvHP0no,J9B"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="-_%Tws,p$qV+ZMfwVQ^["><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="[:j7LH:[X/$q8VzgZkxd"><field
+        name="TEXT">Pluie faible dans 40
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="Anim=Kpux*Z~*#7WQx8r"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id=".f7ZWo|]%-#e2!6Ur]Rw"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="5AcH#@Ys%~Z8b/NIH(;w"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="Z.h[L}gjpGDbLM:*fpJY"><field
+        name="NUM">8</field></block></value></block></value><value
+        name="B"><block type="text" id="i_Yp?1}Ljm2ozK=dRePV"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="5r2cAI,QHC*MBb5{X1os"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id=".9$#g_@A#/dwe(}qY@k3"><field
+        name="TEXT">Pluie modérée dans 40
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="3k[.dd1N8rtz/tA6/}FT"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="OFFOUq#AdcgT^=3Y@FTb"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="!~FH0DMX.Avuc[puv:30"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="t/M+-Qq1;ndDZG][|LQ4"><field
+        name="NUM">8</field></block></value></block></value><value
+        name="B"><block type="text" id="H|hDTe)~2mf$bqL/!L0X"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="V.[f+a$5t|%v|e8ds$fJ"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="pPCFQ9rZ6Jc+{,x7UAQh"><field
+        name="TEXT">Pluie forte dans 40
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id="b.^!f(~FUQYkxD8m$.k3"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="tZQsN,-rnYQG;#*uG#ti"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="#FIme=RV__/e;Ot,Q[Q4"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="Z#4)|Cy65ptJm_D3odKq"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="%Za~{Q$tFszK4`i*.|bw"><field
+        name="NUM">7</field></block></value></block></value><value
+        name="B"><block type="text" id="I]5(`oEz{Es6j|0_^a2q"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="#0wnBeFsY;JESnno|jRL"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="k?R,Xji4,u:|81zuM/91"><field
+        name="TEXT">Pluie faible dans 30
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id=":L%nxjnyd-;K2v0{UYvF"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="b_4alEnI7H]E$v1kot!k"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="wA(0|~?l;D`p^uuf0(Ms"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="V0!tiK$OR9;q@{pyrw4S"><field
+        name="NUM">7</field></block></value></block></value><value
+        name="B"><block type="text" id="}MXYF2tw[{ehvQ?/;,(~"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="HuRfJl{yS8u^J~GAfdZR"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id=",%i7Zvko?n^t3xY8cXWb"><field
+        name="TEXT">Pluie modérée dans 30
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="[FZhZ,Va6fUex;yIao(#"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="8LRfY:n!S:#Vn1fcvf$G"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="vzJ**M-3{9R}]ux#T+fG"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="ao_P96@o(b6$bff]bxtC"><field
+        name="NUM">7</field></block></value></block></value><value
+        name="B"><block type="text" id="1xr^z1[5$ZGs,0u,W{.i"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="[d!xiB).q,a5f3=GpD_H"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="F+sXxgqOzY+(VJEb8cgO"><field
+        name="TEXT">Pluie forte dans 30
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id=".gQ16m`Y{|+f!hs|x2l9"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="./~su1(|=qBblfOd$%4}"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="+mnhkf;ZBGMTLgG(bGcq"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id=",t{h4a{=aq:P,}_eYhza"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="=*=qkCI`~2es}kC,iQ#d"><field
+        name="NUM">6</field></block></value></block></value><value
+        name="B"><block type="text" id="g8NQn66]t8c+(3K0,2I6"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="*Fa?@H}w4onZjfAOidJR"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="^?v~2UGb67|teF.pkvo1"><field
+        name="TEXT">Pluie faible dans 25
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id=")V4%Fe_;WkV8U+Ui*U[X"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="s*mHi0oHV1yK*zQVkf%v"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="cXrc1%UY3Q`FF}@k8wx-"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="^I/pgPW)Cw!op_h,^3oP"><field
+        name="NUM">6</field></block></value></block></value><value
+        name="B"><block type="text" id="G|;hN`{(6Whxn6=68EEs"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="9#VOz{yDKJz#[:tvs~]2"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="=BS]-kOS-Xh=,b+UV$7q"><field
+        name="TEXT">Pluie modérée dans 25
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="HM47]1(R4|^k/;T4[Lc$"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id=";*}|Uw{%k42GLEei+T@*"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="Kmc|B#[/D|#K!,AL_g13"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="Np;P;MNvAmK7/TT[oza$"><field
+        name="NUM">6</field></block></value></block></value><value
+        name="B"><block type="text" id="{i)rK6E`Z1PKv`c9TcBW"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="cOPlOq]2h;fuYGZoUlG#"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="5^NOP).%Z,ujlUA)Jwwq"><field
+        name="TEXT">Pluie forte dans 25
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id="+0!U24bowfub98l261c$"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id=":_#m[6iI;RdXJ0}*,)lK"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="x,JgI8HR=Q`$_zp_KIuz"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="^KkeFdj@/fU9aCcou+[2"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="Xb,nxmm8VoY#;XX|C7pk"><field
+        name="NUM">5</field></block></value></block></value><value
+        name="B"><block type="text" id="~1av#4PoPdlZ0Ked@!P+"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="^U=!^J8]tM0r`vaD1N`;"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="I|?;YLAXZWCc4d1DH1/J"><field
+        name="TEXT">Pluie faible dans 20
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="^Fl@M}1crvvz8I*o~4[A"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="OM$qi,Fe6or4bB%bVxf$"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="k=aGN_7rxyA^XY=hZRi("><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="_7[U#IPU6nlCTt?t=F1L"><field
+        name="NUM">5</field></block></value></block></value><value
+        name="B"><block type="text" id="Y4x;KWQi(KS4vQ.vn:Q!"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="gE=nNIx:1r3@Hvl@i?{M"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="Rm_$QY7T}$|.yQ/#0.[h"><field
+        name="TEXT">Pluie modérée dans 20
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="Hh=Ggn^u2zmzz)v|z0~,"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="l#7*1[pCq0q^!o2u;#i{"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="nI@CsYS.Xf|5kzwL7JSg"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="$7qBRSNe)2UiU_S`(Q79"><field
+        name="NUM">5</field></block></value></block></value><value
+        name="B"><block type="text" id="ZWiqN_N$xno6Xgsl[0p0"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="$GlmR*u+xQNNqHff?%sY"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="QA^wmew?5:9rTwt}^;{d"><field
+        name="TEXT">Pluie forte dans 20
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id="tq3ZG^ADK8%_|L7noMa^"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id=")zR6aW(XEM6qh4|2Hi9z"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="iubiFpR0IHxwb4R_:Nla"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="Jka9ONcE{2W5be}CZ5qf"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="uKiJGS+ZYH9mD[N}mx1e"><field
+        name="NUM">4</field></block></value></block></value><value
+        name="B"><block type="text" id="{M47#zRqMdjfCQFcm+Bv"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="vui$61!9z!H3Wd_%9eZz"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="7-0kZ=M5Z,v80_Y$$y|7"><field
+        name="TEXT">Pluie faible dans 15
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="YB@a2P.E]%I6STa`.@_!"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="QQMi:-3MpIvr)/bwr]PP"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="~DNsp1UjWcs=b/NZ{SKq"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="7cvUFdes}Ux:)u)/!y[9"><field
+        name="NUM">4</field></block></value></block></value><value
+        name="B"><block type="text" id="}{8I_IDusqckd,0n$+;F"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="*C4]Eh#UB2,k$}r1x?@J"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="z;BFmG~TDavU/U.NfHDf"><field
+        name="TEXT">Pluie modérée dans 15
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="a0X4A+eiW+(MEs0vv}1U"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="C%[g{h#.Jk:#d(~by0m!"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="4{/3LfE;|TDWy!a+mPEY"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="JHCR9q~gXAm-OHsj}K}~"><field
+        name="NUM">4</field></block></value></block></value><value
+        name="B"><block type="text" id="1Lt}wHxQ^0Pj5Or`98_*"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="wv#)@.F+[3M0pD4O(5oG"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="XWBCyI0Cz8#LT0qU(g)."><field
+        name="TEXT">Pluie forte dans 15
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id="53P/O-sEM[Q6dD/ZQsiE"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="H,QzlKcqqI9/!1~8l${X"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="E%ec0lBePW!]ZbA,S:H?"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="Ow%6Df(~y,M#@smel%P+"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="guw!jS4OxUp$aPe?80{."><field
+        name="NUM">3</field></block></value></block></value><value
+        name="B"><block type="text" id="@N63u3jS[WNONnFsx:7["><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="]$AxOT*?,wcjuwAjS;RX"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="|hr7!`r^E{cbI|`Hv[H9"><field
+        name="TEXT">Pluie faible dans 10
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="c{Ifpjl8S5CbW3#0A[0u"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="|.R@}[JjV7m?05{Oz4DH"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="X|{zwk(+8rG_pH{+a2uM"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="O;Y5Lo_;.cyPy6_GKj(8"><field
+        name="NUM">3</field></block></value></block></value><value
+        name="B"><block type="text" id="UfTJ_OudZt3fNWf|9H);"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="Lf]3L{-u1_dg;d%VoKFJ"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="`H75[g{#S=s09UyCA52q"><field
+        name="TEXT">Pluie modérée dans 10
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="V=ji_B`(^V{h;`QkiG+1"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="Z|f_mJFLgOsne~Pm1tNG"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="X=a3sM;!ZD-o=0W69{w|"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="F5RphC^!Z~?v]u_+Q?nk"><field
+        name="NUM">3</field></block></value></block></value><value
+        name="B"><block type="text" id="NGLOYTon;a`2``3f/Gd?"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="rk2PTo~^3iWS%HoY?s7k"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="gPTUs-fwpO?kL8vBT6$9"><field
+        name="TEXT">Pluie forte dans 10
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id="3I:y4=~WW_pJkH^UzxHL"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="U(=spZrX:W}aD]WnZxtx"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="{_FxqRPw=N8$)tPfG]{@"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="w[fpd_`!LS@j^-{j5{N`"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="ni,[VRkT;aShTnG|!9Pn"><field
+        name="NUM">2</field></block></value></block></value><value
+        name="B"><block type="text" id="+gtvsTz@-CMxo8,`jIwX"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="O5$tb9miYMm{Y`TyrNcq"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="*R#+h|vXapip7;g_Lg~Q"><field
+        name="TEXT">Pluie faible dans 5
+        minutes</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="6EqmJ/b(%3e3n0//as2a"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="m_fb]8]K/Nd+*%kcCmUi"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="QxES?8c:8^Lj~ryo[|cu"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="]yMGEzEo#GpT%(_35|o?"><field
+        name="NUM">2</field></block></value></block></value><value
+        name="B"><block type="text" id="6XmUmFH2t@@^:+OV4hXM"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="b-a8Cpe_T:_c,y}OW0}b"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="7XZ^8.Yd`SNVel*~`r]g"><field
+        name="TEXT">Pluie modérée dans 5
+        minutes</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="BC4zVh10Q`rUnMgz79Be"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="P9K|:YLlW;waMWdqphL|"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="*s0M?-Gyd`q|`Rv)Ysxd"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="Dq5M=q+t}dTG:P?aDo}{"><field
+        name="NUM">2</field></block></value></block></value><value
+        name="B"><block type="text" id="h}oFi}M*{g2[3Mw|/c!j"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="GBX^)5zLJr|#^5CGIBzI"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="_sqhuL1=1qn_Ih#T2m%W"><field
+        name="TEXT">Pluie forte dans 5
+        minutes</field></block></value></block></statement><next><block
+        type="controls_if" id=",{]I,=okt8v,5P:aq8V$"><mutation
+        elseif="2"></mutation><value name="IF0"><block type="logic_compare"
+        id="__a)g,1bgrE4%Rf^D4bQ"><field name="OP">EQ</field><value
+        name="A"><block type="lists_getIndex"
+        id="h/KC8-4@C#)H(7V-z;AF"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="X_n2/^8Ne;~YgjqU_cb1"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="^n!4K8RD#hX@!0iwRzaJ"><field
+        name="NUM">1</field></block></value></block></value><value
+        name="B"><block type="text" id="qNkQXHO|Q,xtA[^dB_e-"><field
+        name="TEXT">2</field></block></value></block></value><statement
+        name="DO0"><block type="variables_set" id="!39*8-WzqKiv#YDztvwS"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="2{1%s|xsl0p=y(Ju3%2?"><field
+        name="TEXT">Pluie
+        faible</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="tig%!`({5/#}tZhX,YVP"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="]MD8GB0t[.C=geCqJ%nP"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="X0nYNs[F_R@*zstAHhQY"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="cVB;l-$RO4d-jiSqtjtR"><field
+        name="NUM">1</field></block></value></block></value><value
+        name="B"><block type="text" id="ihWgA5{Le=mK4,cV+BN1"><field
+        name="TEXT">3</field></block></value></block></value><statement
+        name="DO1"><block type="variables_set" id="s2dMQM3?daV~p3laVW^s"><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="H=pMG]FG,J|Ni%Z%O+~}"><field
+        name="TEXT">Pluie
+        modérée</field></block></value></block></statement><value
+        name="IF2"><block type="logic_compare" id="nvS:16]|pn6bkL(MO7s4"><field
+        name="OP">EQ</field><value name="A"><block type="lists_getIndex"
+        id="M,Fb+r3/pzaZACK*o(.s"><mutation statement="false"
+        at="true"></mutation><field name="MODE">GET</field><field
+        name="WHERE">FROM_START</field><value name="VALUE"><block
+        type="variables_get" id="we1?hh9otS{DN8+|Y63f"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value><value
+        name="AT"><block type="math_number" id="9%qf7ut/#A[^C5;g(A9z"><field
+        name="NUM">1</field></block></value></block></value><value
+        name="B"><block type="text" id="(zb[wSz*jN#vjcLYs`z^"><field
+        name="TEXT">4</field></block></value></block></value><statement
+        name="DO2"><block type="variables_set" id="4jpJszQ8zV=2eoiM}N@."><field
+        name="VAR" id="C`;^v7|VCaJIw:]b]o)@">Text</field><value
+        name="VALUE"><block type="text" id="_[$qn:w*AvzFn}*s$0(M"><field
+        name="TEXT">Pluie
+        forte</field></block></value></block></statement><next><block
+        type="controls_if" id="A|}06mKR:L*7=n,k=i2O"><mutation
+        elseif="1"></mutation><value name="IF0"><block type="logic_compare"
+        id=";sYZQ9!!iO3^yH-^pu#F"><field name="OP">EQ</field><value
+        name="A"><block type="math_on_list" id="Lp`W(Joxq%tY)A!C4m8c"><mutation
+        op="SUM"></mutation><field name="OP">SUM</field><value
+        name="LIST"><block type="variables_get" id="n^O%VP;kHY`wPIzb}R]+"><field
+        name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value></block></value><value
+        name="B"><block type="math_number" id="S%ppDvMV;}?F7AqhQxxU"><field
+        name="NUM">9</field></block></value></block></value><statement
+        name="DO0"><block type="oh_event" id="UC@v[F/x[HwBL`n%eOh^"><field
+        name="eventType">sendCommand</field><value name="value"><shadow
+        type="text" id=",IT[C{sHPe*b@#ing`*6"><field
+        name="TEXT">value</field></shadow><block type="text"
+        id="`DcB19b%uq$F*.PITZ9}"><field name="TEXT">Pas de
+        précipitations</field></block></value><value name="itemName"><shadow
+        type="oh_item" id="w^cxIKk0R}e1pqUP#v77"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="g[jIUp%AepZ!HxhC0RBO"><mutation itemName="Pluie_dans_lheure_Text"
+        itemLabel="Texte"></mutation><field
+        name="itemName">Pluie_dans_lheure_Text</field></block></value></block></statement><value
+        name="IF1"><block type="logic_compare" id="20qRqFWQ4rG8Ru|PFCP^"><field
+        name="OP">NEQ</field><value name="A"><block type="math_on_list"
+        id="?k4y,-vulCvxC*L3a#A_"><mutation op="SUM"></mutation><field
+        name="OP">SUM</field><value name="LIST"><block type="variables_get"
+        id=":t=MvM;iy=DV=M%eruO@"><field name="VAR"
+        id="tu*hW=of._h05%*:Ztnf">Indices</field></block></value></block></value><value
+        name="B"><block type="math_number" id="~Ha^|V((UXK{4%!jB:,M"><field
+        name="NUM">9</field></block></value></block></value><statement
+        name="DO1"><block type="oh_event" id="{@_8ImLuKMYhfSU}JOeE"><field
+        name="eventType">sendCommand</field><value name="value"><shadow
+        type="text" id=",IT[C{sHPe*b@#ing`*6"><field
+        name="TEXT">value</field></shadow><block type="variables_get"
+        id="0$S($oEtP%gkk#=H0/.F"><field name="VAR"
+        id="C`;^v7|VCaJIw:]b]o)@">Text</field></block></value><value
+        name="itemName"><shadow type="oh_item"
+        id="w^cxIKk0R}e1pqUP#v77"><mutation itemName="MyItem"
+        itemLabel="MyItem"></mutation><field
+        name="itemName">MyItem</field></shadow><block type="oh_item"
+        id="b.r/ASqf4;lLXLuDQ|YL"><mutation itemName="Pluie_dans_lheure_Text"
+        itemLabel="Texte"></mutation><field
+        name="itemName">Pluie_dans_lheure_Text</field></block></value></block></statement></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>
+      type: application/javascript
+      script: >
+        var Indices, Text2;
+
+
+
+        Indices = [parseFloat(items.getItem('Pluie_dans_lheure_5_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_10_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_15_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_20_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_25_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_30_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_40_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_50_minutes').state), parseFloat(items.getItem('Pluie_dans_lheure_60_minutes').state)];
+
+        if (Indices[8] == '2') {
+          Text2 = 'Pluie faible dans 50 minutes';
+        } else if (Indices[8] == '3') {
+          Text2 = 'Pluie modérée dans 50 minutes';
+        } else if (Indices[8] == '4') {
+          Text2 = 'Pluie forte dans 50 minutes';
+        }
+
+        if (Indices[7] == '2') {
+          Text2 = 'Pluie faible dans 40 minutes';
+        } else if (Indices[7] == '3') {
+          Text2 = 'Pluie modérée dans 40 minutes';
+        } else if (Indices[7] == '4') {
+          Text2 = 'Pluie forte dans 40 minutes';
+        }
+
+        if (Indices[6] == '2') {
+          Text2 = 'Pluie faible dans 30 minutes';
+        } else if (Indices[6] == '3') {
+          Text2 = 'Pluie modérée dans 30 minutes';
+        } else if (Indices[6] == '4') {
+          Text2 = 'Pluie forte dans 30 minutes';
+        }
+
+        if (Indices[5] == '2') {
+          Text2 = 'Pluie faible dans 25 minutes';
+        } else if (Indices[5] == '3') {
+          Text2 = 'Pluie modérée dans 25 minutes';
+        } else if (Indices[5] == '4') {
+          Text2 = 'Pluie forte dans 25 minutes';
+        }
+
+        if (Indices[4] == '2') {
+          Text2 = 'Pluie faible dans 20 minutes';
+        } else if (Indices[4] == '3') {
+          Text2 = 'Pluie modérée dans 20 minutes';
+        } else if (Indices[4] == '4') {
+          Text2 = 'Pluie forte dans 20 minutes';
+        }
+
+        if (Indices[3] == '2') {
+          Text2 = 'Pluie faible dans 15 minutes';
+        } else if (Indices[3] == '3') {
+          Text2 = 'Pluie modérée dans 15 minutes';
+        } else if (Indices[3] == '4') {
+          Text2 = 'Pluie forte dans 15 minutes';
+        }
+
+        if (Indices[2] == '2') {
+          Text2 = 'Pluie faible dans 10 minutes';
+        } else if (Indices[2] == '3') {
+          Text2 = 'Pluie modérée dans 10 minutes';
+        } else if (Indices[2] == '4') {
+          Text2 = 'Pluie forte dans 10 minutes';
+        }
+
+        if (Indices[1] == '2') {
+          Text2 = 'Pluie faible dans 5 minutes';
+        } else if (Indices[1] == '3') {
+          Text2 = 'Pluie modérée dans 5 minutes';
+        } else if (Indices[1] == '4') {
+          Text2 = 'Pluie forte dans 5 minutes';
+        }
+
+        if (Indices[0] == '2') {
+          Text2 = 'Pluie faible';
+        } else if (Indices[0] == '3') {
+          Text2 = 'Pluie modérée';
+        } else if (Indices[0] == '4') {
+          Text2 = 'Pluie forte';
+        }
+
+        if (Indices.reduce(function(x, y) {return x + y;}, 0) == 9) {
+          items.getItem('Pluie_dans_lheure_Etat').sendCommand('Pas de précipitations');
+        } else if (Indices.reduce(function(x, y) {return x + y;}, 0) != 9) {
+          items.getItem('Pluie_dans_lheure_Etat').sendCommand(Text2);
+        }
+    type: script.ScriptAction
