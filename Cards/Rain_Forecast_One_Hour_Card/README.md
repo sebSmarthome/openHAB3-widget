@@ -1,4 +1,4 @@
-![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/Cards/Rain_Forecast_One_Hour_List_Card/screenshots/RainCard.jpg)
+![Screen1](https://github.com/sebSmarthome/openHAB3-widget/blob/main/Cards/Rain_Forecast_One_Hour_Card/screenshots/RainCard.jpg)
 
 Widget card to display the rain forecast within the hour in france with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
 
@@ -29,7 +29,7 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/Cards/Rain_Forecast_One_Hour_List_Card/screenshots/RainCardWhite.jpg)
+![Screen2](https://github.com/sebSmarthome/openHAB3-widget/blob/main/Cards/Rain_Forecast_One_Hour_Card/screenshots/RainCardWhite.jpg)
 
 ## Changelog
 
