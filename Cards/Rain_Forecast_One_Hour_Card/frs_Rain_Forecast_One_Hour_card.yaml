@@ -1,0 +1,561 @@
+uid: frs_Rain_Forecast_One_Hour_Card
+tags:
+  - rain
+props:
+  parameters:
+    - default: Pluie dans l'heure
+      label: Header Title
+      name: pluie_Title
+      required: false
+      type: TEXT
+    - default: iconify:emojione-monotone:closed-umbrella
+      description: Use f7:iconName (Framework7 icon), material:iconName (Material
+        icon) or iconify:iconSet:iconName
+      label: Icon no rain
+      name: pluie_Off_Icon
+      required: false
+      type: TEXT
+    - default: gray
+      label: Icon color no rain
+      name: pluie_Off_Color_Icon
+      required: false
+      type: TEXT
+    - default: iconify:emojione-monotone:umbrella-with-rain-drops
+      description: Use f7:iconName (Framework7 icon), material:iconName (Material
+        icon) or iconify:iconSet:iconName
+      label: Icon rain
+      name: pluie_On_Icon
+      required: false
+      type: TEXT
+    - default: lightblue
+      label: Icon color rain
+      name: pluie_On_Color_Icon
+      required: false
+      type: TEXT
+    - default: lightgray
+      label: graph x-axis text color
+      name: graph_x_axis_text_color
+      required: false
+      type: TEXT
+    - default: lightgray
+      label: graph y-axis text color
+      name: graph_y_axis_text_color
+      required: false
+      type: TEXT
+    - default: gray
+      label: graph axis line color
+      name: graph_axis_line_color
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Etat
+      label: Item Rain state
+      name: pluie_text_item
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_5mins
+      label: Item Indice 5mins
+      name: Item5mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Heure_5mins
+      label: Item Hour 5mins
+      name: Item5minsHeure
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_10mins
+      label: Item Indice 10mins
+      name: Item10mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_15mins
+      label: Item Indice 15mins
+      name: Item15mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_20mins
+      label: Item Indice 20mins
+      name: Item20mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_25mins
+      label: Item Indice 25mins
+      name: Item25mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_30mins
+      label: Item Indice 30mins
+      name: Item30mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_40mins
+      label: Item Indice 40mins
+      name: Item40mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_50mins
+      label: Item Indice 50mins
+      name: Item50mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Indice_60mins
+      label: Item Indice 60mins
+      name: Item60mins
+      required: false
+      type: TEXT
+    - context: item
+      default: Pluie_dans_lheure_Heure_60mins
+      label: Item Hour 60mins
+      name: Item60minsHeure
+      required: false
+      type: TEXT
+  parameterGroups: []
+timestamp: Feb 29, 2024, 6:15:15 PM
+component: oh-repeater
+config:
+  for: coords
+  fragment: true
+  in:
+    - graph_axis_line_color: =props.graph_axis_line_color
+      graph_x_axis_text_color: =props.graph_x_axis_text_color
+      graph_y_axis_text_color: =props.graph_y_axis_text_color
+      p0: = 900 -
+        (Number.parseFloat(items[props.Item5mins].state)==1?0:(Number.parseFloat(items[props.Item5mins].state))==2?
+        300:(Number.parseFloat(items[props.Item5mins].state))==3?
+        600:(Number.parseFloat(items[props.Item5mins].state))==4? 900:900)
+      p1: = 900 -
+        (Number.parseFloat(items[props.Item10mins].state)==1?0:(Number.parseFloat(items[props.Item10mins].state))==2?
+        300:(Number.parseFloat(items[props.Item10mins].state))==3?
+        600:(Number.parseFloat(items[props.Item10mins].state))==4? 900:900)
+      p2: = 900 -
+        (Number.parseFloat(items[props.Item15mins].state)==1?0:(Number.parseFloat(items[props.Item15mins].state))==2?
+        300:(Number.parseFloat(items[props.Item15mins].state))==3?
+        600:(Number.parseFloat(items[props.Item15mins].state))==4? 900:900)
+      p3: = 900 -
+        (Number.parseFloat(items[props.Item20mins].state)==1?0:(Number.parseFloat(items[props.Item20mins].state))==2?
+        300:(Number.parseFloat(items[props.Item20mins].state))==3?
+        600:(Number.parseFloat(items[props.Item20mins].state))==4? 900:900)
+      p4: = 900 -
+        (Number.parseFloat(items[props.Item25mins].state)==1?0:(Number.parseFloat(items[props.Item25mins].state))==2?
+        300:(Number.parseFloat(items[props.Item25mins].state))==3?
+        600:(Number.parseFloat(items[props.Item25mins].state))==4? 900:900)
+      p5: = 900 -
+        (Number.parseFloat(items[props.Item30mins].state)==1?0:(Number.parseFloat(items[props.Item30mins].state))==2?
+        300:(Number.parseFloat(items[props.Item30mins].state))==3?
+        600:(Number.parseFloat(items[props.Item30mins].state))==4? 900:900)
+      p6: = 900 -
+        (Number.parseFloat(items[props.Item40mins].state)==1?0:(Number.parseFloat(items[props.Item40mins].state))==2?
+        300:(Number.parseFloat(items[props.Item40mins].state))==3?
+        600:(Number.parseFloat(items[props.Item40mins].state))==4? 900:900)
+      p7: = 900 -
+        (Number.parseFloat(items[props.Item50mins].state)==1?0:(Number.parseFloat(items[props.Item50mins].state))==2?
+        300:(Number.parseFloat(items[props.Item50mins].state))==3?
+        600:(Number.parseFloat(items[props.Item50mins].state))==4? 900:900)
+      p8: = 900 -
+        (Number.parseFloat(items[props.Item60mins].state)==1?0:(Number.parseFloat(items[props.Item60mins].state))==2?
+        300:(Number.parseFloat(items[props.Item60mins].state))==3?
+        600:(Number.parseFloat(items[props.Item60mins].state))==4? 900:900)
+      spacing: 196
+      x_graph_start: 650
+      y_graph_height: 900
+      y_graph_start: 200
+  sourceType: array
+slots:
+  default:
+    - component: f7-card
+      config:
+        style:
+          border-radius: 10px
+          margin-left: 5px
+          margin-right: 5px
+          min-width: 338px
+      slots:
+        default:
+          - component: f7-row
+            config:
+              class:
+                - justify-content-left
+                - align-items-center
+                - display-flex
+            slots:
+              default:
+                - component: oh-icon
+                  config:
+                    color: '=(@props.pluie_text_item == "Pas de précipitations") ?
+                      props.pluie_Off_Color_Icon : props.pluie_On_Color_Icon'
+                    height: 22px
+                    icon: '=(@props.pluie_text_item == "Pas de précipitations") ?
+                      props.pluie_Off_Icon : props.pluie_On_Icon'
+                    style:
+                      margin-left: 10px
+                      margin-top: 10px
+                      padding: 0px
+                - component: Label
+                  config:
+                    style:
+                      color: gray
+                      font-size: 16px
+                      font-weight: 600
+                      margin-left: 10px
+                      margin-top: 8px
+                      padding: 0px
+                    text: Pluie dans l'heure
+          - component: f7-col
+            config:
+              with: 100%
+              style:
+                text-align: center
+                margin-top: -4px
+                margin-left: -10px
+                padding-bottom: 26px
+            slots:
+              default:
+                - component: f7-block
+                  config:
+                    style:
+                      display: inline
+                      margin-left: -20px
+                      position: absolute
+                      top: 38px
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          style:
+                            color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                            font-size: 12px
+                            margin-right: 0px
+                            margin-top: 0px
+                            text-align: right
+                          text: Forte
+                      - component: Label
+                        config:
+                          style:
+                            color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                            font-size: 12px
+                            margin-right: 0px
+                            margin-top: 14px
+                            text-align: right
+                          text: Modérée
+                      - component: Label
+                        config:
+                          style:
+                            color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                            font-size: 12px
+                            margin-right: 0px
+                            margin-top: 12px
+                            text-align: right
+                          text: Faible
+                      - component: f7-block
+                        config:
+                          style:
+                            align-items: center
+                            display: flex
+                            flex-direction: row
+                            left: 40px
+                            position: absolute
+                            top: 86px
+                        slots:
+                          default:
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 12px
+                                  margin-left: 0px
+                                  width: 38px
+                                text: =dayjs(items[props.Item5minsHeure].state).subtract(5,
+                                  'minute').format('HH:mm')
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 10px
+                                  margin-left: 0px
+                                  width: 40px
+                                text: 10
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 10px
+                                  margin-left: 0px
+                                  width: 38px
+                                text: 20
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 10px
+                                  margin-left: 0px
+                                  width: 40px
+                                text: 30
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 10px
+                                  margin-left: 0px
+                                  width: 38px
+                                text: 40
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 10px
+                                  margin-left: 0px
+                                  width: 40px
+                                text: 50
+                            - component: Label
+                              config:
+                                style:
+                                  color: "=themeOptions.dark === 'dark' ? 'rgb(180,180,180)' : 'rgb(80,80,80)'"
+                                  font-size: 12px
+                                  margin-left: 0px
+                                  width: 38px
+                                text: =items[props.Item60minsHeure].displayState
+                - component: svg
+                  config:
+                    color: red
+                    height: 110px
+                    margin-left: -20px
+                    margin-right: 0px
+                    viewBox: 100 0 2900 1100
+                  slots:
+                    default:
+                      - component: polygon
+                        config:
+                          fill: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247, 247, 247)'"
+                          points: 650 200, 3000 200, 3000 1100, 650 1100
+                      - component: polygon
+                        config:
+                          fill: =`${loop.coords.graph_axis_line_color}`
+                          points: 650 200, 3000 200, 3000 210, 650 210
+                      - component: polygon
+                        config:
+                          fill: =`${loop.coords.graph_axis_line_color}`
+                          points: 650 500, 3000 500, 3000 510, 650 510
+                      - component: polygon
+                        config:
+                          fill: =`${loop.coords.graph_axis_line_color}`
+                          points: 650 800, 3000 800, 3000 810, 650 810
+                      - component: polygon
+                        config:
+                          fill: =`${loop.coords.graph_axis_line_color}`
+                          points: 650 1090, 3000 1090, 3000 1100, 650 1100
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item5mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item5mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item5mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*0}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p0},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*1}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p0},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*1}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item10mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item10mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item10mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*1}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p1},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*2}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p1},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*2}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*1}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item15mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item15mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item15mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*2}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p2},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*3}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p2},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*3}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*2}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item20mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item20mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item20mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*3}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p3},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*4}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p3},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*4}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*3}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item25mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item25mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item25mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*4}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p4},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*5}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p4},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*5}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*4}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item30mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item30mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item30mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*5}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p5},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*6}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p5},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*6}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*5}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item40mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item40mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item40mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*6}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p6},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*8}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p6},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*8}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*6}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item50mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item50mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item50mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*8}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p7},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*10}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p7},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*10}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*8}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
+                      - component: polygon
+                        config:
+                          fill: =(Number.parseFloat(items[props.Item60mins].state)==2?'rgba(94, 197, 237,
+                            0.5)':(Number.parseFloat(items[props.Item60mins].state))==3?
+                            'rgba(0, 158, 224,
+                            0.5)':(Number.parseFloat(items[props.Item60mins].state))==4?
+                            'rgba(0, 106, 179, 0.5)':'rgba(0, 106,
+                            179, 0.5)')
+                          points: =` ${loop.coords.x_graph_start + loop.coords.spacing*10}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p8},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*12}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.p8},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*12}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height},
+                            ${loop.coords.x_graph_start +
+                            loop.coords.spacing*10}
+                            ${loop.coords.y_graph_start +
+                            loop.coords.y_graph_height}`
