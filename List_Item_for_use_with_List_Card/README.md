@@ -19,6 +19,7 @@ Support to use a light and a dark background.
 * [Pi hole List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Pi_hole_List_Item)
 * [Pollens List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Pollens_List_Item)
 * [RadioBrowser Chromecast List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/RadioBrowser_Chromecast_List_Item)
+* [Rain Forecast One Hour List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item)
 * [System Info List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/System_Info_List_Item)
 * [Tarifs Base Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsBase_Electricity_List_Item)
 * [Tarifs HC Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsHC_Electricity_List_Item)

@@ -7,6 +7,7 @@ Configuration exemples & tutorials
 * [Tarifs réglementés électricité option Heures Creuses](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9lectricit%C3%A9-option-Heures-Creuses)
 * [ECOGAZ prévisions tension sur le réseau de gaz](https://github.com/sebSmarthome/openHAB3-widget/wiki/ECOGAZ-pr%C3%A9visions-tension-sur-le-r%C3%A9seau-de-gaz)
 * [Risque d'Allergie aux Pollens](https://github.com/sebSmarthome/openHAB3-widget/wiki/Risque-d'Allergie-aux-Pollens)
+* [Pluie dans l'heure Météo France](https://github.com/sebSmarthome/openHAB3-widget/wiki/Pluie-dans-l'heure-M%C3%A9t%C3%A9o-France)
 
 Widgets
 
@@ -28,6 +29,7 @@ Widgets
 * [Pi hole List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Pi_hole_List_Item)
 * [Pollens List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Pollens_List_Item)
 * [RadioBrowser Chromecast List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/RadioBrowser_Chromecast_List_Item)
+* [Rain Forecast One Hour List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item)
 * [System Info List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/System_Info_List_Item)
 * [Tarifs Base Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsBase_Electricity_List_Item)
 * [Tarifs HC Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsHC_Electricity_List_Item)

@@ -2,9 +2,9 @@
 
 UI **List Item** Widget to display the rain forecast within the hour in france with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
 
-[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/)
+[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/Pluie-dans-l'heure-M%C3%A9t%C3%A9o-France)
 
-**Only use with “List Card” with accordion and rich list items option set to true.</br>Do not use it as a “default list item widget”**
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 
