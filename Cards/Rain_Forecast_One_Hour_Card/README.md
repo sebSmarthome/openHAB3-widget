@@ -39,4 +39,4 @@ Support to use a light and a dark background.
 
 ## Resources
 
-<https://github.com/sebSmarthome/openHAB3-widget/blob/main/Cards/Rain_Forecast_One_Hour_List_Card/frs_Rain_Forecast_One_Hour_card.yaml>
+<https://github.com/sebSmarthome/openHAB3-widget/blob/main/Cards/Rain_Forecast_One_Hour_Card/frs_Rain_Forecast_One_Hour_card.yaml>
