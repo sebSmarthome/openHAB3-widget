@@ -257,7 +257,7 @@ slots:
                                   - "#9c27b0"
                                 - - 1
                                   - maroon
-                              width: 30
+                              width: 20
                           axisTick:
                             show: false
                           data:

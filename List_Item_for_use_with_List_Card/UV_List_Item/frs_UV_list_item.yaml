@@ -179,7 +179,7 @@ slots:
                                   - "#ff3b30"
                                 - - 1
                                   - "#9c27b0"
-                              width: 30
+                              width: 20
                           axisTick:
                             show: false
                           data:
