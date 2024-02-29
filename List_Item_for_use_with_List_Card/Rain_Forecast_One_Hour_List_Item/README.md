@@ -1,10 +1,10 @@
 ![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain.jpg)
 
 UI **List Item** Widget to display the rain forecast within the hour in france with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
+
 [Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/)
 
-**Only use with “List Card” with accordion and rich list items option set to true.
-Do not use it as a “default list item widget”**
+**Only use with “List Card” with accordion and rich list items option set to true.</br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 
@@ -28,6 +28,12 @@ Support to use a light and a dark background.
 * Item Indice 50mins
 * Item Indice 60mins
 * Item Heure 60mins
+
+## Screenshots
+
+![Screen2|346x75](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain1.jpg)
+![Screen3|346x75](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain2.jpg)
+![Screen4|346x75](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain3.jpg)
 
 ## Changelog
 
