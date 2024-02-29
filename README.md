@@ -9,7 +9,7 @@ Configuration exemples & tutorials
 * [Risque d'Allergie aux Pollens](https://github.com/sebSmarthome/openHAB3-widget/wiki/Risque-d'Allergie-aux-Pollens)
 * [Pluie dans l'heure Météo France](https://github.com/sebSmarthome/openHAB3-widget/wiki/Pluie-dans-l'heure-M%C3%A9t%C3%A9o-France)
 
-Widgets
+Widgets use with **List Card** with accordion
 
 * [Air Quality List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item)
 * [Astro Moon List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item)
@@ -18,7 +18,6 @@ Widgets
 * [Ecogaz List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Ecogaz_List_Item)
 * [Freebox Phone List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Freebox_Phone_List_Item)
 * [Freebox Server List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Freebox_Server_List_Item)
-* [Freebox Player remote](https://github.com/sebSmarthome/openHAB3-widget/tree/main/Cards/Freebox_Player_remote)
 * [HP Printer List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/HP_Printer_List_Item)
 * [Linky List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Linky_List_Item)
 * [LowBattery List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/LowBattery_List_Item)
@@ -34,3 +33,8 @@ Widgets
 * [Tarifs Base Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsBase_Electricity_List_Item)
 * [Tarifs HC Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsHC_Electricity_List_Item)
 * [UV List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/UV_List_Item)
+
+Widgets cards
+
+* [Freebox Player remote](https://github.com/sebSmarthome/openHAB3-widget/tree/main/Cards/Freebox_Player_remote)
+* [Rain Forecast One Hour Card](https://github.com/sebSmarthome/openHAB3-widget/tree/main/Cards/Rain_Forecast_One_Hour_Card)
