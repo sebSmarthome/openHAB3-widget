@@ -1,6 +1,6 @@
 Group Pluie_dans_lheure "Pluie dans l'heure" <f7:cloud_heavyrain_fill> ["WeatherService"]
-DateTime Pluie_dans_lheure_Mise_A_Jour "Mise à Jour" <f7:clock> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Mise_A_Jour", stateDescription=""[pattern="%1$tHh%1$tM"]}
-DateTime Pluie_dans_lheure_Heure_5mins "5 minutes (heure)" <f7:clock> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Heure_5mins", stateDescription=""[pattern="%1$tHh%1$tM"]}
+DateTime Pluie_dans_lheure_Mise_A_Jour "Mise à Jour" <f7:clock> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Mise_A_Jour", stateDescription=""[pattern="%1$tH:%1$tM"]}
+DateTime Pluie_dans_lheure_Heure_5mins "5 minutes (heure)" <f7:clock> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Heure_5mins", stateDescription=""[pattern="%1$tH:%1$tM"]}
 Number Pluie_dans_lheure_Indice_5mins "5 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_5mins"}
 Number Pluie_dans_lheure_Indice_10mins "10 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_10mins"}
 Number Pluie_dans_lheure_Indice_15mins "15 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_15mins"}
@@ -9,6 +9,6 @@ Number Pluie_dans_lheure_Indice_25mins "25 minutes (indice)" <f7:cloud_heavyrain
 Number Pluie_dans_lheure_Indice_30mins "30 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_30mins"}
 Number Pluie_dans_lheure_Indice_40mins "40 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_40mins"}
 Number Pluie_dans_lheure_Indice_50mins "50 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_50mins"}
-DateTime Pluie_dans_lheure_Heure_60mins "60 minutes (heure)" <f7:clock> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Heure_60mins", stateDescription=""[pattern="%1$tHh%1$tM"]}
+DateTime Pluie_dans_lheure_Heure_60mins "60 minutes (heure)" <f7:clock> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Heure_60mins", stateDescription=""[pattern="%1$tH:%1$tM"]}
 Number Pluie_dans_lheure_Indice_60mins "60 minutes (indice)" <f7:cloud_heavyrain_fill> (Pluie_dans_lheure) ["Point"] {channel="http:url:Pluie_Dans_LHeure:Indice_60mins"}
 String Pluie_dans_lheure_Etat "Etat" <f7:doc_plaintext> (Pluie_dans_lheure) ["Point"]

@@ -2,99 +2,117 @@ uid: frs_Rain_Forecast_One_Hour_list_item
 tags: []
 props:
   parameters:
-    - label: graph x-axis text color (default= lightgrey)
+    - default: Pluie dans l'heure
+      label: Header Title
+      name: pluie_Title
+      required: false
+      type: TEXT
+    - default: iconify:emojione-monotone:closed-umbrella
+      description: Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon no rain
+      name: pluie_Off_Icon
+      required: false
+      type: TEXT
+    - default: gray
+      label: Icon color no rain
+      name: pluie_Off_Color_Icon
+      required: false
+      type: TEXT
+    - default: iconify:emojione-monotone:umbrella-with-rain-drops
+      description: Use f7:iconName (Framework7 icon), material:iconName (Material icon) or iconify:iconSet:iconName
+      label: Icon rain
+      name: pluie_On_Icon
+      required: false
+      type: TEXT
+    - default: lightblue
+      label: Icon color rain
+      name: pluie_On_Color_Icon
+      required: false
+      type: TEXT
+    - label: graph x-axis text color
+      default: lightgray
       name: graph_x_axis_text_color
       required: false
       type: TEXT
-    - label: graph y-axis text color (default= lightgrey)
+    - label: graph y-axis text color
+      default: lightgray
       name: graph_y_axis_text_color
       required: false
       type: TEXT
-    - label: graph axis line color (default= grey)
+    - label: graph axis line color
+      default: gray
       name: graph_axis_line_color
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Etat
-      description: item etat pluie
-      label: Item
+      label: Item Rain state
       name: pluie_text_item
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_5mins
-      description: item Indice 5mins
-      label: Item
+      label: Item Indice 5mins
       name: Item5mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Heure_5mins
-      description: item Heure 5mins
-      label: Item
+      label: Item Hour 5mins
       name: Item5minsHeure
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_10mins
-      description: item Indice 10mins
-      label: Item
+      label: Item Indice 10mins
       name: Item10mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_15mins
-      description: item Indice 15mins
-      label: Item
+      label: Item Indice 15mins
       name: Item15mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_20mins
-      description: item Indice 20mins
-      label: Item
+      label: Item Indice 20mins
       name: Item20mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_25mins
-      description: item Indice 25mins
-      label: Item
+      label: Item Indice 25mins
       name: Item25mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_30mins
-      description: item Indice 30mins
-      label: Item
+      label: Item Indice 30mins
       name: Item30mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_40mins
-      description: item Indice 40mins
-      label: Item
+      label: Item Indice 40mins
       name: Item40mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_50mins
-      description: item Indice 50mins
-      label: Item
+      label: Item Indice 50mins
       name: Item50mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Indice_60mins
-      description: item Indice 60mins
-      label: Item
+      label: Item Indice 60mins
       name: Item60mins
       required: false
       type: TEXT
     - context: item
       default: Pluie_dans_lheure_Heure_60mins
-      description: item Heure 60mins
-      label: Item
+      label: Item Hour 60mins
       name: Item60minsHeure
       required: false
       type: TEXT
@@ -103,10 +121,10 @@ timestamp: Feb 28, 2024, 10:13:19 AM
 component: oh-list-item
 config:
   accordionList: true
-  icon: '=(@props.pluie_text_item == "Pas de précipitations") ? "iconify:emojione-monotone:closed-umbrella" : "iconify:emojione-monotone:umbrella-with-rain-drops"'
-  iconColor: '=(@props.pluie_text_item == "Pas de précipitations") ? "gray" : "lightblue"'
+  icon: '=(@props.pluie_text_item == "Pas de précipitations") ? props.pluie_Off_Icon : props.pluie_On_Icon'
+  iconColor: '=(@props.pluie_text_item == "Pas de précipitations") ? props.pluie_Off_Color_Icon : props.pluie_On_Color_Icon'
   subtitle: =@props.pluie_text_item
-  title: Pluie dans l'heure
+  title: =props.pluie_Title
 slots:
   accordion:
     - component: f7-list
@@ -122,12 +140,9 @@ slots:
               for: coords
               fragment: true
               in:
-                - graph_axis_line_color: =props.graph_axis_line_color?props.graph_axis_line_color
-                    :'grey'
-                  graph_x_axis_text_color: =props.graph_x_axis_text_color?props.graph_x_axis_text_color
-                    :'lightgrey'
-                  graph_y_axis_text_color: =props.graph_y_axis_text_color?props.graph_y_axis_text_color
-                    :'lightgrey'
+                - graph_axis_line_color: =props.graph_axis_line_color
+                  graph_x_axis_text_color: =props.graph_x_axis_text_color
+                  graph_y_axis_text_color: =props.graph_y_axis_text_color
                   p0: = 900 -
                     (Number.parseFloat(items[props.Item5mins].state)==1?0:(Number.parseFloat(items[props.Item5mins].state))==2?
                     300:(Number.parseFloat(items[props.Item5mins].state))==3?
@@ -203,7 +218,7 @@ slots:
                                     config:
                                       style:
                                         display: inline
-                                        margin-left: -20px
+                                        margin-left: -28px
                                         padding-right: 0px
                                         position: absolute
                                         top: 10px
@@ -310,29 +325,29 @@ slots:
                                       height: 110px
                                       margin-left: 0px
                                       margin-right: 0px
-                                      viewBox: 100 0 2900 1100
+                                      viewBox: 180 0 2900 1100
                                     slots:
                                       default:
                                         - component: polygon
                                           config:
                                             fill: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(245, 245, 245)'"
-                                            points: 650 200, 3250 200, 3250 1100, 650 1100
+                                            points: 650 200, 3000 200, 3000 1100, 650 1100
                                         - component: polygon
                                           config:
                                             fill: =`${loop.coords.graph_axis_line_color}`
-                                            points: 650 200, 3250 200, 3250 210, 650 210
+                                            points: 650 200, 3000 200, 3000 210, 650 210
                                         - component: polygon
                                           config:
                                             fill: =`${loop.coords.graph_axis_line_color}`
-                                            points: 650 500, 3250 500, 3250 510, 650 510
+                                            points: 650 500, 3000 500, 3000 510, 650 510
                                         - component: polygon
                                           config:
                                             fill: =`${loop.coords.graph_axis_line_color}`
-                                            points: 650 800, 3250 800, 3250 810, 650 810
+                                            points: 650 800, 3000 800, 3000 810, 650 810
                                         - component: polygon
                                           config:
                                             fill: =`${loop.coords.graph_axis_line_color}`
-                                            points: 650 1090, 3250 1090, 3250 1100, 650 1100
+                                            points: 650 1090, 3000 1090, 3000 1100, 650 1100
                                         - component: polygon
                                           config:
                                             fill: =(Number.parseFloat(items[props.Item5mins].state)==2?'rgba(94, 197, 237,

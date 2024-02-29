@@ -11,30 +11,23 @@ Support to use a light and a dark background.
 **Configuration parameters:**
 
 * Title string
-* Item indice pollens
-* Item Ambroisies pollens
-* Item Armoise pollens
-* Item Aulne pollens
-* Item Bouleau pollens
-* Item Charme pollens
-* Item Chataignier pollens
-* Item Chene pollens
-* Item Cupressacees pollens
-* Item Frene pollens
-* Item Graminees pollens
-* Item Noisetier pollens
-* Item Olivier pollens
-* Item Oseille pollens
-* Item Peuplier pollens
-* Item Plantain pollens
-* Item Platane pollens
-* Item Saule pollens
-* Item Tilleul pollens
-* Item Urticacees pollens
-
-## Screenshots
-
-![Screen2](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain2.jpg)
+* Icon
+* Icon color
+* Graph x-axis text color
+* Graph y-axis text color
+* Graph axis line color
+* Item Etat
+* Item Indice 5mins
+* Item Heure 5mins
+* Item Indice 10mins
+* Item Indice 15mins
+* Item Indice 20mins
+* Item Indice 25mins
+* Item Indice 30mins
+* Item Indice 40mins
+* Item Indice 50mins
+* Item Indice 60mins
+* Item Heure 60mins
 
 ## Changelog
 
