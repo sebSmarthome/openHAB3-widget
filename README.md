@@ -9,7 +9,7 @@ Configuration exemples & tutorials
 * [Risque d'Allergie aux Pollens](https://github.com/sebSmarthome/openHAB3-widget/wiki/Risque-d'Allergie-aux-Pollens)
 * [Pluie dans l'heure Météo France](https://github.com/sebSmarthome/openHAB3-widget/wiki/Pluie-dans-l'heure-M%C3%A9t%C3%A9o-France)
 
-Widgets use with **List Card** with accordion
+Widgets use with **"List Card"** with accordion
 
 * [Air Quality List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Air_Quality_List_Item)
 * [Astro Moon List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/Astro_Moon_List_Item)
