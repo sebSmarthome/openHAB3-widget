@@ -31,9 +31,9 @@ Support to use a light and a dark background.
 
 ## Screenshots
 
-![Screen2|346x75](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain1.jpg)
-![Screen3|346x75](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain2.jpg)
-![Screen4|346x75](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain3.jpg)
+<img src="https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain1.jpg" width="346" height="75">
+<img src="https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain2.jpg" width="346" height="75">
+<img src="https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Rain_Forecast_One_Hour_List_Item/screenshots/Rain3.jpg" width="346" height="75">
 
 ## Changelog
 
