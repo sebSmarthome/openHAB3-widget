@@ -1,10 +1,10 @@
 ![Screen1](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/Ecogaz_List_Item/screenshots/Ecogaz.jpg)
 
-UI **List Item** Widget to view the Ecogaz information with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
+UI **List Item** Widget to view the French Ecogaz information with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
 
 [Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/ECOGAZ-pr%C3%A9visions-tension-sur-le-r%C3%A9seau-de-gaz)
 
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 

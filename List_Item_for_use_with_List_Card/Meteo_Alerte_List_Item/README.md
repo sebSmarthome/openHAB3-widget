@@ -2,7 +2,7 @@
 
 This is an UI **List Item** Widget to view the French Meteo Alerte information with the [Meteo Alerte Binding](https://www.openhab.org/addons/bindings/meteoalerte/).
 
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 

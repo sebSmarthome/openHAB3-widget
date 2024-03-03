@@ -1,4 +1,4 @@
-Group EcoGaz "EcoGaz" <if:material-symbols:mode-heat> ["WebService"]
+Group EcoGaz "EcoGaz" <ecogaz> ["WebService"]
 String EcoGaz_Aujourdhui "Aujourd'hui" <if:material-symbols:mode-heat> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Aujoudhui", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
 String EcoGaz_Demain "Demain" <if:material-symbols:mode-heat> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:Demain", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}
 String EcoGaz_ApresDemain "Après demain" <if:material-symbols:mode-heat> (EcoGaz) ["Point"] {channel="http:url:EcoGaz:ApresDemain", stateDescription=""[options="Vert=Normale,Jaune=Elevée,Orange=Tendue,Rouge=Très tendue"]}

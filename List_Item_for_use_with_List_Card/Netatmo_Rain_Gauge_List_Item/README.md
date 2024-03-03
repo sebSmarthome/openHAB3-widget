@@ -2,7 +2,7 @@
 
 **List Item** Widget for the Netatmo Rain gauge [Netatmo Binding](https://www.openhab.org/addons/bindings/netatmo/#rain-gauge).
 
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 

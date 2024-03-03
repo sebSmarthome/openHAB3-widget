@@ -1,0 +1,27 @@
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      thingUID: http:url:VigiEau
+      status: UNKNOWN
+    type: core.ThingStatusUpdateTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      itemName: VigiEau_Niveau_Alerte
+      state: Aucune restriction
+    type: core.ItemStateUpdateAction
+  - inputs: {}
+    id: "3"
+    configuration:
+      itemName: VigiEau_Arrete_cadre_prefectoral
+      state: Aucune restriction
+    type: core.ItemStateUpdateAction
+  - inputs: {}
+    id: "4"
+    configuration:
+      itemName: VigiEau_Arrete_restriction
+      state: Aucune restriction
+    type: core.ItemStateUpdateAction

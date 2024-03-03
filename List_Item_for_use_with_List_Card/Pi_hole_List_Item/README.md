@@ -4,7 +4,7 @@ This is an UI **List Item** Widget to view the Pi-Hole status with the [HTTP Bin
 
 [OH3: Integrate PI-Hole via HTTP-Binding using the UI](https://community.openhab.org/t/oh3-integrate-pi-hole-via-http-binding-using-the-ui/111844)
 
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 

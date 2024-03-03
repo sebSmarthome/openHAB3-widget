@@ -2,8 +2,7 @@
 
 This is an UI **List Item** Widget to control the [Radio Browser Binding](https://community.openhab.org/t/radio-browser-binding/153785) and the [Chromecast Binding](https://www.openhab.org/addons/bindings/chromecast/)
 
-
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 

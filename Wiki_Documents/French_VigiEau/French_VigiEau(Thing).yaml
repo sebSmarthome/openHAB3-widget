@@ -1,0 +1,52 @@
+UID: http:url:VigiEau
+label: HTTP VigiEau
+thingTypeUID: http:url
+configuration:
+  authMode: BASIC
+  ignoreSSLErrors: false
+  baseURL: https://api.vigieau.beta.gouv.fr/reglementation?lon=<latitude>&lat=<logitude>&commune=<code insee>&profil=<profil>
+  delay: 0
+  stateMethod: GET
+  refresh: 43100
+  commandMethod: GET
+  timeout: 3000
+  bufferSize: 2048
+channels:
+  - id: last-failure
+    channelTypeUID: http:request-date-time
+    label: Last Failure
+    configuration: {}
+  - id: last-success
+    channelTypeUID: http:request-date-time
+    label: Last Success
+    configuration: {}
+  - id: Debut_validite
+    channelTypeUID: http:datetime
+    label: Début validité
+    configuration:
+      mode: READWRITE
+      stateTransformation: JSONPATH:$.arrete.dateDebutValidite
+  - id: Fin_validite
+    channelTypeUID: http:datetime
+    label: Fin validité
+    configuration:
+      mode: READWRITE
+      stateTransformation: JSONPATH:$.arrete.dateFinValidite
+  - id: Niveau_Alerte
+    channelTypeUID: http:string
+    label: Niveau Alerte
+    configuration:
+      mode: READWRITE
+      stateTransformation: JSONPATH:$.niveauAlerte
+  - id: Arrete_restriction
+    channelTypeUID: http:string
+    label: Arrêté de restriction
+    configuration:
+      mode: READWRITE
+      stateTransformation: JSONPATH:$.arrete.cheminFichier
+  - id: Arrete_cadre_prefectoral
+    channelTypeUID: http:string
+    label: Arrêté cadre préfectoral
+    configuration:
+      mode: READWRITE
+      stateTransformation: JSONPATH:$.arrete.cheminFichierArreteCadre

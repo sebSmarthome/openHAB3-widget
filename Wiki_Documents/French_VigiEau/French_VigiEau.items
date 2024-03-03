@@ -1,0 +1,6 @@
+Group VigiEau "VigiEau" <vigieau> ["WebService"]
+DateTime VigiEau_Debut_validite "Début validité" <f7:calendar> (VigiEau) ["Point"] {channel="http:url:VigiEau:Debut_validite", stateDescription=""[pattern="%1$te %1$tb"]}
+DateTime VigiEau_Fin_validite "Fin validité" <f7:calendar> (VigiEau) ["Point"] {channel="http:url:VigiEau:Fin_validite", stateDescription=""[pattern="%1$te %1$tb"]}
+String VigiEau_Niveau_Alerte "Niveau Alerte" <f7:drop_triangle_fill> (VigiEau) ["Point"] {channel="http:url:VigiEau:Niveau_Alerte"}
+String VigiEau_Arrete_restriction "Arrêté de restriction" <f7:doc_plaintext> (VigiEau) ["Point"] {channel="http:url:VigiEau:Arrete_restriction"}
+String VigiEau_Arrete_cadre_prefectoral "Arrêté cadre préfectoral" <f7:doc_plaintext> (VigiEau) ["Point"] {channel="http:url:VigiEau:Arrete_cadre_prefectoral"}

@@ -1,0 +1,252 @@
+uid: frs_VigiEau_list_item
+tags:
+  - list
+props:
+  parameters:
+    - default: VigiEau
+      description: Header Title
+      label: Title
+      name: VigiEauTitle
+      required: false
+      type: TEXT
+    - default: vigieau
+      description: icon name without ".png", located in static/icons/ folder
+      label: Icon
+      name: iconimage
+      required: false
+      type: TEXT
+    - context: item
+      default: VigiEau_Niveau_Alerte
+      description: Item Niveau Alerte
+      label: Item
+      name: Niveau_AlerteItem
+      required: false
+      type: TEXT
+    - context: item
+      default: VigiEau_Arrete_restriction
+      description: Item lien Arrêté de restriction
+      label: Item
+      name: Arrete_restrictionItem
+      required: false
+      type: TEXT
+    - context: item
+      default: VigiEau_Arrete_cadre_prefectoral
+      description: Item lien Arrêté cadre préfectoral
+      label: Item
+      name: Arrete_cadre_prefectoralItem
+      required: false
+      type: TEXT
+    - context: item
+      default: VigiEau_Debut_validite
+      description: Item Début validité
+      label: Item
+      name: Debut_validiteItem
+      required: false
+      type: TEXT
+    - context: item
+      default: VigiEau_Fin_validite
+      description: Item Fin validité
+      label: Item
+      name: Fin_validiteItem
+      required: false
+      type: TEXT
+  parameterGroups: []
+timestamp: Mar 3, 2024, 9:30:35 PM
+component: oh-list-item
+config:
+  colorTheme: green
+  accordionList: true
+  icon: =props.iconimage
+  mediaList: true
+  stylesheet: |
+    .animvigieaured {
+      animation: flashingbgvigieaured 1s linear 0s infinite;
+    } @keyframes flashingbgvigieaured {
+      0%   {color: #b10026; opacity: 0}
+      25%  {color: #b10026; opacity: 1}
+      50%  {color: #b10026; opacity: 1}
+      75%  {color: #b10026; opacity: 0}
+      100% {color: #b10026; opacity: 0}
+    } .animvigieauorange {
+      animation: flashingbgvigieauorange 1s linear 0s infinite;
+    } @keyframes flashingbgvigieauorange {
+      0%   {color: #fc4e2a; opacity: 0.6}
+      25%  {color: #fc4e2a; opacity: 1}
+      50%  {color: #fc4e2a; opacity: 1}
+      75%  {color: #fc4e2a; opacity: 0.6}
+      100% {color: #fc4e2a; opacity: 0.6}
+    } .vigieauyellow {
+      color: #feb24c;
+      opacity: 1
+    } .vigieaugreen {
+      color: #4cd964;
+      opacity: 1
+    } .vigieaulime {
+      color: #bca12b;
+      opacity: 1
+    } .vigieaugray {
+      color: #808080;
+      opacity: 1
+    }
+  subtitle: =@props.Niveau_AlerteItem
+  title: =props.VigiEauTitle
+slots:
+  accordion:
+    - component: f7-list
+      config:
+        mediaList: true
+        style:
+          background-color: "=themeOptions.dark === 'dark' ? 'rgb(35, 35, 35)' : 'rgb(247,
+            247, 247)'"
+        visible: '=@@props.Niveau_AlerteItem == "Aucune restriction" ? false : true'
+      slots:
+        default:
+          - component: f7-row
+            config:
+              class:
+                - display-flex
+                - justify-content-center
+              style:
+                margin-left: 6px
+                margin-right: 6px
+                padding-top: 16px
+                margin-bottom: 0px
+                text-align: center
+            slots:
+              default:
+                - component: Label
+                  config:
+                    style:
+                      background: '=(@@props.Niveau_AlerteItem) == "Vigilance" ? "#bca12b" : "white"'
+                      border-radius: 4px
+                      font-size: 14px
+                      font-weight: 600
+                      color: '=(@@props.Niveau_AlerteItem) == "Vigilance" ? "white" : "#bca12b"'
+                      width: 84px
+                      margin-bottom: 6px
+                      margin-left: 3px
+                      margin-right: 3px
+                    text: ="VIGILANCE"
+                - component: Label
+                  config:
+                    style:
+                      background: '=(@@props.Niveau_AlerteItem) == "Alerte" ? "#feb24c" : "white"'
+                      border-radius: 4px
+                      font-size: 14px
+                      font-weight: 600
+                      color: '=(@@props.Niveau_AlerteItem) == "Alerte" ? "white" : "#feb24c"'
+                      width: 60px
+                      margin-bottom: 6px
+                      margin-left: 3px
+                      margin-right: 3px
+                    text: ="ALERTE"
+                - component: Label
+                  config:
+                    style:
+                      background: '=(@@props.Niveau_AlerteItem) == "Alerte renforcée" ? "#fc4e2a" :
+                        "white"'
+                      border-radius: 4px
+                      font-size: 14px
+                      font-weight: 600
+                      color: '=(@@props.Niveau_AlerteItem) == "Alerte renforcée" ? "white" :
+                        "#fc4e2a"'
+                      width: 140px
+                      margin-bottom: 6px
+                      margin-left: 3px
+                      margin-right: 3px
+                    text: ="ALERTE RENFORCÉE"
+                - component: Label
+                  config:
+                    style:
+                      background: '=(@@props.Niveau_AlerteItem) == "Crise" ? "#b10026" : "white"'
+                      border-radius: 4px
+                      font-size: 14px
+                      font-weight: 600
+                      color: '=(@@props.Niveau_AlerteItem) == "Crise" ? "white" : "#b10026"'
+                      width: 50px
+                      margin-bottom: 6px
+                      margin-left: 3px
+                      margin-right: 3px
+                    text: ="CRISE"
+          - component: oh-list-item
+            config:
+              icon: f7:calendar
+              iconColor: gray
+              style:
+                --f7-list-item-after-font-size: 15px
+                --f7-list-item-after-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-subtitle-font-size: 14px
+                --f7-list-item-subtitle-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              subtitle: ="Du " + @props.Debut_validiteItem + " au " + @props.Fin_validiteItem
+              title: ="Validité"
+          - component: oh-list-item
+            config:
+              icon: iconify:mdi:link-variant
+              iconColor: gray
+              style:
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: Arrêté de restriction
+            slots:
+              after:
+                - component: oh-button
+                  config:
+                    action: url
+                    actionUrl: =@@props.Arrete_restrictionItem
+                    actionUrlSameWindow: false
+                    fill: false
+                    iconMaterial: open_in_new
+                    iconSize: 28px
+                    raised: false
+                    small: true
+          - component: oh-list-item
+            config:
+              icon: iconify:mdi:link-variant
+              iconColor: gray
+              style:
+                --f7-list-item-title-font-size: 15px
+                --f7-list-item-title-line-height: 32px
+                --f7-list-item-title-text-color: "=themeOptions.dark === 'dark' ?
+                  'rgb(180,180,180)' : 'rgb(100,100,100)'"
+              title: Arrêté cadre préfectoral
+            slots:
+              after:
+                - component: oh-button
+                  config:
+                    action: url
+                    actionUrl: =@@props.Arrete_cadre_prefectoralItem
+                    actionUrlSameWindow: false
+                    fill: false
+                    iconMaterial: open_in_new
+                    iconSize: 28px
+                    raised: false
+                    small: true
+  after:
+    - component: f7-icon
+      config:
+        class: '=(@@props.Niveau_AlerteItem) == "Aucune restriction" ? "vigieaugreen" :
+          (@@props.Niveau_AlerteItem) == "Vigilance" ? "vigieaulime" :
+          (@@props.Niveau_AlerteItem) == "Alerte" ? "vigieauyellow" :
+          (@@props.Niveau_AlerteItem) == "Alerte renforcée" ?
+          "animvigieauorange" : (@@props.Niveau_AlerteItem) == "Crise" ?
+          "animvigieaured" : "vigieaugray"'
+        f7: '=@@props.Niveau_AlerteItem == "Aucune restriction" ?
+          "checkmark_alt_circle_fill" : @@props.Niveau_AlerteItem == "Vigilance"
+          ? "exclamationmark_circle_fill" : @@props.Niveau_AlerteItem ==
+          "Alerte" ? "exclamationmark_square_fill" : @@props.Niveau_AlerteItem
+          == "Alerte renforcée" ? "exclamationmark_octagon_fill" :
+          @@props.Niveau_AlerteItem == "Crise" ? "exclamationmark_triangle_fill"
+          : "exclamationmark_circle"'
+        size: 30
+        style:
+          height: 20px
+          margin-left: 0px
+          margin-top: 0px
+          width: 30px

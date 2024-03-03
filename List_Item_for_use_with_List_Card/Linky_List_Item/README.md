@@ -4,7 +4,7 @@ This is an UI **List Item** Widget to view the consumption of your home from the
 
 Linky electric meter with TIC mode: Historical, electricity connection: single phase and pricing mode: HCHP.
 
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 

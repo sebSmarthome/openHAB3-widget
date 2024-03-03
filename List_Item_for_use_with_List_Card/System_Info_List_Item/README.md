@@ -2,7 +2,7 @@
 
 This is an UI **List Item** Widget to view the RaspberryPi System info with the [Systeminfo Binding](https://www.openhab.org/addons/bindings/systeminfo/) and reboot/shutdown system with the [Exec Binding](https://www.openhab.org/addons/bindings/exec/).
 
-Only use with **List Card** with accordion and rich list items option set to true.
+**Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
 Support to use a light and a dark background.
 
