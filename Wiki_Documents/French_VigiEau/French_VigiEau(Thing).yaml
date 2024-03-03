@@ -4,7 +4,7 @@ thingTypeUID: http:url
 configuration:
   authMode: BASIC
   ignoreSSLErrors: false
-  baseURL: https://api.vigieau.beta.gouv.fr/reglementation?lon=<latitude>&lat=<logitude>&commune=<code insee>&profil=<profil>
+  baseURL: https://api.vigieau.beta.gouv.fr/reglementation?lon=< latitude >&lat=< longitude >&commune=< code insee >&profil=< profil >
   delay: 0
   stateMethod: GET
   refresh: 43100
