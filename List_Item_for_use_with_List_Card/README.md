@@ -24,6 +24,7 @@ Support to use a light and a dark background.
 * [Tarifs Base Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsBase_Electricity_List_Item)
 * [Tarifs HC Electricity List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/TarifsHC_Electricity_List_Item)
 * [UV List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/UV_List_Item)
+* [VigiEau List Item](https://github.com/sebSmarthome/openHAB3-widget/tree/main/List_Item_for_use_with_List_Card/VigiEau_List_Item)
 
 ## Screenshots
 

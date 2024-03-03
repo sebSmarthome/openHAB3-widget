@@ -2,7 +2,7 @@
 
 UI **List Item** Widget to view the French VigiEau information with the [HTTP Binding](https://www.openhab.org/addons/bindings/http/).
 
-[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/)
+[Tutorial in french](https://github.com/sebSmarthome/openHAB3-widget/wiki/VigiEau-restrictions-d'eau)
 
 **Only use with “List Card” with accordion and rich list items option set to true.<br>Do not use it as a “default list item widget”**
 
