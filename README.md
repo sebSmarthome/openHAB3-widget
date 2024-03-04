@@ -5,7 +5,7 @@ Configuration exemples & tutorials
 
 * [Tarifs réglementés électricité option Base](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9lectricit%C3%A9-option-Base)
 * [Tarifs réglementés électricité option Heures Creuses](https://github.com/sebSmarthome/openHAB3-widget/wiki/Tarifs-r%C3%A9glement%C3%A9s-%C3%A9lectricit%C3%A9-option-Heures-Creuses)
-* [ECOGAZ prévisions tension sur le réseau de gaz](https://github.com/sebSmarthome/openHAB3-widget/wiki/ECOGAZ-pr%C3%A9visions-tension-sur-le-r%C3%A9seau-de-gaz)
+* [EcoGaz prévisions tension sur le réseau de gaz](https://github.com/sebSmarthome/openHAB3-widget/wiki/ECOGAZ-pr%C3%A9visions-tension-sur-le-r%C3%A9seau-de-gaz)
 * [VigiEau restrictions d'eau](https://github.com/sebSmarthome/openHAB3-widget/wiki/VigiEau-restrictions-d'eau)
 * [Risque d'Allergie aux Pollens](https://github.com/sebSmarthome/openHAB3-widget/wiki/Risque-d'Allergie-aux-Pollens)
 * [Pluie dans l'heure Météo France](https://github.com/sebSmarthome/openHAB3-widget/wiki/Pluie-dans-l'heure-M%C3%A9t%C3%A9o-France)
