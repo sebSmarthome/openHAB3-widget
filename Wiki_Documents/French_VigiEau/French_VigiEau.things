@@ -1,8 +1,8 @@
-Thing http:url:VigiEau "HTTP VigiEau" [ baseURL="https://api.vigieau.beta.gouv.fr/reglementation?lon=< latitude >&lat=< longitude >&commune=< code insee >&profil=< profil >", refresh=43200, delay=0 ] {
+Thing http:url:VigiEau "HTTP VigiEau" [ baseURL="https://api.vigieau.gouv.fr/api/zones?lon=< latitude >&lat=< longitude >&commune=< code insee >&profil=< profil >&zoneType=< zone Type >", refresh=43200, delay=0 ] {
     Channels:
         Type datetime : Debut_validite "Début validité" [ stateTransformation="JSONPATH:$.arrete.dateDebutValidite" ]
         Type datetime : Fin_validite "Fin validité" [ stateTransformation="JSONPATH:$.arrete.dateFinValidite" ]
-        Type string : Niveau_Alerte "Niveau Alerte" [ stateTransformation="JSONPATH:$.niveauAlerte" ]
+        Type string : Niveau_Alerte "Niveau Alerte" [ stateTransformation="JSONPATH:$.niveauGravite" ]
         Type string : Arrete_restriction "Arrêté de restriction" [ stateTransformation="JSONPATH:$.arrete.cheminFichier" ]
         Type string : Arrete_cadre_prefectoral "Arrêté cadre préfectoral" [ stateTransformation="JSONPATH:$.arrete.cheminFichierArreteCadre" ]
     }

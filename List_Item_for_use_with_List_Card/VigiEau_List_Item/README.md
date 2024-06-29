@@ -33,6 +33,10 @@ Support to use a light and a dark background.
 ![Screen7](https://github.com/sebSmarthome/openHAB3-widget/raw/main/List_Item_for_use_with_List_Card/VigiEau_List_Item/screenshots/vigieau4.jpg)
 
 ## Changelog
+
+### Version 0.2
+
+* compatible with new API
   
 ### Version 0.1
 

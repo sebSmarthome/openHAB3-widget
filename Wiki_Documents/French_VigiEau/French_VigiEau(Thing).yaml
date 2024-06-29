@@ -4,7 +4,7 @@ thingTypeUID: http:url
 configuration:
   authMode: BASIC
   ignoreSSLErrors: false
-  baseURL: https://api.vigieau.beta.gouv.fr/reglementation?lon=< latitude >&lat=< longitude >&commune=< code insee >&profil=< profil >
+  baseURL: https://api.vigieau.gouv.fr/api/zones?lon=< latitude >&lat=< longitude >&commune=< code insee >&profil=< profil >&zoneType=< zone Type >
   delay: 0
   stateMethod: GET
   refresh: 43100
@@ -37,7 +37,7 @@ channels:
     label: Niveau Alerte
     configuration:
       mode: READWRITE
-      stateTransformation: JSONPATH:$.niveauAlerte
+      stateTransformation: JSONPATH:$.niveauGravite
   - id: Arrete_restriction
     channelTypeUID: http:string
     label: Arrêté de restriction
