@@ -9,6 +9,7 @@ Configuration exemples & tutorials
 * [VigiEau restrictions d'eau](https://github.com/sebSmarthome/openHAB3-widget/wiki/VigiEau-restrictions-d'eau)
 * [Risque d'Allergie aux Pollens](https://github.com/sebSmarthome/openHAB3-widget/wiki/Risque-d'Allergie-aux-Pollens)
 * [Pluie dans l'heure Météo France](https://github.com/sebSmarthome/openHAB3-widget/wiki/Pluie-dans-l'heure-M%C3%A9t%C3%A9o-France)
+* [IPX‐800 V4 avec extension X‐8R,X‐4VR et X‐THL](https://github.com/sebSmarthome/openHAB3-widget/wiki/IPX%E2%80%90800-V4-avec-extension-X%E2%80%908R,-X%E2%80%904VR-et-X%E2%80%90THL)
 
 Widgets use with **"List Card"** with accordion
 
